@@ -12,9 +12,26 @@ namespace RedocApp
 {
     public partial class frmDashboardAdmin : Form
     {
+        FrmScheduler frmScheduler;
+        FrmPatients frmPatients;
+        FrmExams frmExams;
+
         public frmDashboardAdmin()
         {
             InitializeComponent();
+            InitializeMDIChildren();
+        }
+
+        private void InitializeMDIChildren()
+        {
+            frmScheduler = FrmScheduler.GetInstance();
+            frmScheduler.MdiParent = this;
+
+            frmPatients = FrmPatients.GetInstance();
+            frmPatients.MdiParent = this;
+
+            frmExams = FrmExams.GetInstance();
+            frmExams.MdiParent = this;
         }
 
         private void frmDashboardAdmin_Load(object sender, EventArgs e)
@@ -23,11 +40,12 @@ namespace RedocApp
             FrmLogin frmLogin = new FrmLogin();
             if (frmLogin.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Connexion réussie");
+                MessageBox.Show("Connexion réussie", "REDOC - Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Enabled = true;
-            } else
+            }
+            else
             {
-                MessageBox.Show("Connexion échouée");
+                this.Close();
             }
         }
 
@@ -37,6 +55,21 @@ namespace RedocApp
             {
                 this.Close();
             }
+        }
+
+        private void tsbtnRdv_Click(object sender, EventArgs e)
+        {
+            frmScheduler.Show();
+        }
+
+        private void tsbtnPatients_Click(object sender, EventArgs e)
+        {
+            frmPatients.Show();
+        }
+
+        private void tsbtnExams_Click(object sender, EventArgs e)
+        {
+            frmExams.Show();
         }
     }
 }

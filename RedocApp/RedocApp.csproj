@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAddEditAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddEditAppointment.Designer.cs">
+      <DependentUpon>FrmAddEditAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExams.Designer.cs">
+      <DependentUpon>FrmExams.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -58,13 +70,34 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPatients.Designer.cs">
+      <DependentUpon>FrmPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScheduler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScheduler.Designer.cs">
+      <DependentUpon>FrmScheduler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAddEditAppointment.resx">
+      <DependentUpon>FrmAddEditAppointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPatients.resx">
+      <DependentUpon>FrmPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScheduler.resx">
+      <DependentUpon>FrmScheduler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

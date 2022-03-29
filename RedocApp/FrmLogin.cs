@@ -19,7 +19,7 @@ namespace RedocApp
 
         private void txtLogin_TextChanged(object sender, EventArgs e)
         {
-            if (!String.IsNullOrWhiteSpace(txtUsername.Text) && !String.IsNullOrWhiteSpace(txtPassword.Text))
+            if (!string.IsNullOrWhiteSpace(txtUsername.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 btnLogin.Enabled = true;
             } else
@@ -30,7 +30,13 @@ namespace RedocApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(txtUsername.Text + " " + txtPassword.Text);
+            if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
+            {
+                this.DialogResult = DialogResult.OK;
+            } else
+            {
+                MessageBox.Show("Connexion échouée. Veuillez réessayer.", "REDOC - Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

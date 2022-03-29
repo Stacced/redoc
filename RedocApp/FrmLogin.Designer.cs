@@ -79,6 +79,7 @@ namespace RedocApp
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(224, 22);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.Text = "admin";
             this.txtUsername.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // txtPassword
@@ -87,6 +88,7 @@ namespace RedocApp
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(224, 22);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.Text = "admin";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
@@ -125,8 +127,6 @@ namespace RedocApp
             // 
             // btnLogin
             // 
-            this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLogin.Enabled = false;
             this.btnLogin.Location = new System.Drawing.Point(12, 426);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(409, 35);
@@ -144,8 +144,9 @@ namespace RedocApp
             this.lblSeparator.Size = new System.Drawing.Size(409, 1);
             this.lblSeparator.TabIndex = 10;
             // 
-            // frmLogin
+            // FrmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -162,7 +163,7 @@ namespace RedocApp
             this.Controls.Add(this.picConnection);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "frmLogin";
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REDOC - Connexion";
             ((System.ComponentModel.ISupportInitialize)(this.picConnection)).EndInit();
