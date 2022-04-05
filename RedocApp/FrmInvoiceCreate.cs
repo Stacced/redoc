@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RedocApp
 {
-    public partial class FrmExams : Form
+    public partial class FrmInvoiceCreate : Form
     {
-        public FrmExams()
+        public FrmInvoiceCreate()
         {
             InitializeComponent();
         }

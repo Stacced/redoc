@@ -12,6 +12,8 @@ namespace RedocApp
 {
     public partial class FrmDashboard : Form
     {
+        public static FrmLogin.UserType userType;
+
         public FrmDashboard()
         {
             InitializeComponent();
@@ -31,21 +33,14 @@ namespace RedocApp
             return frm;
         }
 
-        private FrmExams InitializeExamsForm()
-        {
-            FrmExams frm = new FrmExams();
-            frm.MdiParent = this;
-            return frm;
-        }
-
         private void frmDashboardAdmin_Load(object sender, EventArgs e)
         {
             this.Enabled = false;
             FrmLogin frmLogin = new FrmLogin();
             if (frmLogin.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Connexion réussie", "REDOC - Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Enabled = true;
+                userType = FrmLogin.userType;
             }
             else
             {
@@ -53,7 +48,7 @@ namespace RedocApp
             }
         }
 
-        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmiFileQuit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Êtes-vous sûr de vouloir quitter ?", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
@@ -61,7 +56,7 @@ namespace RedocApp
             }
         }
 
-        private void tsbtnRdv_Click(object sender, EventArgs e)
+        private void tsbtnAppointments_Click(object sender, EventArgs e)
         {
             InitializeSchedulerForm().Show();
         }
@@ -71,9 +66,14 @@ namespace RedocApp
             InitializePatientsForm().Show();
         }
 
-        private void tsbtnExams_Click(object sender, EventArgs e)
+        private void tsmiTileHorizontal_Click(object sender, EventArgs e)
         {
-            InitializeExamsForm().Show();
+            LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void tsmiTileVertical_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileVertical);
         }
     }
 }

@@ -22,5 +22,19 @@ namespace RedocApp
             FrmAddEditAppointment frm = new FrmAddEditAppointment();
             frm.ShowDialog();
         }
+
+        private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                FrmAddEditAppointment frm = new FrmAddEditAppointment();
+                frm.ShowDialog();
+            }
+        }
+
+        private void FrmScheduler_Load(object sender, EventArgs e)
+        {
+            this.btnAddAppointment.Enabled = FrmDashboard.userType == FrmLogin.UserType.ASSISTANT;
+        }
     }
 }

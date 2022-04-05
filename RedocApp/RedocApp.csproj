@@ -52,17 +52,29 @@
     <Compile Include="FrmAddEditAppointment.Designer.cs">
       <DependentUpon>FrmAddEditAppointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddEditPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddEditPatient.Designer.cs">
+      <DependentUpon>FrmAddEditPatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmExams.cs">
+    <Compile Include="FrmDoctorSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmExams.Designer.cs">
-      <DependentUpon>FrmExams.cs</DependentUpon>
+    <Compile Include="FrmDoctorSchedule.Designer.cs">
+      <DependentUpon>FrmDoctorSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInvoiceCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInvoiceCreate.Designer.cs">
+      <DependentUpon>FrmInvoiceCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -96,8 +108,8 @@
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmExams.resx">
-      <DependentUpon>FrmExams.cs</DependentUpon>
+    <EmbeddedResource Include="FrmInvoiceCreate.resx">
+      <DependentUpon>FrmInvoiceCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

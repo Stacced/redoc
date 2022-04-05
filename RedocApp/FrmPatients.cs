@@ -21,5 +21,10 @@ namespace RedocApp
             // TODO
             // Execute search on database
         }
+
+        private void FrmPatients_Load(object sender, EventArgs e)
+        {
+            dgvPatients.Rows.Add("", "", "", "");
+        }
     }
 }

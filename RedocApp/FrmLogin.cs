@@ -18,7 +18,7 @@ namespace RedocApp
             ASSISTANT = 2
         }
 
-        public UserType userType;
+        public static UserType userType;
 
         public FrmLogin()
         {
@@ -40,10 +40,10 @@ namespace RedocApp
         {
             if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
             {
-                this.userType = UserType.ASSISTANT;
+                userType = UserType.ASSISTANT;
                 this.DialogResult = DialogResult.OK;
             } else if (txtUsername.Text == "doctor" && txtPassword.Text == "doctor") {
-                this.userType = UserType.DOCTOR;
+                userType = UserType.DOCTOR;
                 this.DialogResult = DialogResult.OK;
             }
             else {

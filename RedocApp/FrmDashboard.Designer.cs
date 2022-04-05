@@ -31,17 +31,19 @@ namespace RedocApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
             this.mnsMain = new System.Windows.Forms.MenuStrip();
-            this.tsmiFichier = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiFichierQuitter = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEdition = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEditionCopier = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEditionColler = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFileQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEditCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEditPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTileHorizontal = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTileVertical = new System.Windows.Forms.ToolStripMenuItem();
             this.tsrMain = new System.Windows.Forms.ToolStrip();
-            this.tsbtnRdv = new System.Windows.Forms.ToolStripButton();
-            this.tssRdv = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbtnAppointments = new System.Windows.Forms.ToolStripButton();
+            this.tssAppointments = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnPatients = new System.Windows.Forms.ToolStripButton();
-            this.tss = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnExams = new System.Windows.Forms.ToolStripButton();
+            this.tssPatients = new System.Windows.Forms.ToolStripSeparator();
             this.mnsMain.SuspendLayout();
             this.tsrMain.SuspendLayout();
             this.SuspendLayout();
@@ -50,78 +52,102 @@ namespace RedocApp
             // 
             this.mnsMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiFichier,
-            this.tsmiEdition});
+            this.tsmiFile,
+            this.tsmiEdit,
+            this.tsmiWindow});
             this.mnsMain.Location = new System.Drawing.Point(0, 0);
+            this.mnsMain.MdiWindowListItem = this.tsmiWindow;
             this.mnsMain.Name = "mnsMain";
             this.mnsMain.Size = new System.Drawing.Size(958, 28);
             this.mnsMain.TabIndex = 1;
             this.mnsMain.Text = "mnsMain";
             // 
-            // tsmiFichier
+            // tsmiFile
             // 
-            this.tsmiFichier.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiFichierQuitter});
-            this.tsmiFichier.Name = "tsmiFichier";
-            this.tsmiFichier.Size = new System.Drawing.Size(66, 24);
-            this.tsmiFichier.Text = "&Fichier";
+            this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFileQuit});
+            this.tsmiFile.Name = "tsmiFile";
+            this.tsmiFile.Size = new System.Drawing.Size(66, 24);
+            this.tsmiFile.Text = "&Fichier";
             // 
-            // tsmiFichierQuitter
+            // tsmiFileQuit
             // 
-            this.tsmiFichierQuitter.Name = "tsmiFichierQuitter";
-            this.tsmiFichierQuitter.Size = new System.Drawing.Size(138, 26);
-            this.tsmiFichierQuitter.Text = "&Quitter";
-            this.tsmiFichierQuitter.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            this.tsmiFileQuit.Name = "tsmiFileQuit";
+            this.tsmiFileQuit.Size = new System.Drawing.Size(138, 26);
+            this.tsmiFileQuit.Text = "&Quitter";
+            this.tsmiFileQuit.Click += new System.EventHandler(this.tsmiFileQuit_Click);
             // 
-            // tsmiEdition
+            // tsmiEdit
             // 
-            this.tsmiEdition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiEditionCopier,
-            this.tsmiEditionColler});
-            this.tsmiEdition.Name = "tsmiEdition";
-            this.tsmiEdition.Size = new System.Drawing.Size(70, 24);
-            this.tsmiEdition.Text = "&Edition";
+            this.tsmiEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiEditCopy,
+            this.tsmiEditPaste});
+            this.tsmiEdit.Name = "tsmiEdit";
+            this.tsmiEdit.Size = new System.Drawing.Size(70, 24);
+            this.tsmiEdit.Text = "&Edition";
             // 
-            // tsmiEditionCopier
+            // tsmiEditCopy
             // 
-            this.tsmiEditionCopier.Name = "tsmiEditionCopier";
-            this.tsmiEditionCopier.Size = new System.Drawing.Size(136, 26);
-            this.tsmiEditionCopier.Text = "&Copier";
+            this.tsmiEditCopy.Name = "tsmiEditCopy";
+            this.tsmiEditCopy.Size = new System.Drawing.Size(223, 26);
+            this.tsmiEditCopy.Text = "&Copier";
             // 
-            // tsmiEditionColler
+            // tsmiEditPaste
             // 
-            this.tsmiEditionColler.Name = "tsmiEditionColler";
-            this.tsmiEditionColler.Size = new System.Drawing.Size(136, 26);
-            this.tsmiEditionColler.Text = "C&oller";
+            this.tsmiEditPaste.Name = "tsmiEditPaste";
+            this.tsmiEditPaste.Size = new System.Drawing.Size(223, 26);
+            this.tsmiEditPaste.Text = "C&oller";
+            // 
+            // tsmiWindow
+            // 
+            this.tsmiWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiTileHorizontal,
+            this.tsmiTileVertical});
+            this.tsmiWindow.Name = "tsmiWindow";
+            this.tsmiWindow.Size = new System.Drawing.Size(72, 26);
+            this.tsmiWindow.Text = "&Fenêtre";
+            // 
+            // tsmiTileHorizontal
+            // 
+            this.tsmiTileHorizontal.Name = "tsmiTileHorizontal";
+            this.tsmiTileHorizontal.Size = new System.Drawing.Size(269, 26);
+            this.tsmiTileHorizontal.Text = "Organiser &horizontalement";
+            this.tsmiTileHorizontal.Click += new System.EventHandler(this.tsmiTileHorizontal_Click);
+            // 
+            // tsmiTileVertical
+            // 
+            this.tsmiTileVertical.Name = "tsmiTileVertical";
+            this.tsmiTileVertical.Size = new System.Drawing.Size(269, 26);
+            this.tsmiTileVertical.Text = "Organiser &verticalement";
+            this.tsmiTileVertical.Click += new System.EventHandler(this.tsmiTileVertical_Click);
             // 
             // tsrMain
             // 
             this.tsrMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsrMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbtnRdv,
-            this.tssRdv,
+            this.tsbtnAppointments,
+            this.tssAppointments,
             this.tsbtnPatients,
-            this.tss,
-            this.tsbtnExams});
+            this.tssPatients});
             this.tsrMain.Location = new System.Drawing.Point(0, 28);
             this.tsrMain.Name = "tsrMain";
             this.tsrMain.Size = new System.Drawing.Size(958, 27);
             this.tsrMain.TabIndex = 2;
             this.tsrMain.Text = "tsrMain";
             // 
-            // tsbtnRdv
+            // tsbtnAppointments
             // 
-            this.tsbtnRdv.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnRdv.Image")));
-            this.tsbtnRdv.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnRdv.Name = "tsbtnRdv";
-            this.tsbtnRdv.Size = new System.Drawing.Size(118, 24);
-            this.tsbtnRdv.Text = "Rendez-vous";
-            this.tsbtnRdv.Click += new System.EventHandler(this.tsbtnRdv_Click);
+            this.tsbtnAppointments.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAppointments.Image")));
+            this.tsbtnAppointments.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAppointments.Name = "tsbtnAppointments";
+            this.tsbtnAppointments.Size = new System.Drawing.Size(118, 24);
+            this.tsbtnAppointments.Text = "&Rendez-vous";
+            this.tsbtnAppointments.Click += new System.EventHandler(this.tsbtnAppointments_Click);
             // 
-            // tssRdv
+            // tssAppointments
             // 
-            this.tssRdv.Name = "tssRdv";
-            this.tssRdv.Size = new System.Drawing.Size(6, 27);
+            this.tssAppointments.Name = "tssAppointments";
+            this.tssAppointments.Size = new System.Drawing.Size(6, 27);
             // 
             // tsbtnPatients
             // 
@@ -129,22 +155,13 @@ namespace RedocApp
             this.tsbtnPatients.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnPatients.Name = "tsbtnPatients";
             this.tsbtnPatients.Size = new System.Drawing.Size(140, 24);
-            this.tsbtnPatients.Text = "Gestion patients";
+            this.tsbtnPatients.Text = "Gestion &patients";
             this.tsbtnPatients.Click += new System.EventHandler(this.tsbtnPatients_Click);
             // 
-            // tss
+            // tssPatients
             // 
-            this.tss.Name = "tss";
-            this.tss.Size = new System.Drawing.Size(6, 27);
-            // 
-            // tsbtnExams
-            // 
-            this.tsbtnExams.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnExams.Image")));
-            this.tsbtnExams.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnExams.Name = "tsbtnExams";
-            this.tsbtnExams.Size = new System.Drawing.Size(145, 24);
-            this.tsbtnExams.Text = "Gestion examens";
-            this.tsbtnExams.Click += new System.EventHandler(this.tsbtnExams_Click);
+            this.tssPatients.Name = "tssPatients";
+            this.tssPatients.Size = new System.Drawing.Size(6, 27);
             // 
             // FrmDashboard
             // 
@@ -159,6 +176,7 @@ namespace RedocApp
             this.Name = "FrmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REDOC - Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDashboardAdmin_Load);
             this.mnsMain.ResumeLayout(false);
             this.mnsMain.PerformLayout();
@@ -172,16 +190,18 @@ namespace RedocApp
         #endregion
 
         private System.Windows.Forms.MenuStrip mnsMain;
-        private System.Windows.Forms.ToolStripMenuItem tsmiFichier;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFile;
         private System.Windows.Forms.ToolStrip tsrMain;
-        private System.Windows.Forms.ToolStripMenuItem tsmiFichierQuitter;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEdition;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEditionCopier;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEditionColler;
-        private System.Windows.Forms.ToolStripSeparator tssRdv;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFileQuit;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEdit;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEditCopy;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEditPaste;
+        private System.Windows.Forms.ToolStripSeparator tssAppointments;
         private System.Windows.Forms.ToolStripButton tsbtnPatients;
-        private System.Windows.Forms.ToolStripSeparator tss;
-        private System.Windows.Forms.ToolStripButton tsbtnExams;
-        private System.Windows.Forms.ToolStripButton tsbtnRdv;
+        private System.Windows.Forms.ToolStripSeparator tssPatients;
+        private System.Windows.Forms.ToolStripButton tsbtnAppointments;
+        private System.Windows.Forms.ToolStripMenuItem tsmiWindow;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTileHorizontal;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTileVertical;
     }
 }
