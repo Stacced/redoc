@@ -10,28 +10,32 @@ using System.Windows.Forms;
 
 namespace RedocApp
 {
-    public partial class frmDashboardAdmin : Form
+    public partial class FrmDashboard : Form
     {
-        FrmScheduler frmScheduler;
-        FrmPatients frmPatients;
-        FrmExams frmExams;
-
-        public frmDashboardAdmin()
+        public FrmDashboard()
         {
             InitializeComponent();
-            InitializeMDIChildren();
         }
 
-        private void InitializeMDIChildren()
+        private FrmScheduler InitializeSchedulerForm()
         {
-            frmScheduler = FrmScheduler.GetInstance();
-            frmScheduler.MdiParent = this;
+            FrmScheduler frm = new FrmScheduler();
+            frm.MdiParent = this;
+            return frm;
+        }
 
-            frmPatients = FrmPatients.GetInstance();
-            frmPatients.MdiParent = this;
+        private FrmPatients InitializePatientsForm()
+        {
+            FrmPatients frm = new FrmPatients();
+            frm.MdiParent = this;
+            return frm;
+        }
 
-            frmExams = FrmExams.GetInstance();
-            frmExams.MdiParent = this;
+        private FrmExams InitializeExamsForm()
+        {
+            FrmExams frm = new FrmExams();
+            frm.MdiParent = this;
+            return frm;
         }
 
         private void frmDashboardAdmin_Load(object sender, EventArgs e)
@@ -59,17 +63,17 @@ namespace RedocApp
 
         private void tsbtnRdv_Click(object sender, EventArgs e)
         {
-            frmScheduler.Show();
+            InitializeSchedulerForm().Show();
         }
 
         private void tsbtnPatients_Click(object sender, EventArgs e)
         {
-            frmPatients.Show();
+            InitializePatientsForm().Show();
         }
 
         private void tsbtnExams_Click(object sender, EventArgs e)
         {
-            frmExams.Show();
+            InitializeExamsForm().Show();
         }
     }
 }

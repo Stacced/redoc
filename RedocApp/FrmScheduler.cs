@@ -12,20 +12,15 @@ namespace RedocApp
 {
     public partial class FrmScheduler : Form
     {
-        private static FrmScheduler _instance = null;
-        private FrmScheduler()
+        public FrmScheduler()
         {
             InitializeComponent();
         }
 
-        public static FrmScheduler GetInstance()
+        private void btnAddAppointment_Click(object sender, EventArgs e)
         {
-            if (_instance == null)
-            {
-                _instance = new FrmScheduler();
-            }
-
-            return _instance;
+            FrmAddEditAppointment frm = new FrmAddEditAppointment();
+            frm.ShowDialog();
         }
     }
 }

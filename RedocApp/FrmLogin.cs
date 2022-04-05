@@ -12,6 +12,14 @@ namespace RedocApp
 {
     public partial class FrmLogin : Form
     {
+        public enum UserType
+        {
+            DOCTOR = 1,
+            ASSISTANT = 2
+        }
+
+        public UserType userType;
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -32,9 +40,13 @@ namespace RedocApp
         {
             if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
             {
+                this.userType = UserType.ASSISTANT;
                 this.DialogResult = DialogResult.OK;
-            } else
-            {
+            } else if (txtUsername.Text == "doctor" && txtPassword.Text == "doctor") {
+                this.userType = UserType.DOCTOR;
+                this.DialogResult = DialogResult.OK;
+            }
+            else {
                 MessageBox.Show("Connexion échouée. Veuillez réessayer.", "REDOC - Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

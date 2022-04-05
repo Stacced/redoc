@@ -70,6 +70,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPatientFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPatientFile.Designer.cs">
+      <DependentUpon>FrmPatientFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPatients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,8 +96,14 @@
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmExams.resx">
+      <DependentUpon>FrmExams.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPatientFile.resx">
+      <DependentUpon>FrmPatientFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPatients.resx">
       <DependentUpon>FrmPatients.cs</DependentUpon>

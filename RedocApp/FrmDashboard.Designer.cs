@@ -1,7 +1,7 @@
 ﻿
 namespace RedocApp
 {
-    partial class frmDashboardAdmin
+    partial class FrmDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace RedocApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboardAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
             this.mnsMain = new System.Windows.Forms.MenuStrip();
             this.tsmiFichier = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFichierQuitter = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +54,7 @@ namespace RedocApp
             this.tsmiEdition});
             this.mnsMain.Location = new System.Drawing.Point(0, 0);
             this.mnsMain.Name = "mnsMain";
-            this.mnsMain.Size = new System.Drawing.Size(832, 28);
+            this.mnsMain.Size = new System.Drawing.Size(958, 28);
             this.mnsMain.TabIndex = 1;
             this.mnsMain.Text = "mnsMain";
             // 
@@ -105,7 +105,7 @@ namespace RedocApp
             this.tsbtnExams});
             this.tsrMain.Location = new System.Drawing.Point(0, 28);
             this.tsrMain.Name = "tsrMain";
-            this.tsrMain.Size = new System.Drawing.Size(832, 27);
+            this.tsrMain.Size = new System.Drawing.Size(958, 27);
             this.tsrMain.TabIndex = 2;
             this.tsrMain.Text = "tsrMain";
             // 
@@ -146,19 +146,19 @@ namespace RedocApp
             this.tsbtnExams.Text = "Gestion examens";
             this.tsbtnExams.Click += new System.EventHandler(this.tsbtnExams_Click);
             // 
-            // frmDashboardAdmin
+            // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 454);
+            this.ClientSize = new System.Drawing.Size(958, 537);
             this.Controls.Add(this.tsrMain);
             this.Controls.Add(this.mnsMain);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnsMain;
             this.MinimumSize = new System.Drawing.Size(850, 500);
-            this.Name = "frmDashboardAdmin";
+            this.Name = "FrmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "REDOC - Dashboard secrétaire";
+            this.Text = "REDOC - Dashboard";
             this.Load += new System.EventHandler(this.frmDashboardAdmin_Load);
             this.mnsMain.ResumeLayout(false);
             this.mnsMain.PerformLayout();
