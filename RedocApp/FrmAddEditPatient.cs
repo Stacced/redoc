@@ -12,9 +12,29 @@ namespace RedocApp
 {
     public partial class FrmAddEditPatient : Form
     {
-        public FrmAddEditPatient()
+        private bool isEdit = false;
+        public FrmAddEditPatient(bool isEdit)
         {
             InitializeComponent();
+            this.isEdit = isEdit;
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void FrmAddEditPatient_Load(object sender, EventArgs e)
+        {
+            if (isEdit)
+            {
+                this.Text = "REDOC - Modification patient";
+                this.lblAddEditPatient.Text = "Modification patient";
+            } else
+            {
+                this.Text = "REDOC - Ajout patient";
+                this.lblAddEditPatient.Text = "Ajout patient";
+            }
         }
     }
 }

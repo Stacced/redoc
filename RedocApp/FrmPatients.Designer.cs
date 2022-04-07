@@ -50,7 +50,7 @@ namespace RedocApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Location = new System.Drawing.Point(158, 19);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(307, 22);
+            this.txtSearch.Size = new System.Drawing.Size(691, 22);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -86,8 +86,9 @@ namespace RedocApp
             this.dgvPatients.ReadOnly = true;
             this.dgvPatients.RowHeadersWidth = 51;
             this.dgvPatients.RowTemplate.Height = 24;
-            this.dgvPatients.Size = new System.Drawing.Size(674, 431);
+            this.dgvPatients.Size = new System.Drawing.Size(1058, 431);
             this.dgvPatients.TabIndex = 3;
+            this.dgvPatients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPatients_CellContentClick);
             // 
             // colPatientFile
             // 
@@ -157,18 +158,19 @@ namespace RedocApp
             // btnAddPatient
             // 
             this.btnAddPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddPatient.Location = new System.Drawing.Point(496, 15);
+            this.btnAddPatient.Location = new System.Drawing.Point(880, 15);
             this.btnAddPatient.Name = "btnAddPatient";
             this.btnAddPatient.Size = new System.Drawing.Size(194, 30);
             this.btnAddPatient.TabIndex = 2;
             this.btnAddPatient.Text = "&Ajouter un patient";
             this.btnAddPatient.UseVisualStyleBackColor = true;
+            this.btnAddPatient.Click += new System.EventHandler(this.btnAddPatient_Click);
             // 
             // FrmPatients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 507);
+            this.ClientSize = new System.Drawing.Size(1091, 507);
             this.Controls.Add(this.btnAddPatient);
             this.Controls.Add(this.dgvPatients);
             this.Controls.Add(this.lblSearch);

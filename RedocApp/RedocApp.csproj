@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataGridViewAutoFilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataGridView-AutoFilter.1.1.0\lib\net20\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,11 +75,11 @@
     <Compile Include="FrmDoctorSchedule.Designer.cs">
       <DependentUpon>FrmDoctorSchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInvoiceCreate.cs">
+    <Compile Include="FrmCreateEditInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInvoiceCreate.Designer.cs">
-      <DependentUpon>FrmInvoiceCreate.cs</DependentUpon>
+    <Compile Include="FrmCreateEditInvoice.Designer.cs">
+      <DependentUpon>FrmCreateEditInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -105,11 +110,14 @@
     <EmbeddedResource Include="FrmAddEditAppointment.resx">
       <DependentUpon>FrmAddEditAppointment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddEditPatient.resx">
+      <DependentUpon>FrmAddEditPatient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInvoiceCreate.resx">
-      <DependentUpon>FrmInvoiceCreate.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCreateEditInvoice.resx">
+      <DependentUpon>FrmCreateEditInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -132,6 +140,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

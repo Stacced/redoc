@@ -66,9 +66,9 @@ namespace RedocApp
             this.lblDate.AutoSize = true;
             this.lblDate.Location = new System.Drawing.Point(14, 56);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(143, 17);
+            this.lblDate.Size = new System.Drawing.Size(123, 16);
             this.lblDate.TabIndex = 1;
-            this.lblDate.Text = "Date et heure ...........";
+            this.lblDate.Text = "Date et &heure ...........";
             // 
             // cmbDoctor
             // 
@@ -83,18 +83,18 @@ namespace RedocApp
             this.lblDoctor.AutoSize = true;
             this.lblDoctor.Location = new System.Drawing.Point(14, 98);
             this.lblDoctor.Name = "lblDoctor";
-            this.lblDoctor.Size = new System.Drawing.Size(142, 17);
+            this.lblDoctor.Size = new System.Drawing.Size(117, 16);
             this.lblDoctor.TabIndex = 3;
-            this.lblDoctor.Text = "Docteur ....................";
+            this.lblDoctor.Text = "&Docteur ....................";
             // 
             // lblPatient
             // 
             this.lblPatient.AutoSize = true;
             this.lblPatient.Location = new System.Drawing.Point(14, 140);
             this.lblPatient.Name = "lblPatient";
-            this.lblPatient.Size = new System.Drawing.Size(140, 17);
+            this.lblPatient.Size = new System.Drawing.Size(114, 16);
             this.lblPatient.TabIndex = 5;
-            this.lblPatient.Text = "Patient .....................";
+            this.lblPatient.Text = "&Patient .....................";
             // 
             // cmbPatient
             // 
@@ -110,8 +110,8 @@ namespace RedocApp
             this.btnConfirm.Location = new System.Drawing.Point(279, 345);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(156, 50);
-            this.btnConfirm.TabIndex = 7;
-            this.btnConfirm.Text = "Valider";
+            this.btnConfirm.TabIndex = 9;
+            this.btnConfirm.Text = "&Valider";
             this.btnConfirm.UseVisualStyleBackColor = true;
             // 
             // btnCancel
@@ -120,8 +120,8 @@ namespace RedocApp
             this.btnCancel.Location = new System.Drawing.Point(17, 345);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(156, 50);
-            this.btnCancel.TabIndex = 8;
-            this.btnCancel.Text = "Annuler";
+            this.btnCancel.TabIndex = 10;
+            this.btnCancel.Text = "&Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // txbNotes
@@ -130,16 +130,16 @@ namespace RedocApp
             this.txbNotes.Multiline = true;
             this.txbNotes.Name = "txbNotes";
             this.txbNotes.Size = new System.Drawing.Size(418, 121);
-            this.txbNotes.TabIndex = 9;
+            this.txbNotes.TabIndex = 8;
             // 
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
             this.lblNotes.Location = new System.Drawing.Point(14, 188);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(45, 17);
-            this.lblNotes.TabIndex = 10;
-            this.lblNotes.Text = "Notes";
+            this.lblNotes.Size = new System.Drawing.Size(43, 16);
+            this.lblNotes.TabIndex = 7;
+            this.lblNotes.Text = "&Notes";
             // 
             // FrmAddEditAppointment
             // 

@@ -37,10 +37,6 @@ namespace RedocApp
             this.lblBirthdate = new System.Windows.Forms.Label();
             this.dtpMain = new System.Windows.Forms.DateTimePicker();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
-            this.colDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDoctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCancelled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txbAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblAppointments = new System.Windows.Forms.Label();
@@ -48,6 +44,11 @@ namespace RedocApp
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.txbPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
+            this.colDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDoctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCancelled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colInvoiceState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayment = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +67,7 @@ namespace RedocApp
             this.lblSurname.AutoSize = true;
             this.lblSurname.Location = new System.Drawing.Point(14, 49);
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(149, 17);
+            this.lblSurname.Size = new System.Drawing.Size(120, 16);
             this.lblSurname.TabIndex = 1;
             this.lblSurname.Text = "Nom ...........................";
             // 
@@ -93,7 +94,7 @@ namespace RedocApp
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(14, 92);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(149, 17);
+            this.lblName.Size = new System.Drawing.Size(123, 16);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Prénom ......................";
             // 
@@ -102,13 +103,14 @@ namespace RedocApp
             this.lblBirthdate.AutoSize = true;
             this.lblBirthdate.Location = new System.Drawing.Point(14, 135);
             this.lblBirthdate.Name = "lblBirthdate";
-            this.lblBirthdate.Size = new System.Drawing.Size(194, 17);
+            this.lblBirthdate.Size = new System.Drawing.Size(171, 16);
             this.lblBirthdate.TabIndex = 5;
             this.lblBirthdate.Text = "Date de naissance ................";
             // 
             // dtpMain
             // 
             this.dtpMain.CustomFormat = "";
+            this.dtpMain.Enabled = false;
             this.dtpMain.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpMain.Location = new System.Drawing.Point(209, 130);
             this.dtpMain.Name = "dtpMain";
@@ -120,19 +122,94 @@ namespace RedocApp
             // 
             this.dgvAppointments.AllowUserToAddRows = false;
             this.dgvAppointments.AllowUserToDeleteRows = false;
+            this.dgvAppointments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAppointments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDateTime,
             this.colDoctor,
             this.colCancelled,
+            this.colInvoiceState,
             this.colPayment});
             this.dgvAppointments.Location = new System.Drawing.Point(12, 278);
             this.dgvAppointments.Name = "dgvAppointments";
             this.dgvAppointments.ReadOnly = true;
             this.dgvAppointments.RowHeadersWidth = 51;
             this.dgvAppointments.RowTemplate.Height = 24;
-            this.dgvAppointments.Size = new System.Drawing.Size(588, 172);
+            this.dgvAppointments.Size = new System.Drawing.Size(679, 172);
             this.dgvAppointments.TabIndex = 8;
+            this.dgvAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointments_CellContentClick);
+            // 
+            // txbAddress
+            // 
+            this.txbAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbAddress.Enabled = false;
+            this.txbAddress.Location = new System.Drawing.Point(508, 44);
+            this.txbAddress.Multiline = true;
+            this.txbAddress.Name = "txbAddress";
+            this.txbAddress.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txbAddress.Size = new System.Drawing.Size(183, 67);
+            this.txbAddress.TabIndex = 10;
+            this.txbAddress.Text = "Chemin des Chênes 12\r\n1202 - Genève\r\nSuisse";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(426, 49);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(73, 16);
+            this.lblAddress.TabIndex = 9;
+            this.lblAddress.Text = "Adresse ....";
+            // 
+            // lblAppointments
+            // 
+            this.lblAppointments.AutoSize = true;
+            this.lblAppointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppointments.Location = new System.Drawing.Point(8, 255);
+            this.lblAppointments.Name = "lblAppointments";
+            this.lblAppointments.Size = new System.Drawing.Size(196, 20);
+            this.lblAppointments.TabIndex = 11;
+            this.lblAppointments.Text = "Liste des rendez-vous";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(426, 135);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(71, 16);
+            this.lblEmail.TabIndex = 12;
+            this.lblEmail.Text = "Email .........";
+            // 
+            // txbEmail
+            // 
+            this.txbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbEmail.Enabled = false;
+            this.txbEmail.Location = new System.Drawing.Point(508, 130);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.Size = new System.Drawing.Size(183, 22);
+            this.txbEmail.TabIndex = 13;
+            this.txbEmail.Text = "jean@dupont.ch";
+            // 
+            // txbPhone
+            // 
+            this.txbPhone.Enabled = false;
+            this.txbPhone.Location = new System.Drawing.Point(163, 173);
+            this.txbPhone.Name = "txbPhone";
+            this.txbPhone.Size = new System.Drawing.Size(158, 22);
+            this.txbPhone.TabIndex = 15;
+            this.txbPhone.Text = "+41 79 799 79 79";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(14, 178);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(127, 16);
+            this.lblPhone.TabIndex = 14;
+            this.lblPhone.Text = "Téléphone .................";
             // 
             // colDateTime
             // 
@@ -158,85 +235,29 @@ namespace RedocApp
             this.colCancelled.ReadOnly = true;
             this.colCancelled.Width = 124;
             // 
+            // colInvoiceState
+            // 
+            this.colInvoiceState.HeaderText = "Etat facture";
+            this.colInvoiceState.MinimumWidth = 6;
+            this.colInvoiceState.Name = "colInvoiceState";
+            this.colInvoiceState.ReadOnly = true;
+            this.colInvoiceState.Width = 124;
+            // 
             // colPayment
             // 
             this.colPayment.HeaderText = "Facturation";
             this.colPayment.MinimumWidth = 6;
             this.colPayment.Name = "colPayment";
             this.colPayment.ReadOnly = true;
+            this.colPayment.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPayment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colPayment.Width = 124;
-            // 
-            // txbAddress
-            // 
-            this.txbAddress.Enabled = false;
-            this.txbAddress.Location = new System.Drawing.Point(417, 44);
-            this.txbAddress.Multiline = true;
-            this.txbAddress.Name = "txbAddress";
-            this.txbAddress.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txbAddress.Size = new System.Drawing.Size(183, 67);
-            this.txbAddress.TabIndex = 10;
-            this.txbAddress.Text = "Chemin des Chênes 12\r\n1202 - Genève\r\nSuisse";
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(335, 49);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(80, 17);
-            this.lblAddress.TabIndex = 9;
-            this.lblAddress.Text = "Adresse ....";
-            // 
-            // lblAppointments
-            // 
-            this.lblAppointments.AutoSize = true;
-            this.lblAppointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointments.Location = new System.Drawing.Point(8, 255);
-            this.lblAppointments.Name = "lblAppointments";
-            this.lblAppointments.Size = new System.Drawing.Size(196, 20);
-            this.lblAppointments.TabIndex = 11;
-            this.lblAppointments.Text = "Liste des rendez-vous";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(335, 135);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(82, 17);
-            this.lblEmail.TabIndex = 12;
-            this.lblEmail.Text = "Email .........";
-            // 
-            // txbEmail
-            // 
-            this.txbEmail.Enabled = false;
-            this.txbEmail.Location = new System.Drawing.Point(417, 130);
-            this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(183, 22);
-            this.txbEmail.TabIndex = 13;
-            this.txbEmail.Text = "jean@dupont.ch";
-            // 
-            // txbPhone
-            // 
-            this.txbPhone.Enabled = false;
-            this.txbPhone.Location = new System.Drawing.Point(163, 173);
-            this.txbPhone.Name = "txbPhone";
-            this.txbPhone.Size = new System.Drawing.Size(158, 22);
-            this.txbPhone.TabIndex = 15;
-            this.txbPhone.Text = "+41 79 799 79 79";
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(14, 178);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(148, 17);
-            this.lblPhone.TabIndex = 14;
-            this.lblPhone.Text = "Téléphone .................";
             // 
             // FrmPatientFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 462);
+            this.ClientSize = new System.Drawing.Size(704, 462);
             this.Controls.Add(this.txbPhone);
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.txbEmail);
@@ -255,7 +276,9 @@ namespace RedocApp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmPatientFile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REDOC - Dossier patient";
+            this.Load += new System.EventHandler(this.FrmPatientFile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -275,13 +298,14 @@ namespace RedocApp
         private System.Windows.Forms.TextBox txbAddress;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblAppointments;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDateTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDoctor;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colCancelled;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPayment;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txbEmail;
         private System.Windows.Forms.TextBox txbPhone;
         private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDoctor;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colCancelled;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceState;
+        private System.Windows.Forms.DataGridViewButtonColumn colPayment;
     }
 }
