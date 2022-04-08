@@ -93,6 +93,12 @@
     <Compile Include="FrmPatientFile.Designer.cs">
       <DependentUpon>FrmPatientFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInvoices.Designer.cs">
+      <DependentUpon>FrmInvoices.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPatients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,11 +125,17 @@
     <EmbeddedResource Include="FrmCreateEditInvoice.resx">
       <DependentUpon>FrmCreateEditInvoice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDoctorSchedule.resx">
+      <DependentUpon>FrmDoctorSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPatientFile.resx">
       <DependentUpon>FrmPatientFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInvoices.resx">
+      <DependentUpon>FrmInvoices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPatients.resx">
       <DependentUpon>FrmPatients.cs</DependentUpon>

@@ -44,9 +44,10 @@ namespace RedocApp
             // picConnection
             // 
             this.picConnection.Image = ((System.Drawing.Image)(resources.GetObject("picConnection.Image")));
-            this.picConnection.Location = new System.Drawing.Point(12, 12);
+            this.picConnection.Location = new System.Drawing.Point(9, 10);
+            this.picConnection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picConnection.Name = "picConnection";
-            this.picConnection.Size = new System.Drawing.Size(409, 257);
+            this.picConnection.Size = new System.Drawing.Size(307, 209);
             this.picConnection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picConnection.TabIndex = 0;
             this.picConnection.TabStop = false;
@@ -54,9 +55,10 @@ namespace RedocApp
             // lblConnection
             // 
             this.lblConnection.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.78151F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConnection.Location = new System.Drawing.Point(12, 282);
+            this.lblConnection.Location = new System.Drawing.Point(9, 229);
+            this.lblConnection.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConnection.Name = "lblConnection";
-            this.lblConnection.Size = new System.Drawing.Size(409, 39);
+            this.lblConnection.Size = new System.Drawing.Size(307, 32);
             this.lblConnection.TabIndex = 0;
             this.lblConnection.Text = "Connexion";
             this.lblConnection.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -65,26 +67,29 @@ namespace RedocApp
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(7, 331);
+            this.lblUsername.Location = new System.Drawing.Point(5, 269);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(155, 25);
+            this.lblUsername.Size = new System.Drawing.Size(135, 20);
             this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "&Nom d\'utilisateur";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(197, 334);
+            this.txtUsername.Location = new System.Drawing.Point(148, 271);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(224, 22);
+            this.txtUsername.Size = new System.Drawing.Size(169, 20);
             this.txtUsername.TabIndex = 2;
             this.txtUsername.Text = "admin";
             this.txtUsername.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(197, 380);
+            this.txtPassword.Location = new System.Drawing.Point(148, 309);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(224, 22);
+            this.txtPassword.Size = new System.Drawing.Size(169, 20);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.Text = "admin";
             this.txtPassword.UseSystemPasswordChar = true;
@@ -94,17 +99,19 @@ namespace RedocApp
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.10084F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(7, 377);
+            this.lblPassword.Location = new System.Drawing.Point(5, 306);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(130, 25);
+            this.lblPassword.Size = new System.Drawing.Size(110, 20);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "&Mot de passe";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(12, 426);
+            this.btnLogin.Location = new System.Drawing.Point(9, 346);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(409, 35);
+            this.btnLogin.Size = new System.Drawing.Size(307, 28);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "✅ &Se connecter";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -114,18 +121,19 @@ namespace RedocApp
             // 
             this.lblSeparator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSeparator.Enabled = false;
-            this.lblSeparator.Location = new System.Drawing.Point(12, 270);
+            this.lblSeparator.Location = new System.Drawing.Point(9, 219);
+            this.lblSeparator.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSeparator.Name = "lblSeparator";
-            this.lblSeparator.Size = new System.Drawing.Size(409, 1);
-            this.lblSeparator.TabIndex = 10;
+            this.lblSeparator.Size = new System.Drawing.Size(307, 1);
+            this.lblSeparator.TabIndex = 6;
             // 
             // FrmLogin
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(434, 475);
+            this.ClientSize = new System.Drawing.Size(326, 386);
             this.Controls.Add(this.lblSeparator);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -135,6 +143,7 @@ namespace RedocApp
             this.Controls.Add(this.lblConnection);
             this.Controls.Add(this.picConnection);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -33,6 +33,20 @@ namespace RedocApp
             return frm;
         }
 
+        private FrmPatients InitializeInvoicesForm()
+        {
+            FrmPatients frm = new FrmPatients();
+            frm.MdiParent = this;
+            return frm;
+        }
+
+        private FrmDoctorSchedule InitializeDoctorScheduleForm()
+        {
+            FrmDoctorSchedule frm = new FrmDoctorSchedule();
+            frm.MdiParent = this;
+            return frm;
+        }
+
         private void frmDashboardAdmin_Load(object sender, EventArgs e)
         {
             this.Enabled = false;
@@ -41,11 +55,18 @@ namespace RedocApp
             {
                 this.Enabled = true;
                 userType = FrmLogin.userType;
+
+                if (userType == FrmLogin.UserType.ASSISTANT)
+                {
+                    tsbtnManageDocSchedule.Visible = false;
+                }
             }
             else
             {
                 this.Close();
             }
+
+            
         }
 
         private void tsmiFileQuit_Click(object sender, EventArgs e)
@@ -64,6 +85,16 @@ namespace RedocApp
         private void tsbtnPatients_Click(object sender, EventArgs e)
         {
             InitializePatientsForm().Show();
+        }
+
+        private void tsbtnInvoicing_Click(object sender, EventArgs e)
+        {
+            InitializeInvoicesForm().Show();
+        }
+
+        private void tsbtnSchedules_Click(object sender, EventArgs e)
+        {
+            InitializeDoctorScheduleForm().Show();
         }
 
         private void tsmiTileHorizontal_Click(object sender, EventArgs e)

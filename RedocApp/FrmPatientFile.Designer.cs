@@ -37,6 +37,11 @@ namespace RedocApp
             this.lblBirthdate = new System.Windows.Forms.Label();
             this.dtpMain = new System.Windows.Forms.DateTimePicker();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
+            this.colDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDoctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCancelled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colInvoiceState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayment = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txbAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblAppointments = new System.Windows.Forms.Label();
@@ -44,11 +49,6 @@ namespace RedocApp
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.txbPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
-            this.colDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDoctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCancelled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colInvoiceState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPayment = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,54 +56,60 @@ namespace RedocApp
             // 
             this.lblPatientFile.AutoSize = true;
             this.lblPatientFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientFile.Location = new System.Drawing.Point(12, 9);
+            this.lblPatientFile.Location = new System.Drawing.Point(9, 7);
+            this.lblPatientFile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPatientFile.Name = "lblPatientFile";
-            this.lblPatientFile.Size = new System.Drawing.Size(156, 25);
+            this.lblPatientFile.Size = new System.Drawing.Size(138, 20);
             this.lblPatientFile.TabIndex = 0;
             this.lblPatientFile.Text = "Dossier patient";
             // 
             // lblSurname
             // 
             this.lblSurname.AutoSize = true;
-            this.lblSurname.Location = new System.Drawing.Point(14, 49);
+            this.lblSurname.Location = new System.Drawing.Point(10, 40);
+            this.lblSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(120, 16);
+            this.lblSurname.Size = new System.Drawing.Size(113, 13);
             this.lblSurname.TabIndex = 1;
             this.lblSurname.Text = "Nom ...........................";
             // 
             // txbSurname
             // 
             this.txbSurname.Enabled = false;
-            this.txbSurname.Location = new System.Drawing.Point(163, 44);
+            this.txbSurname.Location = new System.Drawing.Point(122, 36);
+            this.txbSurname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbSurname.Name = "txbSurname";
-            this.txbSurname.Size = new System.Drawing.Size(158, 22);
+            this.txbSurname.Size = new System.Drawing.Size(120, 20);
             this.txbSurname.TabIndex = 2;
             this.txbSurname.Text = "DUPONT";
             // 
             // txbName
             // 
             this.txbName.Enabled = false;
-            this.txbName.Location = new System.Drawing.Point(163, 87);
+            this.txbName.Location = new System.Drawing.Point(122, 71);
+            this.txbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(158, 22);
+            this.txbName.Size = new System.Drawing.Size(120, 20);
             this.txbName.TabIndex = 4;
             this.txbName.Text = "Jean";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(14, 92);
+            this.lblName.Location = new System.Drawing.Point(10, 75);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(123, 16);
+            this.lblName.Size = new System.Drawing.Size(112, 13);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Prénom ......................";
             // 
             // lblBirthdate
             // 
             this.lblBirthdate.AutoSize = true;
-            this.lblBirthdate.Location = new System.Drawing.Point(14, 135);
+            this.lblBirthdate.Location = new System.Drawing.Point(10, 110);
+            this.lblBirthdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBirthdate.Name = "lblBirthdate";
-            this.lblBirthdate.Size = new System.Drawing.Size(171, 16);
+            this.lblBirthdate.Size = new System.Drawing.Size(147, 13);
             this.lblBirthdate.TabIndex = 5;
             this.lblBirthdate.Text = "Date de naissance ................";
             // 
@@ -112,9 +118,10 @@ namespace RedocApp
             this.dtpMain.CustomFormat = "";
             this.dtpMain.Enabled = false;
             this.dtpMain.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpMain.Location = new System.Drawing.Point(209, 130);
+            this.dtpMain.Location = new System.Drawing.Point(157, 106);
+            this.dtpMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpMain.Name = "dtpMain";
-            this.dtpMain.Size = new System.Drawing.Size(112, 22);
+            this.dtpMain.Size = new System.Drawing.Size(85, 20);
             this.dtpMain.TabIndex = 6;
             this.dtpMain.Value = new System.DateTime(1999, 12, 22, 0, 0, 0, 0);
             // 
@@ -132,84 +139,15 @@ namespace RedocApp
             this.colCancelled,
             this.colInvoiceState,
             this.colPayment});
-            this.dgvAppointments.Location = new System.Drawing.Point(12, 278);
+            this.dgvAppointments.Location = new System.Drawing.Point(9, 226);
+            this.dgvAppointments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvAppointments.Name = "dgvAppointments";
             this.dgvAppointments.ReadOnly = true;
             this.dgvAppointments.RowHeadersWidth = 51;
             this.dgvAppointments.RowTemplate.Height = 24;
-            this.dgvAppointments.Size = new System.Drawing.Size(679, 172);
-            this.dgvAppointments.TabIndex = 8;
+            this.dgvAppointments.Size = new System.Drawing.Size(509, 140);
+            this.dgvAppointments.TabIndex = 14;
             this.dgvAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointments_CellContentClick);
-            // 
-            // txbAddress
-            // 
-            this.txbAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbAddress.Enabled = false;
-            this.txbAddress.Location = new System.Drawing.Point(508, 44);
-            this.txbAddress.Multiline = true;
-            this.txbAddress.Name = "txbAddress";
-            this.txbAddress.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txbAddress.Size = new System.Drawing.Size(183, 67);
-            this.txbAddress.TabIndex = 10;
-            this.txbAddress.Text = "Chemin des Chênes 12\r\n1202 - Genève\r\nSuisse";
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(426, 49);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(73, 16);
-            this.lblAddress.TabIndex = 9;
-            this.lblAddress.Text = "Adresse ....";
-            // 
-            // lblAppointments
-            // 
-            this.lblAppointments.AutoSize = true;
-            this.lblAppointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointments.Location = new System.Drawing.Point(8, 255);
-            this.lblAppointments.Name = "lblAppointments";
-            this.lblAppointments.Size = new System.Drawing.Size(196, 20);
-            this.lblAppointments.TabIndex = 11;
-            this.lblAppointments.Text = "Liste des rendez-vous";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(426, 135);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(71, 16);
-            this.lblEmail.TabIndex = 12;
-            this.lblEmail.Text = "Email .........";
-            // 
-            // txbEmail
-            // 
-            this.txbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbEmail.Enabled = false;
-            this.txbEmail.Location = new System.Drawing.Point(508, 130);
-            this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(183, 22);
-            this.txbEmail.TabIndex = 13;
-            this.txbEmail.Text = "jean@dupont.ch";
-            // 
-            // txbPhone
-            // 
-            this.txbPhone.Enabled = false;
-            this.txbPhone.Location = new System.Drawing.Point(163, 173);
-            this.txbPhone.Name = "txbPhone";
-            this.txbPhone.Size = new System.Drawing.Size(158, 22);
-            this.txbPhone.TabIndex = 15;
-            this.txbPhone.Text = "+41 79 799 79 79";
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(14, 178);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(127, 16);
-            this.lblPhone.TabIndex = 14;
-            this.lblPhone.Text = "Téléphone .................";
             // 
             // colDateTime
             // 
@@ -253,11 +191,88 @@ namespace RedocApp
             this.colPayment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colPayment.Width = 124;
             // 
+            // txbAddress
+            // 
+            this.txbAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbAddress.Enabled = false;
+            this.txbAddress.Location = new System.Drawing.Point(365, 37);
+            this.txbAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbAddress.Multiline = true;
+            this.txbAddress.Name = "txbAddress";
+            this.txbAddress.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txbAddress.Size = new System.Drawing.Size(153, 55);
+            this.txbAddress.TabIndex = 10;
+            this.txbAddress.Text = "Chemin des Chênes 12\r\n1202 - Genève\r\nSuisse";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(299, 40);
+            this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(60, 13);
+            this.lblAddress.TabIndex = 9;
+            this.lblAddress.Text = "Adresse ....";
+            // 
+            // lblAppointments
+            // 
+            this.lblAppointments.AutoSize = true;
+            this.lblAppointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppointments.Location = new System.Drawing.Point(6, 207);
+            this.lblAppointments.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAppointments.Name = "lblAppointments";
+            this.lblAppointments.Size = new System.Drawing.Size(169, 17);
+            this.lblAppointments.TabIndex = 13;
+            this.lblAppointments.Text = "Liste des rendez-vous";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(299, 110);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(62, 13);
+            this.lblEmail.TabIndex = 11;
+            this.lblEmail.Text = "Email .........";
+            // 
+            // txbEmail
+            // 
+            this.txbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbEmail.Enabled = false;
+            this.txbEmail.Location = new System.Drawing.Point(365, 106);
+            this.txbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.Size = new System.Drawing.Size(153, 20);
+            this.txbEmail.TabIndex = 12;
+            this.txbEmail.Text = "jean@dupont.ch";
+            // 
+            // txbPhone
+            // 
+            this.txbPhone.Enabled = false;
+            this.txbPhone.Location = new System.Drawing.Point(122, 141);
+            this.txbPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbPhone.Name = "txbPhone";
+            this.txbPhone.Size = new System.Drawing.Size(120, 20);
+            this.txbPhone.TabIndex = 8;
+            this.txbPhone.Text = "+41 79 799 79 79";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(10, 145);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(112, 13);
+            this.lblPhone.TabIndex = 7;
+            this.lblPhone.Text = "Téléphone .................";
+            // 
             // FrmPatientFile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 462);
+            this.ClientSize = new System.Drawing.Size(528, 375);
             this.Controls.Add(this.txbPhone);
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.txbEmail);
@@ -274,6 +289,7 @@ namespace RedocApp
             this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.lblPatientFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "FrmPatientFile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
