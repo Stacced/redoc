@@ -33,9 +33,9 @@ namespace RedocApp
             return frm;
         }
 
-        private FrmPatients InitializeInvoicesForm()
+        private FrmInvoices InitializeInvoicesForm()
         {
-            FrmPatients frm = new FrmPatients();
+            FrmInvoices frm = new FrmInvoices();
             frm.MdiParent = this;
             return frm;
         }
@@ -56,17 +56,39 @@ namespace RedocApp
                 this.Enabled = true;
                 userType = FrmLogin.userType;
 
-                if (userType == FrmLogin.UserType.ASSISTANT)
-                {
-                    tsbtnManageDocSchedule.Visible = false;
-                }
+                tsbtnManageDocSchedule.Visible = userType == FrmLogin.UserType.DOCTOR;
             }
             else
             {
                 this.Close();
             }
+        }
 
-            
+        private void Logout()
+        {
+            if (MessageBox.Show("Êtes-vous sûr de vouloir vous déconnecter ?", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                // Close all forms
+                foreach (Form frm in this.MdiChildren)
+                {
+                    frm.Close();
+                }
+                
+                // Login logic
+                this.Enabled = false;
+                FrmLogin frmLogin = new FrmLogin();
+                if (frmLogin.ShowDialog() == DialogResult.OK)
+                {
+                    this.Enabled = true;
+                    userType = FrmLogin.userType;
+
+                    tsbtnManageDocSchedule.Visible = userType == FrmLogin.UserType.DOCTOR;
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
         }
 
         private void tsmiFileQuit_Click(object sender, EventArgs e)
@@ -105,6 +127,11 @@ namespace RedocApp
         private void tsmiTileVertical_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void tsmiLogout_Click(object sender, EventArgs e)
+        {
+            Logout();
         }
     }
 }
