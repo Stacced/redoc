@@ -25,7 +25,7 @@ namespace RedocApp
 
         private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 5)
             {
                 FrmAddEditAppointment frm = new FrmAddEditAppointment();
                 frm.ShowDialog();
@@ -35,6 +35,10 @@ namespace RedocApp
         private void FrmScheduler_Load(object sender, EventArgs e)
         {
             this.btnAddAppointment.Enabled = FrmDashboard.userType == FrmLogin.UserType.ASSISTANT;
+
+            dgvAppointments.Rows.Add("202201", "10.04.2022", "DUJARDIN Jean", "DUPONT Jean", false, "Voir facture");
+            dgvAppointments.Rows.Add("202202", "12.04.2022", "DUJARDIN Jean", "TERIEUR Alain", false, "Voir facture");
+            dgvAppointments.Rows.Add("202203", "13.04.2022", "DUJARDIN Jean", "TERIEUR Alex", true, "Voir facture");
         }
     }
 }

@@ -28,7 +28,7 @@ namespace RedocApp
 
         private void FrmPatientFile_Load(object sender, EventArgs e)
         {
-            dgvAppointments.Rows.Add("04.04.2022", "Jean FRANCOIS", false, "Impayée", "Voir facture");
+            dgvAppointments.Rows.Add("04.04.2022", "FRANCOIS Jean", false, "Impayée", "Voir facture");
         }
     }
 }

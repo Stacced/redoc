@@ -24,23 +24,19 @@ namespace RedocApp
 
         private void FrmInvoices_Load(object sender, EventArgs e)
         {
-            dgvInvoices.Rows.Add("Voir dossier", "DUPONT", "Jean", "756.0000.0000.00", "14.02.2001", "Chemin des Vergers 12", "test@test.ch", "0787990909");
-            dgvInvoices.Rows.Add("Voir dossier", "TERIEUR", "Alain", "756.0000.0000.00", "02.03.1999", "Chemin des Zigloutirages 1", "test@test.ch", "0787990909");
-            dgvInvoices.Rows.Add("Voir dossier", "TERIEUR", "Alex", "756.0000.0000.00", "01.07.1998", "Allée des Chimpanzé 10", "test@test.ch", "0787990909");
-        }
-
-        private void btnAddPatient_Click(object sender, EventArgs e)
-        {
-            FrmAddEditPatient frm = new FrmAddEditPatient(false);
-            frm.ShowDialog();
+            dgvInvoices.Rows.Add("1", "Impayée", "DUPONT Jean", "202201", "250.60", "Voir détails");
+            dgvInvoices.Rows.Add("2", "Payée", "TERIEUR Alain", "202202", "153.30", "Voir détails");
+            dgvInvoices.Rows.Add("3", "En retard", "TERIEUR Alex", "202203", "77.70", "Voir détails");
         }
 
         private void dgvPatients_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 6)
             {
+                /*
                 FrmPatientFile frm = new FrmPatientFile();
                 frm.ShowDialog();
+                */
             }
         }
     }

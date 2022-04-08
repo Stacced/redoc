@@ -41,8 +41,8 @@ namespace RedocApp
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txbPhoneNumber = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.lblNoAVS = new System.Windows.Forms.Label();
             this.mtbNoAVS = new System.Windows.Forms.MaskedTextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -147,23 +147,23 @@ namespace RedocApp
             this.txbPhoneNumber.Size = new System.Drawing.Size(213, 22);
             this.txbPhoneNumber.TabIndex = 14;
             // 
-            // label1
+            // lblPhoneNumber
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 364);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 16);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "&Téléphone (format int.)";
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(14, 364);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(140, 16);
+            this.lblPhoneNumber.TabIndex = 13;
+            this.lblPhoneNumber.Text = "&Téléphone (format int.)";
             // 
-            // label2
+            // lblNoAVS
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "&No AVS";
+            this.lblNoAVS.AutoSize = true;
+            this.lblNoAVS.Location = new System.Drawing.Point(14, 47);
+            this.lblNoAVS.Name = "lblNoAVS";
+            this.lblNoAVS.Size = new System.Drawing.Size(55, 16);
+            this.lblNoAVS.TabIndex = 1;
+            this.lblNoAVS.Text = "&No AVS";
             // 
             // mtbNoAVS
             // 
@@ -203,9 +203,9 @@ namespace RedocApp
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.mtbNoAVS);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblNoAVS);
             this.Controls.Add(this.txbPhoneNumber);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPhoneNumber);
             this.Controls.Add(this.txbEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txbAddress);
@@ -242,8 +242,8 @@ namespace RedocApp
         private System.Windows.Forms.TextBox txbEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txbPhoneNumber;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.Label lblNoAVS;
         private System.Windows.Forms.MaskedTextBox mtbNoAVS;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnConfirm;
