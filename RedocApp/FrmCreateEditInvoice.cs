@@ -21,6 +21,8 @@ namespace RedocApp
 
         private void FrmCreateEditInvoice_Load(object sender, EventArgs e)
         {
+            // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VW_EXAMEN'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.vW_EXAMENTableAdapter.Fill(this.dataSetRedoc.VW_EXAMEN);
             if (isEdit)
             {
                 this.Text = "REDOC - Modification facture";

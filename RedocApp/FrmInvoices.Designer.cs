@@ -29,38 +29,15 @@ namespace RedocApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblSearch = new System.Windows.Forms.Label();
             this.dgvInvoices = new System.Windows.Forms.DataGridView();
-            this.colInvoiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPatientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAppointmentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInvoiceDetails = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.adgvInvoices = new Zuby.ADGV.AdvancedDataGridView();
+            this.adgvSearch = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adgvInvoices)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(157, 18);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(861, 22);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.10084F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(12, 16);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(115, 25);
-            this.lblSearch.TabIndex = 0;
-            this.lblSearch.Text = "&Recherche";
             // 
             // dgvInvoices
             // 
@@ -71,11 +48,8 @@ namespace RedocApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colInvoiceId,
-            this.colInvoiceState,
             this.colPatientName,
             this.colAppointmentId,
-            this.colTotalAmount,
             this.colInvoiceDetails});
             this.dgvInvoices.Location = new System.Drawing.Point(17, 62);
             this.dgvInvoices.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -86,22 +60,6 @@ namespace RedocApp
             this.dgvInvoices.Size = new System.Drawing.Size(1003, 439);
             this.dgvInvoices.TabIndex = 2;
             this.dgvInvoices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPatients_CellContentClick);
-            // 
-            // colInvoiceId
-            // 
-            this.colInvoiceId.HeaderText = "ID";
-            this.colInvoiceId.MinimumWidth = 6;
-            this.colInvoiceId.Name = "colInvoiceId";
-            this.colInvoiceId.ReadOnly = true;
-            this.colInvoiceId.Width = 124;
-            // 
-            // colInvoiceState
-            // 
-            this.colInvoiceState.HeaderText = "Etat facture";
-            this.colInvoiceState.MinimumWidth = 6;
-            this.colInvoiceState.Name = "colInvoiceState";
-            this.colInvoiceState.ReadOnly = true;
-            this.colInvoiceState.Width = 124;
             // 
             // colPatientName
             // 
@@ -119,14 +77,6 @@ namespace RedocApp
             this.colAppointmentId.ReadOnly = true;
             this.colAppointmentId.Width = 124;
             // 
-            // colTotalAmount
-            // 
-            this.colTotalAmount.HeaderText = "Montant total";
-            this.colTotalAmount.MinimumWidth = 6;
-            this.colTotalAmount.Name = "colTotalAmount";
-            this.colTotalAmount.ReadOnly = true;
-            this.colTotalAmount.Width = 124;
-            // 
             // colInvoiceDetails
             // 
             this.colInvoiceDetails.HeaderText = "Voir détails";
@@ -138,35 +88,63 @@ namespace RedocApp
             this.colInvoiceDetails.Text = "Voir détails";
             this.colInvoiceDetails.Width = 124;
             // 
+            // adgvInvoices
+            // 
+            this.adgvInvoices.AllowUserToAddRows = false;
+            this.adgvInvoices.AllowUserToDeleteRows = false;
+            this.adgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adgvInvoices.FilterAndSortEnabled = true;
+            this.adgvInvoices.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.adgvInvoices.Location = new System.Drawing.Point(17, 92);
+            this.adgvInvoices.Name = "adgvInvoices";
+            this.adgvInvoices.ReadOnly = true;
+            this.adgvInvoices.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.adgvInvoices.RowHeadersWidth = 51;
+            this.adgvInvoices.RowTemplate.Height = 24;
+            this.adgvInvoices.Size = new System.Drawing.Size(1003, 409);
+            this.adgvInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.adgvInvoices.TabIndex = 3;
+            // 
+            // adgvSearch
+            // 
+            this.adgvSearch.AllowMerge = false;
+            this.adgvSearch.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.adgvSearch.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.adgvSearch.Location = new System.Drawing.Point(0, 0);
+            this.adgvSearch.MaximumSize = new System.Drawing.Size(0, 27);
+            this.adgvSearch.MinimumSize = new System.Drawing.Size(0, 27);
+            this.adgvSearch.Name = "adgvSearch";
+            this.adgvSearch.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.adgvSearch.Size = new System.Drawing.Size(1035, 27);
+            this.adgvSearch.TabIndex = 4;
+            this.adgvSearch.Text = "advancedDataGridViewSearchToolBar1";
+            // 
             // FrmInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 514);
+            this.Controls.Add(this.adgvSearch);
+            this.Controls.Add(this.adgvInvoices);
             this.Controls.Add(this.dgvInvoices);
-            this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.txtSearch);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(725, 552);
             this.Name = "FrmInvoices";
             this.Text = "REDOC - Facturation";
             this.Load += new System.EventHandler(this.FrmInvoices_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adgvInvoices)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.DataGridView dgvInvoices;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInvoiceState;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPatientName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAppointmentId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmount;
         private System.Windows.Forms.DataGridViewButtonColumn colInvoiceDetails;
+        private Zuby.ADGV.AdvancedDataGridView adgvInvoices;
+        private Zuby.ADGV.AdvancedDataGridViewSearchToolBar adgvSearch;
     }
 }

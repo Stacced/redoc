@@ -12,9 +12,11 @@ namespace RedocApp
 {
     public partial class FrmPatientFile : Form
     {
-        public FrmPatientFile()
+        private int noPatient;
+        public FrmPatientFile(int noPatient)
         {
             InitializeComponent();
+            this.noPatient = noPatient;
         }
 
         private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -24,11 +26,6 @@ namespace RedocApp
                 FrmCreateEditInvoice frm = new FrmCreateEditInvoice(false);
                 frm.ShowDialog();
             }
-        }
-
-        private void FrmPatientFile_Load(object sender, EventArgs e)
-        {
-            dgvAppointments.Rows.Add("04.04.2022", "FRANCOIS Jean", false, "Impayée", "Voir facture");
         }
     }
 }

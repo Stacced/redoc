@@ -66,7 +66,7 @@ namespace RedocApp
             this.lblDate.AutoSize = true;
             this.lblDate.Location = new System.Drawing.Point(14, 56);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(123, 16);
+            this.lblDate.Size = new System.Drawing.Size(143, 17);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "Date et &heure ...........";
             // 
@@ -83,7 +83,7 @@ namespace RedocApp
             this.lblDoctor.AutoSize = true;
             this.lblDoctor.Location = new System.Drawing.Point(14, 98);
             this.lblDoctor.Name = "lblDoctor";
-            this.lblDoctor.Size = new System.Drawing.Size(117, 16);
+            this.lblDoctor.Size = new System.Drawing.Size(142, 17);
             this.lblDoctor.TabIndex = 3;
             this.lblDoctor.Text = "&Docteur ....................";
             // 
@@ -92,7 +92,7 @@ namespace RedocApp
             this.lblPatient.AutoSize = true;
             this.lblPatient.Location = new System.Drawing.Point(14, 140);
             this.lblPatient.Name = "lblPatient";
-            this.lblPatient.Size = new System.Drawing.Size(114, 16);
+            this.lblPatient.Size = new System.Drawing.Size(140, 17);
             this.lblPatient.TabIndex = 5;
             this.lblPatient.Text = "&Patient .....................";
             // 
@@ -137,7 +137,7 @@ namespace RedocApp
             this.lblNotes.AutoSize = true;
             this.lblNotes.Location = new System.Drawing.Point(14, 188);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(43, 16);
+            this.lblNotes.Size = new System.Drawing.Size(45, 17);
             this.lblNotes.TabIndex = 7;
             this.lblNotes.Text = "&Notes";
             // 
@@ -163,7 +163,7 @@ namespace RedocApp
             this.MaximizeBox = false;
             this.Name = "FrmAddEditAppointment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "REDOC - AJOUT/EDIT RDV";
+            this.Text = "i";
             this.Load += new System.EventHandler(this.FrmAddEditAppointment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

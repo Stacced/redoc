@@ -35,10 +35,47 @@ namespace RedocApp
         private void FrmScheduler_Load(object sender, EventArgs e)
         {
             this.btnAddAppointment.Enabled = FrmDashboard.userType == FrmLogin.UserType.ASSISTANT;
+            this.adgvSearch.SetColumns(adgvAppointments.Columns);
+        }
 
-            dgvAppointments.Rows.Add("202201", "10.04.2022", "DUJARDIN Jean", "DUPONT Jean", false, "Voir facture");
-            dgvAppointments.Rows.Add("202202", "12.04.2022", "DUJARDIN Jean", "TERIEUR Alain", false, "Voir facture");
-            dgvAppointments.Rows.Add("202203", "13.04.2022", "DUJARDIN Jean", "TERIEUR Alex", true, "Voir facture");
+        private void adgvSearch_Search(object sender, Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventArgs e)
+        {
+            bool restartsearch = true;
+            int startColumn = 0;
+            int startRow = 0;
+            if (!e.FromBegin)
+            {
+                bool endcol = adgvAppointments.CurrentCell.ColumnIndex + 1 >= adgvAppointments.ColumnCount;
+                bool endrow = adgvAppointments.CurrentCell.RowIndex + 1 >= adgvAppointments.RowCount;
+
+                if (endcol && endrow)
+                {
+                    startColumn = adgvAppointments.CurrentCell.ColumnIndex;
+                    startRow = adgvAppointments.CurrentCell.RowIndex;
+                }
+                else
+                {
+                    startColumn = endcol ? 0 : adgvAppointments.CurrentCell.ColumnIndex + 1;
+                    startRow = adgvAppointments.CurrentCell.RowIndex + (endcol ? 1 : 0);
+                }
+            }
+            DataGridViewCell c = adgvAppointments.FindCell(
+                e.ValueToSearch,
+                e.ColumnToSearch != null ? e.ColumnToSearch.Name : null,
+                startRow,
+                startColumn,
+                e.WholeWord,
+                e.CaseSensitive);
+            if (c == null && restartsearch)
+                c = adgvAppointments.FindCell(
+                    e.ValueToSearch,
+                    e.ColumnToSearch != null ? e.ColumnToSearch.Name : null,
+                    0,
+                    0,
+                    e.WholeWord,
+                    e.CaseSensitive);
+            if (c != null)
+                adgvAppointments.CurrentCell = c;
         }
     }
 }

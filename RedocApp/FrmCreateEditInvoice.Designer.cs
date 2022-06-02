@@ -29,6 +29,7 @@ namespace RedocApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblInvoice = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
             this.lsbExams = new System.Windows.Forms.ListBox();
@@ -38,11 +39,16 @@ namespace RedocApp
             this.btnAddExam = new System.Windows.Forms.Button();
             this.btnRemoveExam = new System.Windows.Forms.Button();
             this.cmbExams = new System.Windows.Forms.ComboBox();
+            this.vWEXAMENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetRedoc = new RedocApp.DataSetRedoc();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.lblExamList = new System.Windows.Forms.Label();
+            this.vW_EXAMENTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_EXAMENTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInvoice
@@ -60,7 +66,7 @@ namespace RedocApp
             this.lblPatientName.AutoSize = true;
             this.lblPatientName.Location = new System.Drawing.Point(13, 48);
             this.lblPatientName.Name = "lblPatientName";
-            this.lblPatientName.Size = new System.Drawing.Size(48, 16);
+            this.lblPatientName.Size = new System.Drawing.Size(52, 17);
             this.lblPatientName.TabIndex = 1;
             this.lblPatientName.Text = "&Patient";
             // 
@@ -89,7 +95,7 @@ namespace RedocApp
             this.lblDate.AutoSize = true;
             this.lblDate.Location = new System.Drawing.Point(13, 84);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(36, 16);
+            this.lblDate.Size = new System.Drawing.Size(38, 17);
             this.lblDate.TabIndex = 3;
             this.lblDate.Text = "&Date";
             // 
@@ -124,12 +130,26 @@ namespace RedocApp
             // 
             // cmbExams
             // 
+            this.cmbExams.DataSource = this.vWEXAMENBindingSource;
+            this.cmbExams.DisplayMember = "NOM";
+            this.cmbExams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbExams.FormattingEnabled = true;
             this.cmbExams.Location = new System.Drawing.Point(17, 142);
             this.cmbExams.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbExams.Name = "cmbExams";
             this.cmbExams.Size = new System.Drawing.Size(369, 24);
             this.cmbExams.TabIndex = 6;
+            this.cmbExams.ValueMember = "NUMÉRO";
+            // 
+            // vWEXAMENBindingSource
+            // 
+            this.vWEXAMENBindingSource.DataMember = "VW_EXAMEN";
+            this.vWEXAMENBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // dataSetRedoc
+            // 
+            this.dataSetRedoc.DataSetName = "DataSetRedoc";
+            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblTotal
             // 
@@ -178,9 +198,13 @@ namespace RedocApp
             this.lblExamList.AutoSize = true;
             this.lblExamList.Location = new System.Drawing.Point(13, 123);
             this.lblExamList.Name = "lblExamList";
-            this.lblExamList.Size = new System.Drawing.Size(119, 16);
+            this.lblExamList.Size = new System.Drawing.Size(125, 17);
             this.lblExamList.TabIndex = 5;
             this.lblExamList.Text = "&Liste des examens";
+            // 
+            // vW_EXAMENTableAdapter
+            // 
+            this.vW_EXAMENTableAdapter.ClearBeforeFill = true;
             // 
             // FrmCreateEditInvoice
             // 
@@ -209,6 +233,8 @@ namespace RedocApp
             this.Name = "FrmCreateEditInvoice";
             this.Text = "REDOC - Facturation";
             this.Load += new System.EventHandler(this.FrmCreateEditInvoice_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +256,8 @@ namespace RedocApp
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label lblExamList;
+        private DataSetRedoc dataSetRedoc;
+        private System.Windows.Forms.BindingSource vWEXAMENBindingSource;
+        private DataSetRedocTableAdapters.VW_EXAMENTableAdapter vW_EXAMENTableAdapter;
     }
 }

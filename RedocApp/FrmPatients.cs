@@ -16,17 +16,15 @@ namespace RedocApp
         {
             InitializeComponent();
         }
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            // TODO
-            // Execute search on database
-        }
 
         private void FrmPatients_Load(object sender, EventArgs e)
         {
-            dgvPatients.Rows.Add("1", "Voir dossier", "DUPONT", "Jean", "756.0000.0000.00", "14.02.2001", "Chemin des Vergers 12", "test@test.ch", "0787990909");
-            dgvPatients.Rows.Add("2", "Voir dossier", "TERIEUR", "Alain", "756.0000.0000.00", "02.03.1999", "Chemin des Zigloutirages 1", "test@test.ch", "0787990909");
-            dgvPatients.Rows.Add("3", "Voir dossier", "TERIEUR", "Alex", "756.0000.0000.00", "01.07.1998", "Allée des Chimpanzé 10", "test@test.ch", "0787990909");
+            // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VW_PATIENT'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.vW_PATIENTTableAdapter.Fill(this.dataSetRedoc.VW_PATIENT);
+            // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VWR_PATIENT'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.vW_PATIENTTableAdapter.Fill(this.dataSetRedoc.VW_PATIENT);
+
+            this.adgvSearch.SetColumns(adgvPatients.Columns);
         }
 
         private void btnAddPatient_Click(object sender, EventArgs e)
@@ -35,13 +33,51 @@ namespace RedocApp
             frm.ShowDialog();
         }
 
-        private void dgvPatients_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void adgvSearch_Search(object sender, Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventArgs e)
         {
-            if (e.ColumnIndex == 1)
+            bool restartsearch = true;
+            int startColumn = 0;
+            int startRow = 0;
+            if (!e.FromBegin)
             {
-                FrmPatientFile frm = new FrmPatientFile();
-                frm.ShowDialog();
+                bool endcol = adgvPatients.CurrentCell.ColumnIndex + 1 >= adgvPatients.ColumnCount;
+                bool endrow = adgvPatients.CurrentCell.RowIndex + 1 >= adgvPatients.RowCount;
+
+                if (endcol && endrow)
+                {
+                    startColumn = adgvPatients.CurrentCell.ColumnIndex;
+                    startRow = adgvPatients.CurrentCell.RowIndex;
+                }
+                else
+                {
+                    startColumn = endcol ? 0 : adgvPatients.CurrentCell.ColumnIndex + 1;
+                    startRow = adgvPatients.CurrentCell.RowIndex + (endcol ? 1 : 0);
+                }
             }
+            DataGridViewCell c = adgvPatients.FindCell(
+                e.ValueToSearch,
+                e.ColumnToSearch != null ? e.ColumnToSearch.Name : null,
+                startRow,
+                startColumn,
+                e.WholeWord,
+                e.CaseSensitive);
+            if (c == null && restartsearch)
+                c = adgvPatients.FindCell(
+                    e.ValueToSearch,
+                    e.ColumnToSearch != null ? e.ColumnToSearch.Name : null,
+                    0,
+                    0,
+                    e.WholeWord,
+                    e.CaseSensitive);
+            if (c != null)
+                adgvPatients.CurrentCell = c;
+        }
+
+        private void adgvPatients_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow selectedRow = adgvPatients.Rows[e.RowIndex];
+            FrmPatientFile frm = new FrmPatientFile(0);
+            frm.ShowDialog();
         }
     }
 }

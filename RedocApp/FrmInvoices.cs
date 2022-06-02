@@ -24,9 +24,6 @@ namespace RedocApp
 
         private void FrmInvoices_Load(object sender, EventArgs e)
         {
-            dgvInvoices.Rows.Add("1", "Impayée", "DUPONT Jean", "202201", "250.60", "Voir détails");
-            dgvInvoices.Rows.Add("2", "Payée", "TERIEUR Alain", "202202", "153.30", "Voir détails");
-            dgvInvoices.Rows.Add("3", "En retard", "TERIEUR Alex", "202203", "77.70", "Voir détails");
         }
 
         private void dgvPatients_CellContentClick(object sender, DataGridViewCellEventArgs e)
