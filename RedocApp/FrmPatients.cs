@@ -21,8 +21,6 @@ namespace RedocApp
         {
             // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VW_PATIENT'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.vW_PATIENTTableAdapter.Fill(this.dataSetRedoc.VW_PATIENT);
-            // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VWR_PATIENT'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.vW_PATIENTTableAdapter.Fill(this.dataSetRedoc.VW_PATIENT);
 
             this.adgvSearch.SetColumns(adgvPatients.Columns);
         }
@@ -30,7 +28,10 @@ namespace RedocApp
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
             FrmAddEditPatient frm = new FrmAddEditPatient(false);
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                this.vW_PATIENTTableAdapter.Fill(this.dataSetRedoc.VW_PATIENT);
+            }
         }
 
         private void adgvSearch_Search(object sender, Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventArgs e)
@@ -76,8 +77,11 @@ namespace RedocApp
         private void adgvPatients_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow selectedRow = adgvPatients.Rows[e.RowIndex];
-            FrmPatientFile frm = new FrmPatientFile(0);
-            frm.ShowDialog();
+            if (selectedRow.Cells[0] != null)
+            {
+                FrmPatientFile frm = new FrmPatientFile(int.Parse(selectedRow.Cells[0].Value.ToString()));
+                frm.ShowDialog();
+            }
         }
     }
 }

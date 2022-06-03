@@ -29,17 +29,29 @@ namespace RedocApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblAddEditAppointment = new System.Windows.Forms.Label();
             this.dtpMain = new System.Windows.Forms.DateTimePicker();
+            this.vWRENDEZVOUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetRedoc = new RedocApp.DataSetRedoc();
             this.lblDate = new System.Windows.Forms.Label();
             this.cmbDoctor = new System.Windows.Forms.ComboBox();
+            this.vWDOCTEURBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblDoctor = new System.Windows.Forms.Label();
             this.lblPatient = new System.Windows.Forms.Label();
             this.cmbPatient = new System.Windows.Forms.ComboBox();
+            this.vWPATIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txbNotes = new System.Windows.Forms.TextBox();
             this.lblNotes = new System.Windows.Forms.Label();
+            this.vW_DOCTEURTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_DOCTEURTableAdapter();
+            this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
+            this.vW_RENDEZVOUSTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_RENDEZVOUSTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.vWRENDEZVOUSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWDOCTEURBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWPATIENTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAddEditAppointment
@@ -55,11 +67,22 @@ namespace RedocApp
             // dtpMain
             // 
             this.dtpMain.CustomFormat = "dddd dd MMMM yyyy HH:mm tt";
+            this.dtpMain.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vWRENDEZVOUSBindingSource, "REN_DATE", true));
             this.dtpMain.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpMain.Location = new System.Drawing.Point(158, 51);
             this.dtpMain.Name = "dtpMain";
             this.dtpMain.Size = new System.Drawing.Size(277, 22);
             this.dtpMain.TabIndex = 2;
+            // 
+            // vWRENDEZVOUSBindingSource
+            // 
+            this.vWRENDEZVOUSBindingSource.DataMember = "VW_RENDEZVOUS";
+            this.vWRENDEZVOUSBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // dataSetRedoc
+            // 
+            this.dataSetRedoc.DataSetName = "DataSetRedoc";
+            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblDate
             // 
@@ -72,11 +95,20 @@ namespace RedocApp
             // 
             // cmbDoctor
             // 
+            this.cmbDoctor.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vWRENDEZVOUSBindingSource, "DOC_NO", true));
+            this.cmbDoctor.DataSource = this.vWDOCTEURBindingSource;
+            this.cmbDoctor.DisplayMember = "DOC_NOM_COMPLET";
             this.cmbDoctor.FormattingEnabled = true;
             this.cmbDoctor.Location = new System.Drawing.Point(158, 93);
             this.cmbDoctor.Name = "cmbDoctor";
             this.cmbDoctor.Size = new System.Drawing.Size(277, 24);
             this.cmbDoctor.TabIndex = 4;
+            this.cmbDoctor.ValueMember = "DOC_NO";
+            // 
+            // vWDOCTEURBindingSource
+            // 
+            this.vWDOCTEURBindingSource.DataMember = "VW_DOCTEUR";
+            this.vWDOCTEURBindingSource.DataSource = this.dataSetRedoc;
             // 
             // lblDoctor
             // 
@@ -98,21 +130,30 @@ namespace RedocApp
             // 
             // cmbPatient
             // 
+            this.cmbPatient.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vWRENDEZVOUSBindingSource, "PAT_NO", true));
+            this.cmbPatient.DataSource = this.vWPATIENTBindingSource;
+            this.cmbPatient.DisplayMember = "PAT_NOM_COMPLET";
             this.cmbPatient.FormattingEnabled = true;
             this.cmbPatient.Location = new System.Drawing.Point(158, 137);
             this.cmbPatient.Name = "cmbPatient";
             this.cmbPatient.Size = new System.Drawing.Size(277, 24);
             this.cmbPatient.TabIndex = 6;
+            this.cmbPatient.ValueMember = "PAT_NO";
+            // 
+            // vWPATIENTBindingSource
+            // 
+            this.vWPATIENTBindingSource.DataMember = "VW_PATIENT";
+            this.vWPATIENTBindingSource.DataSource = this.dataSetRedoc;
             // 
             // btnConfirm
             // 
-            this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnConfirm.Location = new System.Drawing.Point(279, 345);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(156, 50);
             this.btnConfirm.TabIndex = 9;
             this.btnConfirm.Text = "&Valider";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -126,6 +167,7 @@ namespace RedocApp
             // 
             // txbNotes
             // 
+            this.txbNotes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vWRENDEZVOUSBindingSource, "REN_COMMENTAIRE", true));
             this.txbNotes.Location = new System.Drawing.Point(17, 208);
             this.txbNotes.Multiline = true;
             this.txbNotes.Name = "txbNotes";
@@ -141,13 +183,25 @@ namespace RedocApp
             this.lblNotes.TabIndex = 7;
             this.lblNotes.Text = "&Notes";
             // 
+            // vW_DOCTEURTableAdapter
+            // 
+            this.vW_DOCTEURTableAdapter.ClearBeforeFill = true;
+            // 
+            // vW_PATIENTTableAdapter
+            // 
+            this.vW_PATIENTTableAdapter.ClearBeforeFill = true;
+            // 
+            // vW_RENDEZVOUSTableAdapter
+            // 
+            this.vW_RENDEZVOUSTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmAddEditAppointment
             // 
             this.AcceptButton = this.btnConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(452, 407);
+            this.ClientSize = new System.Drawing.Size(455, 415);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.txbNotes);
             this.Controls.Add(this.btnCancel);
@@ -163,8 +217,12 @@ namespace RedocApp
             this.MaximizeBox = false;
             this.Name = "FrmAddEditAppointment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "i";
+            this.Text = "REDOC - Ajout / modification RDV";
             this.Load += new System.EventHandler(this.FrmAddEditAppointment_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vWRENDEZVOUSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWDOCTEURBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWPATIENTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +241,12 @@ namespace RedocApp
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txbNotes;
         private System.Windows.Forms.Label lblNotes;
+        private DataSetRedoc dataSetRedoc;
+        private System.Windows.Forms.BindingSource vWDOCTEURBindingSource;
+        private DataSetRedocTableAdapters.VW_DOCTEURTableAdapter vW_DOCTEURTableAdapter;
+        private System.Windows.Forms.BindingSource vWPATIENTBindingSource;
+        private DataSetRedocTableAdapters.VW_PATIENTTableAdapter vW_PATIENTTableAdapter;
+        private System.Windows.Forms.BindingSource vWRENDEZVOUSBindingSource;
+        private DataSetRedocTableAdapters.VW_RENDEZVOUSTableAdapter vW_RENDEZVOUSTableAdapter;
     }
 }

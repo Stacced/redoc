@@ -54,6 +54,10 @@ namespace RedocApp {
         
         private VW_EXCEPTION_HORAIRE_DOCTEURDataTable tableVW_EXCEPTION_HORAIRE_DOCTEUR;
         
+        private VW_FACTUREDataTable tableVW_FACTURE;
+        
+        private VW_RENDEZVOUSDataTable tableVW_RENDEZVOUS;
+        
         private global::System.Data.DataRelation relationFK_CAB_EXCEPTION_HORAIRE_CAB_U;
         
         private global::System.Data.DataRelation relationFK_CAB_FACTURE_CAB_RENDEZVOUS;
@@ -144,6 +148,12 @@ namespace RedocApp {
                 }
                 if ((ds.Tables["VW_EXCEPTION_HORAIRE_DOCTEUR"] != null)) {
                     base.Tables.Add(new VW_EXCEPTION_HORAIRE_DOCTEURDataTable(ds.Tables["VW_EXCEPTION_HORAIRE_DOCTEUR"]));
+                }
+                if ((ds.Tables["VW_FACTURE"] != null)) {
+                    base.Tables.Add(new VW_FACTUREDataTable(ds.Tables["VW_FACTURE"]));
+                }
+                if ((ds.Tables["VW_RENDEZVOUS"] != null)) {
+                    base.Tables.Add(new VW_RENDEZVOUSDataTable(ds.Tables["VW_RENDEZVOUS"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -315,6 +325,26 @@ namespace RedocApp {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public VW_FACTUREDataTable VW_FACTURE {
+            get {
+                return this.tableVW_FACTURE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public VW_RENDEZVOUSDataTable VW_RENDEZVOUS {
+            get {
+                return this.tableVW_RENDEZVOUS;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -424,6 +454,12 @@ namespace RedocApp {
                 }
                 if ((ds.Tables["VW_EXCEPTION_HORAIRE_DOCTEUR"] != null)) {
                     base.Tables.Add(new VW_EXCEPTION_HORAIRE_DOCTEURDataTable(ds.Tables["VW_EXCEPTION_HORAIRE_DOCTEUR"]));
+                }
+                if ((ds.Tables["VW_FACTURE"] != null)) {
+                    base.Tables.Add(new VW_FACTUREDataTable(ds.Tables["VW_FACTURE"]));
+                }
+                if ((ds.Tables["VW_RENDEZVOUS"] != null)) {
+                    base.Tables.Add(new VW_RENDEZVOUSDataTable(ds.Tables["VW_RENDEZVOUS"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -548,6 +584,18 @@ namespace RedocApp {
                     this.tableVW_EXCEPTION_HORAIRE_DOCTEUR.InitVars();
                 }
             }
+            this.tableVW_FACTURE = ((VW_FACTUREDataTable)(base.Tables["VW_FACTURE"]));
+            if ((initTable == true)) {
+                if ((this.tableVW_FACTURE != null)) {
+                    this.tableVW_FACTURE.InitVars();
+                }
+            }
+            this.tableVW_RENDEZVOUS = ((VW_RENDEZVOUSDataTable)(base.Tables["VW_RENDEZVOUS"]));
+            if ((initTable == true)) {
+                if ((this.tableVW_RENDEZVOUS != null)) {
+                    this.tableVW_RENDEZVOUS.InitVars();
+                }
+            }
             this.relationFK_CAB_EXCEPTION_HORAIRE_CAB_U = this.Relations["FK_CAB_EXCEPTION_HORAIRE_CAB_U"];
             this.relationFK_CAB_FACTURE_CAB_RENDEZVOUS = this.Relations["FK_CAB_FACTURE_CAB_RENDEZVOUS"];
             this.relationFK_CAB_HORAIRE_CAB_UTILISATEUR = this.Relations["FK_CAB_HORAIRE_CAB_UTILISATEUR"];
@@ -597,6 +645,10 @@ namespace RedocApp {
             base.Tables.Add(this.tableVW_PATIENT);
             this.tableVW_EXCEPTION_HORAIRE_DOCTEUR = new VW_EXCEPTION_HORAIRE_DOCTEURDataTable();
             base.Tables.Add(this.tableVW_EXCEPTION_HORAIRE_DOCTEUR);
+            this.tableVW_FACTURE = new VW_FACTUREDataTable();
+            base.Tables.Add(this.tableVW_FACTURE);
+            this.tableVW_RENDEZVOUS = new VW_RENDEZVOUSDataTable();
+            base.Tables.Add(this.tableVW_RENDEZVOUS);
             this.relationFK_CAB_EXCEPTION_HORAIRE_CAB_U = new global::System.Data.DataRelation("FK_CAB_EXCEPTION_HORAIRE_CAB_U", new global::System.Data.DataColumn[] {
                         this.tableCAB_UTILISATEUR.UTI_NOColumn}, new global::System.Data.DataColumn[] {
                         this.tableCAB_EXCEPTION_HORAIRE.EXC_UTI_NOColumn}, false);
@@ -727,6 +779,18 @@ namespace RedocApp {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeVW_FACTURE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeVW_RENDEZVOUS() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -824,6 +888,12 @@ namespace RedocApp {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void VW_EXCEPTION_HORAIRE_DOCTEURRowChangeEventHandler(object sender, VW_EXCEPTION_HORAIRE_DOCTEURRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void VW_FACTURERowChangeEventHandler(object sender, VW_FACTURERowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void VW_RENDEZVOUSRowChangeEventHandler(object sender, VW_RENDEZVOUSRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5600,6 +5670,778 @@ namespace RedocApp {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class VW_FACTUREDataTable : global::System.Data.TypedTableBase<VW_FACTURERow> {
+            
+            private global::System.Data.DataColumn columnFAC_NO;
+            
+            private global::System.Data.DataColumn columnPAT_NOM;
+            
+            private global::System.Data.DataColumn columnPAT_PRENOM;
+            
+            private global::System.Data.DataColumn columnPAT_NOM_COMPLET;
+            
+            private global::System.Data.DataColumn columnFAC_DATE;
+            
+            private global::System.Data.DataColumn columnFAC_PAYE;
+            
+            private global::System.Data.DataColumn columnFAC_TOTAL;
+            
+            private global::System.Data.DataColumn columnPAT_NO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_FACTUREDataTable() {
+                this.TableName = "VW_FACTURE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal VW_FACTUREDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected VW_FACTUREDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FAC_NOColumn {
+                get {
+                    return this.columnFAC_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PAT_NOMColumn {
+                get {
+                    return this.columnPAT_NOM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PAT_PRENOMColumn {
+                get {
+                    return this.columnPAT_PRENOM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PAT_NOM_COMPLETColumn {
+                get {
+                    return this.columnPAT_NOM_COMPLET;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FAC_DATEColumn {
+                get {
+                    return this.columnFAC_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FAC_PAYEColumn {
+                get {
+                    return this.columnFAC_PAYE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FAC_TOTALColumn {
+                get {
+                    return this.columnFAC_TOTAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PAT_NOColumn {
+                get {
+                    return this.columnPAT_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_FACTURERow this[int index] {
+                get {
+                    return ((VW_FACTURERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event VW_FACTURERowChangeEventHandler VW_FACTURERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event VW_FACTURERowChangeEventHandler VW_FACTURERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event VW_FACTURERowChangeEventHandler VW_FACTURERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event VW_FACTURERowChangeEventHandler VW_FACTURERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddVW_FACTURERow(VW_FACTURERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_FACTURERow AddVW_FACTURERow(short FAC_NO, string PAT_NOM, string PAT_PRENOM, string PAT_NOM_COMPLET, System.DateTime FAC_DATE, short FAC_PAYE, double FAC_TOTAL, short PAT_NO) {
+                VW_FACTURERow rowVW_FACTURERow = ((VW_FACTURERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        FAC_NO,
+                        PAT_NOM,
+                        PAT_PRENOM,
+                        PAT_NOM_COMPLET,
+                        FAC_DATE,
+                        FAC_PAYE,
+                        FAC_TOTAL,
+                        PAT_NO};
+                rowVW_FACTURERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVW_FACTURERow);
+                return rowVW_FACTURERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                VW_FACTUREDataTable cln = ((VW_FACTUREDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new VW_FACTUREDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnFAC_NO = base.Columns["FAC_NO"];
+                this.columnPAT_NOM = base.Columns["PAT_NOM"];
+                this.columnPAT_PRENOM = base.Columns["PAT_PRENOM"];
+                this.columnPAT_NOM_COMPLET = base.Columns["PAT_NOM_COMPLET"];
+                this.columnFAC_DATE = base.Columns["FAC_DATE"];
+                this.columnFAC_PAYE = base.Columns["FAC_PAYE"];
+                this.columnFAC_TOTAL = base.Columns["FAC_TOTAL"];
+                this.columnPAT_NO = base.Columns["PAT_NO"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnFAC_NO = new global::System.Data.DataColumn("FAC_NO", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFAC_NO);
+                this.columnPAT_NOM = new global::System.Data.DataColumn("PAT_NOM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAT_NOM);
+                this.columnPAT_PRENOM = new global::System.Data.DataColumn("PAT_PRENOM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAT_PRENOM);
+                this.columnPAT_NOM_COMPLET = new global::System.Data.DataColumn("PAT_NOM_COMPLET", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAT_NOM_COMPLET);
+                this.columnFAC_DATE = new global::System.Data.DataColumn("FAC_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFAC_DATE);
+                this.columnFAC_PAYE = new global::System.Data.DataColumn("FAC_PAYE", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFAC_PAYE);
+                this.columnFAC_TOTAL = new global::System.Data.DataColumn("FAC_TOTAL", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFAC_TOTAL);
+                this.columnPAT_NO = new global::System.Data.DataColumn("PAT_NO", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAT_NO);
+                this.columnFAC_NO.AllowDBNull = false;
+                this.columnPAT_NOM.AllowDBNull = false;
+                this.columnPAT_NOM.MaxLength = 50;
+                this.columnPAT_PRENOM.AllowDBNull = false;
+                this.columnPAT_PRENOM.MaxLength = 50;
+                this.columnPAT_NOM_COMPLET.MaxLength = 101;
+                this.columnFAC_DATE.AllowDBNull = false;
+                this.columnFAC_PAYE.AllowDBNull = false;
+                this.columnFAC_TOTAL.AllowDBNull = false;
+                this.columnPAT_NO.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_FACTURERow NewVW_FACTURERow() {
+                return ((VW_FACTURERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new VW_FACTURERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(VW_FACTURERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.VW_FACTURERowChanged != null)) {
+                    this.VW_FACTURERowChanged(this, new VW_FACTURERowChangeEvent(((VW_FACTURERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.VW_FACTURERowChanging != null)) {
+                    this.VW_FACTURERowChanging(this, new VW_FACTURERowChangeEvent(((VW_FACTURERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.VW_FACTURERowDeleted != null)) {
+                    this.VW_FACTURERowDeleted(this, new VW_FACTURERowChangeEvent(((VW_FACTURERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.VW_FACTURERowDeleting != null)) {
+                    this.VW_FACTURERowDeleting(this, new VW_FACTURERowChangeEvent(((VW_FACTURERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveVW_FACTURERow(VW_FACTURERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetRedoc ds = new DataSetRedoc();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "VW_FACTUREDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class VW_RENDEZVOUSDataTable : global::System.Data.TypedTableBase<VW_RENDEZVOUSRow> {
+            
+            private global::System.Data.DataColumn columnREN_NO;
+            
+            private global::System.Data.DataColumn columnREN_DATE;
+            
+            private global::System.Data.DataColumn columnPAT_NOM;
+            
+            private global::System.Data.DataColumn columnPAT_PRENOM;
+            
+            private global::System.Data.DataColumn columnPAT_NOM_COMPLET;
+            
+            private global::System.Data.DataColumn columnDOC_NOM;
+            
+            private global::System.Data.DataColumn columnDOC_PRENOM;
+            
+            private global::System.Data.DataColumn columnDOC_NOM_COMPLET;
+            
+            private global::System.Data.DataColumn columnREN_ANNULE;
+            
+            private global::System.Data.DataColumn columnREN_COMMENTAIRE;
+            
+            private global::System.Data.DataColumn columnPAT_NO;
+            
+            private global::System.Data.DataColumn columnDOC_NO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_RENDEZVOUSDataTable() {
+                this.TableName = "VW_RENDEZVOUS";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal VW_RENDEZVOUSDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected VW_RENDEZVOUSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn REN_NOColumn {
+                get {
+                    return this.columnREN_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn REN_DATEColumn {
+                get {
+                    return this.columnREN_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PAT_NOMColumn {
+                get {
+                    return this.columnPAT_NOM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PAT_PRENOMColumn {
+                get {
+                    return this.columnPAT_PRENOM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PAT_NOM_COMPLETColumn {
+                get {
+                    return this.columnPAT_NOM_COMPLET;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DOC_NOMColumn {
+                get {
+                    return this.columnDOC_NOM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DOC_PRENOMColumn {
+                get {
+                    return this.columnDOC_PRENOM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DOC_NOM_COMPLETColumn {
+                get {
+                    return this.columnDOC_NOM_COMPLET;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn REN_ANNULEColumn {
+                get {
+                    return this.columnREN_ANNULE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn REN_COMMENTAIREColumn {
+                get {
+                    return this.columnREN_COMMENTAIRE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PAT_NOColumn {
+                get {
+                    return this.columnPAT_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DOC_NOColumn {
+                get {
+                    return this.columnDOC_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_RENDEZVOUSRow this[int index] {
+                get {
+                    return ((VW_RENDEZVOUSRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event VW_RENDEZVOUSRowChangeEventHandler VW_RENDEZVOUSRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event VW_RENDEZVOUSRowChangeEventHandler VW_RENDEZVOUSRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event VW_RENDEZVOUSRowChangeEventHandler VW_RENDEZVOUSRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event VW_RENDEZVOUSRowChangeEventHandler VW_RENDEZVOUSRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddVW_RENDEZVOUSRow(VW_RENDEZVOUSRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_RENDEZVOUSRow AddVW_RENDEZVOUSRow(short REN_NO, System.DateTime REN_DATE, string PAT_NOM, string PAT_PRENOM, string PAT_NOM_COMPLET, string DOC_NOM, string DOC_PRENOM, string DOC_NOM_COMPLET, short REN_ANNULE, string REN_COMMENTAIRE, short PAT_NO, short DOC_NO) {
+                VW_RENDEZVOUSRow rowVW_RENDEZVOUSRow = ((VW_RENDEZVOUSRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        REN_NO,
+                        REN_DATE,
+                        PAT_NOM,
+                        PAT_PRENOM,
+                        PAT_NOM_COMPLET,
+                        DOC_NOM,
+                        DOC_PRENOM,
+                        DOC_NOM_COMPLET,
+                        REN_ANNULE,
+                        REN_COMMENTAIRE,
+                        PAT_NO,
+                        DOC_NO};
+                rowVW_RENDEZVOUSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVW_RENDEZVOUSRow);
+                return rowVW_RENDEZVOUSRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                VW_RENDEZVOUSDataTable cln = ((VW_RENDEZVOUSDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new VW_RENDEZVOUSDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnREN_NO = base.Columns["REN_NO"];
+                this.columnREN_DATE = base.Columns["REN_DATE"];
+                this.columnPAT_NOM = base.Columns["PAT_NOM"];
+                this.columnPAT_PRENOM = base.Columns["PAT_PRENOM"];
+                this.columnPAT_NOM_COMPLET = base.Columns["PAT_NOM_COMPLET"];
+                this.columnDOC_NOM = base.Columns["DOC_NOM"];
+                this.columnDOC_PRENOM = base.Columns["DOC_PRENOM"];
+                this.columnDOC_NOM_COMPLET = base.Columns["DOC_NOM_COMPLET"];
+                this.columnREN_ANNULE = base.Columns["REN_ANNULE"];
+                this.columnREN_COMMENTAIRE = base.Columns["REN_COMMENTAIRE"];
+                this.columnPAT_NO = base.Columns["PAT_NO"];
+                this.columnDOC_NO = base.Columns["DOC_NO"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnREN_NO = new global::System.Data.DataColumn("REN_NO", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnREN_NO);
+                this.columnREN_DATE = new global::System.Data.DataColumn("REN_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnREN_DATE);
+                this.columnPAT_NOM = new global::System.Data.DataColumn("PAT_NOM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAT_NOM);
+                this.columnPAT_PRENOM = new global::System.Data.DataColumn("PAT_PRENOM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAT_PRENOM);
+                this.columnPAT_NOM_COMPLET = new global::System.Data.DataColumn("PAT_NOM_COMPLET", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAT_NOM_COMPLET);
+                this.columnDOC_NOM = new global::System.Data.DataColumn("DOC_NOM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDOC_NOM);
+                this.columnDOC_PRENOM = new global::System.Data.DataColumn("DOC_PRENOM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDOC_PRENOM);
+                this.columnDOC_NOM_COMPLET = new global::System.Data.DataColumn("DOC_NOM_COMPLET", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDOC_NOM_COMPLET);
+                this.columnREN_ANNULE = new global::System.Data.DataColumn("REN_ANNULE", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnREN_ANNULE);
+                this.columnREN_COMMENTAIRE = new global::System.Data.DataColumn("REN_COMMENTAIRE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnREN_COMMENTAIRE);
+                this.columnPAT_NO = new global::System.Data.DataColumn("PAT_NO", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAT_NO);
+                this.columnDOC_NO = new global::System.Data.DataColumn("DOC_NO", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDOC_NO);
+                this.columnREN_NO.AllowDBNull = false;
+                this.columnREN_DATE.AllowDBNull = false;
+                this.columnPAT_NOM.AllowDBNull = false;
+                this.columnPAT_NOM.MaxLength = 50;
+                this.columnPAT_PRENOM.AllowDBNull = false;
+                this.columnPAT_PRENOM.MaxLength = 50;
+                this.columnPAT_NOM_COMPLET.MaxLength = 101;
+                this.columnDOC_NOM.AllowDBNull = false;
+                this.columnDOC_NOM.MaxLength = 255;
+                this.columnDOC_PRENOM.AllowDBNull = false;
+                this.columnDOC_PRENOM.MaxLength = 255;
+                this.columnDOC_NOM_COMPLET.MaxLength = 511;
+                this.columnREN_ANNULE.AllowDBNull = false;
+                this.columnREN_COMMENTAIRE.MaxLength = 2147483647;
+                this.columnPAT_NO.AllowDBNull = false;
+                this.columnDOC_NO.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_RENDEZVOUSRow NewVW_RENDEZVOUSRow() {
+                return ((VW_RENDEZVOUSRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new VW_RENDEZVOUSRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(VW_RENDEZVOUSRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.VW_RENDEZVOUSRowChanged != null)) {
+                    this.VW_RENDEZVOUSRowChanged(this, new VW_RENDEZVOUSRowChangeEvent(((VW_RENDEZVOUSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.VW_RENDEZVOUSRowChanging != null)) {
+                    this.VW_RENDEZVOUSRowChanging(this, new VW_RENDEZVOUSRowChangeEvent(((VW_RENDEZVOUSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.VW_RENDEZVOUSRowDeleted != null)) {
+                    this.VW_RENDEZVOUSRowDeleted(this, new VW_RENDEZVOUSRowChangeEvent(((VW_RENDEZVOUSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.VW_RENDEZVOUSRowDeleting != null)) {
+                    this.VW_RENDEZVOUSRowDeleting(this, new VW_RENDEZVOUSRowChangeEvent(((VW_RENDEZVOUSRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveVW_RENDEZVOUSRow(VW_RENDEZVOUSRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetRedoc ds = new DataSetRedoc();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "VW_RENDEZVOUSDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CAB_EXCEPTION_HORAIRERow : global::System.Data.DataRow {
@@ -6990,6 +7832,328 @@ namespace RedocApp {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class VW_FACTURERow : global::System.Data.DataRow {
+            
+            private VW_FACTUREDataTable tableVW_FACTURE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal VW_FACTURERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVW_FACTURE = ((VW_FACTUREDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short FAC_NO {
+                get {
+                    return ((short)(this[this.tableVW_FACTURE.FAC_NOColumn]));
+                }
+                set {
+                    this[this.tableVW_FACTURE.FAC_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PAT_NOM {
+                get {
+                    return ((string)(this[this.tableVW_FACTURE.PAT_NOMColumn]));
+                }
+                set {
+                    this[this.tableVW_FACTURE.PAT_NOMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PAT_PRENOM {
+                get {
+                    return ((string)(this[this.tableVW_FACTURE.PAT_PRENOMColumn]));
+                }
+                set {
+                    this[this.tableVW_FACTURE.PAT_PRENOMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PAT_NOM_COMPLET {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_FACTURE.PAT_NOM_COMPLETColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'PAT_NOM_COMPLET\' dans la table \'VW_FACTURE\' est DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_FACTURE.PAT_NOM_COMPLETColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime FAC_DATE {
+                get {
+                    return ((global::System.DateTime)(this[this.tableVW_FACTURE.FAC_DATEColumn]));
+                }
+                set {
+                    this[this.tableVW_FACTURE.FAC_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short FAC_PAYE {
+                get {
+                    return ((short)(this[this.tableVW_FACTURE.FAC_PAYEColumn]));
+                }
+                set {
+                    this[this.tableVW_FACTURE.FAC_PAYEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double FAC_TOTAL {
+                get {
+                    return ((double)(this[this.tableVW_FACTURE.FAC_TOTALColumn]));
+                }
+                set {
+                    this[this.tableVW_FACTURE.FAC_TOTALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short PAT_NO {
+                get {
+                    return ((short)(this[this.tableVW_FACTURE.PAT_NOColumn]));
+                }
+                set {
+                    this[this.tableVW_FACTURE.PAT_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPAT_NOM_COMPLETNull() {
+                return this.IsNull(this.tableVW_FACTURE.PAT_NOM_COMPLETColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPAT_NOM_COMPLETNull() {
+                this[this.tableVW_FACTURE.PAT_NOM_COMPLETColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class VW_RENDEZVOUSRow : global::System.Data.DataRow {
+            
+            private VW_RENDEZVOUSDataTable tableVW_RENDEZVOUS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal VW_RENDEZVOUSRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVW_RENDEZVOUS = ((VW_RENDEZVOUSDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short REN_NO {
+                get {
+                    return ((short)(this[this.tableVW_RENDEZVOUS.REN_NOColumn]));
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.REN_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime REN_DATE {
+                get {
+                    return ((global::System.DateTime)(this[this.tableVW_RENDEZVOUS.REN_DATEColumn]));
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.REN_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PAT_NOM {
+                get {
+                    return ((string)(this[this.tableVW_RENDEZVOUS.PAT_NOMColumn]));
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.PAT_NOMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PAT_PRENOM {
+                get {
+                    return ((string)(this[this.tableVW_RENDEZVOUS.PAT_PRENOMColumn]));
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.PAT_PRENOMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PAT_NOM_COMPLET {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_RENDEZVOUS.PAT_NOM_COMPLETColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'PAT_NOM_COMPLET\' dans la table \'VW_RENDEZVOUS\' est DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.PAT_NOM_COMPLETColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DOC_NOM {
+                get {
+                    return ((string)(this[this.tableVW_RENDEZVOUS.DOC_NOMColumn]));
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.DOC_NOMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DOC_PRENOM {
+                get {
+                    return ((string)(this[this.tableVW_RENDEZVOUS.DOC_PRENOMColumn]));
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.DOC_PRENOMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DOC_NOM_COMPLET {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_RENDEZVOUS.DOC_NOM_COMPLETColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DOC_NOM_COMPLET\' dans la table \'VW_RENDEZVOUS\' est DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.DOC_NOM_COMPLETColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short REN_ANNULE {
+                get {
+                    return ((short)(this[this.tableVW_RENDEZVOUS.REN_ANNULEColumn]));
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.REN_ANNULEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string REN_COMMENTAIRE {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_RENDEZVOUS.REN_COMMENTAIREColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'REN_COMMENTAIRE\' dans la table \'VW_RENDEZVOUS\' est DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.REN_COMMENTAIREColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short PAT_NO {
+                get {
+                    return ((short)(this[this.tableVW_RENDEZVOUS.PAT_NOColumn]));
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.PAT_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short DOC_NO {
+                get {
+                    return ((short)(this[this.tableVW_RENDEZVOUS.DOC_NOColumn]));
+                }
+                set {
+                    this[this.tableVW_RENDEZVOUS.DOC_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPAT_NOM_COMPLETNull() {
+                return this.IsNull(this.tableVW_RENDEZVOUS.PAT_NOM_COMPLETColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPAT_NOM_COMPLETNull() {
+                this[this.tableVW_RENDEZVOUS.PAT_NOM_COMPLETColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDOC_NOM_COMPLETNull() {
+                return this.IsNull(this.tableVW_RENDEZVOUS.DOC_NOM_COMPLETColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDOC_NOM_COMPLETNull() {
+                this[this.tableVW_RENDEZVOUS.DOC_NOM_COMPLETColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsREN_COMMENTAIRENull() {
+                return this.IsNull(this.tableVW_RENDEZVOUS.REN_COMMENTAIREColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetREN_COMMENTAIRENull() {
+                this[this.tableVW_RENDEZVOUS.REN_COMMENTAIREColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -7485,6 +8649,74 @@ namespace RedocApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VW_EXCEPTION_HORAIRE_DOCTEURRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class VW_FACTURERowChangeEvent : global::System.EventArgs {
+            
+            private VW_FACTURERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_FACTURERowChangeEvent(VW_FACTURERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_FACTURERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class VW_RENDEZVOUSRowChangeEvent : global::System.EventArgs {
+            
+            private VW_RENDEZVOUSRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_RENDEZVOUSRowChangeEvent(VW_RENDEZVOUSRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VW_RENDEZVOUSRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -12951,12 +14183,26 @@ namespace RedocApp.DataSetRedocTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.DataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.DataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.DataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PAT_NO, PAT_NOM, PAT_PRENOM, PAT_NOM_COMPLET, PAT_DATE_NAISSANCE, PAT_ADRE" +
                 "SSE, PAT_EMAIL, PAT_TELEPHONE, PAT_NO_AVS FROM \"C##_REDOC_DATA\".VW_PATIENT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.DataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT PAT_NO, PAT_NOM, PAT_PRENOM, PAT_NOM_COMPLET, PAT_DATE_NAISSANCE, PAT_ADRE" +
+                "SSE, PAT_EMAIL, PAT_TELEPHONE, PAT_NO_AVS\r\nFROM     \"C##_REDOC_DATA\".VW_PATIENT\r" +
+                "\nWHERE  (PAT_NO = :patientNo)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.DataAccess.Client.OracleParameter param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = ":patientNo";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAT_NO";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12981,6 +14227,20 @@ namespace RedocApp.DataSetRedocTableAdapters {
             DataSetRedoc.VW_PATIENTDataTable dataTable = new DataSetRedoc.VW_PATIENTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPatientNo(DataSetRedoc.VW_PATIENTDataTable dataTable, decimal patientNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(patientNo));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     
@@ -13191,6 +14451,445 @@ namespace RedocApp.DataSetRedocTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class VW_FACTURETableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Oracle.DataAccess.Client.OracleDataAdapter _adapter;
+        
+        private global::Oracle.DataAccess.Client.OracleConnection _connection;
+        
+        private global::Oracle.DataAccess.Client.OracleTransaction _transaction;
+        
+        private global::Oracle.DataAccess.Client.OracleCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public VW_FACTURETableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::Oracle.DataAccess.Client.OracleDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::Oracle.DataAccess.Client.OracleConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::Oracle.DataAccess.Client.OracleTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::Oracle.DataAccess.Client.OracleCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Oracle.DataAccess.Client.OracleDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "VW_FACTURE";
+            tableMapping.ColumnMappings.Add("FAC_NO", "FAC_NO");
+            tableMapping.ColumnMappings.Add("PAT_NOM", "PAT_NOM");
+            tableMapping.ColumnMappings.Add("PAT_PRENOM", "PAT_PRENOM");
+            tableMapping.ColumnMappings.Add("PAT_NOM_COMPLET", "PAT_NOM_COMPLET");
+            tableMapping.ColumnMappings.Add("FAC_DATE", "FAC_DATE");
+            tableMapping.ColumnMappings.Add("FAC_PAYE", "FAC_PAYE");
+            tableMapping.ColumnMappings.Add("FAC_TOTAL", "FAC_TOTAL");
+            tableMapping.ColumnMappings.Add("PAT_NO", "PAT_NO");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Oracle.DataAccess.Client.OracleConnection();
+            this._connection.ConnectionString = global::RedocApp.Properties.Settings.Default.ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Oracle.DataAccess.Client.OracleCommand[1];
+            this._commandCollection[0] = new global::Oracle.DataAccess.Client.OracleCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT FAC_NO, PAT_NOM, PAT_PRENOM, PAT_NOM_COMPLET, FAC_DATE, FAC_PAYE, FAC_TOTA" +
+                "L, PAT_NO FROM \"C##_REDOC_DATA\".VW_FACTURE";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetRedoc.VW_FACTUREDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetRedoc.VW_FACTUREDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetRedoc.VW_FACTUREDataTable dataTable = new DataSetRedoc.VW_FACTUREDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class VW_RENDEZVOUSTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Oracle.DataAccess.Client.OracleDataAdapter _adapter;
+        
+        private global::Oracle.DataAccess.Client.OracleConnection _connection;
+        
+        private global::Oracle.DataAccess.Client.OracleTransaction _transaction;
+        
+        private global::Oracle.DataAccess.Client.OracleCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public VW_RENDEZVOUSTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::Oracle.DataAccess.Client.OracleDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::Oracle.DataAccess.Client.OracleConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::Oracle.DataAccess.Client.OracleTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::Oracle.DataAccess.Client.OracleCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Oracle.DataAccess.Client.OracleDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "VW_RENDEZVOUS";
+            tableMapping.ColumnMappings.Add("REN_NO", "REN_NO");
+            tableMapping.ColumnMappings.Add("REN_DATE", "REN_DATE");
+            tableMapping.ColumnMappings.Add("PAT_NOM", "PAT_NOM");
+            tableMapping.ColumnMappings.Add("PAT_PRENOM", "PAT_PRENOM");
+            tableMapping.ColumnMappings.Add("PAT_NOM_COMPLET", "PAT_NOM_COMPLET");
+            tableMapping.ColumnMappings.Add("DOC_NOM", "DOC_NOM");
+            tableMapping.ColumnMappings.Add("DOC_PRENOM", "DOC_PRENOM");
+            tableMapping.ColumnMappings.Add("DOC_NOM_COMPLET", "DOC_NOM_COMPLET");
+            tableMapping.ColumnMappings.Add("REN_ANNULE", "REN_ANNULE");
+            tableMapping.ColumnMappings.Add("REN_COMMENTAIRE", "REN_COMMENTAIRE");
+            tableMapping.ColumnMappings.Add("PAT_NO", "PAT_NO");
+            tableMapping.ColumnMappings.Add("DOC_NO", "DOC_NO");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Oracle.DataAccess.Client.OracleConnection();
+            this._connection.ConnectionString = global::RedocApp.Properties.Settings.Default.ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Oracle.DataAccess.Client.OracleCommand[4];
+            this._commandCollection[0] = new global::Oracle.DataAccess.Client.OracleCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT REN_NO, REN_DATE, PAT_NOM, PAT_PRENOM, PAT_NOM_COMPLET, DOC_NOM, DOC_PRENO" +
+                "M, DOC_NOM_COMPLET, REN_ANNULE, REN_COMMENTAIRE, DOC_NO, PAT_NO FROM \"C##_REDOC_" +
+                "DATA\".VW_RENDEZVOUS";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.DataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT REN_NO, REN_DATE, PAT_NOM, PAT_PRENOM, PAT_NOM_COMPLET, DOC_NOM, DOC_PRENO" +
+                "M, DOC_NOM_COMPLET, REN_ANNULE, REN_COMMENTAIRE, DOC_NO, PAT_NO\r\nFROM     \"C##_R" +
+                "EDOC_DATA\".VW_RENDEZVOUS\r\nWHERE  (REN_NO = :apptNo)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.DataAccess.Client.OracleParameter param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = ":apptNo";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "REN_NO";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Oracle.DataAccess.Client.OracleCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT REN_NO, REN_DATE, PAT_NOM, PAT_PRENOM, PAT_NOM_COMPLET, DOC_NOM, DOC_PRENO" +
+                "M, DOC_NOM_COMPLET, REN_ANNULE, REN_COMMENTAIRE, DOC_NO, PAT_NO\r\nFROM     \"C##_R" +
+                "EDOC_DATA\".VW_RENDEZVOUS\r\nWHERE  (DOC_NO = :docNo)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = ":docNo";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "DOC_NO";
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::Oracle.DataAccess.Client.OracleCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT REN_NO, REN_DATE, PAT_NOM, PAT_PRENOM, PAT_NOM_COMPLET, DOC_NOM, DOC_PRENO" +
+                "M, DOC_NOM_COMPLET, REN_ANNULE, REN_COMMENTAIRE, DOC_NO, PAT_NO\r\nFROM     \"C##_R" +
+                "EDOC_DATA\".VW_RENDEZVOUS\r\nWHERE  (PAT_NO = :patNo)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = ":patNo";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAT_NO";
+            this._commandCollection[3].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetRedoc.VW_RENDEZVOUSDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetRedoc.VW_RENDEZVOUSDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetRedoc.VW_RENDEZVOUSDataTable dataTable = new DataSetRedoc.VW_RENDEZVOUSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByApptNo(DataSetRedoc.VW_RENDEZVOUSDataTable dataTable, decimal apptNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(apptNo));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByDocNo(DataSetRedoc.VW_RENDEZVOUSDataTable dataTable, decimal docNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(docNo));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPatNo(DataSetRedoc.VW_RENDEZVOUSDataTable dataTable, decimal patNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(patNo));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.IDbCommand[] _commandCollection;
@@ -13209,7 +14908,7 @@ namespace RedocApp.DataSetRedocTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[4];
+            this._commandCollection = new global::System.Data.IDbCommand[6];
             this._commandCollection[0] = new global::Oracle.DataAccess.Client.OracleCommand();
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDPATIENT";
@@ -13362,6 +15061,84 @@ namespace RedocApp.DataSetRedocTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).Parameters.Add(param);
+            this._commandCollection[4] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDAPPOINTMENT";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_REN_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_DOC_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_PAT_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_REN_COMMENTAIRE";
+            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Clob;
+            param.Size = 65536;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
+            this._commandCollection[5] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.EDITAPPOINTMENT";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_REN_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_REN_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_DOC_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_PAT_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_REN_COMMENTAIRE";
+            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Clob;
+            param.Size = 65536;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13563,6 +15340,104 @@ namespace RedocApp.DataSetRedocTableAdapters {
             else {
                 return ((string)(command.Parameters[0].Value));
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_ADDAPPOINTMENT(global::System.Nullable<global::System.DateTime> I_REN_DATE, global::System.Nullable<decimal> I_DOC_NO, global::System.Nullable<decimal> I_PAT_NO, object I_REN_COMMENTAIRE) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[4]));
+            if ((I_REN_DATE.HasValue == true)) {
+                command.Parameters[0].Value = ((System.DateTime)(I_REN_DATE.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((I_DOC_NO.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(I_DOC_NO.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((I_PAT_NO.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(I_PAT_NO.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((I_REN_COMMENTAIRE == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((object)(I_REN_COMMENTAIRE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_EDITAPPOINTMENT(global::System.Nullable<decimal> I_REN_NO, global::System.Nullable<global::System.DateTime> I_REN_DATE, global::System.Nullable<decimal> I_DOC_NO, global::System.Nullable<decimal> I_PAT_NO, object I_REN_COMMENTAIRE) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[5]));
+            if ((I_REN_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_REN_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((I_REN_DATE.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(I_REN_DATE.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((I_DOC_NO.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(I_DOC_NO.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((I_PAT_NO.HasValue == true)) {
+                command.Parameters[3].Value = ((decimal)(I_PAT_NO.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((I_REN_COMMENTAIRE == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((object)(I_REN_COMMENTAIRE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -13893,6 +15768,15 @@ namespace RedocApp.DataSetRedocTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._cAB_SPECIALISATIONTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CAB_SPECIALISATION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._cAB_SPECIALISATIONTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._cAB_FACTURETableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.CAB_FACTURE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -13911,15 +15795,6 @@ namespace RedocApp.DataSetRedocTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cAB_SPECIALISATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CAB_SPECIALISATION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._cAB_SPECIALISATIONTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._cAB_EXCEPTION_HORAIRETableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.CAB_EXCEPTION_HORAIRE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -13929,12 +15804,12 @@ namespace RedocApp.DataSetRedocTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cAB_HORAIRETableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CAB_HORAIRE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cAB_SPE_UTILISATEURTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CAB_SPE_UTILISATEUR.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cAB_HORAIRETableAdapter.Update(updatedRows));
+                    result = (result + this._cAB_SPE_UTILISATEURTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -13947,12 +15822,12 @@ namespace RedocApp.DataSetRedocTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cAB_SPE_UTILISATEURTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CAB_SPE_UTILISATEUR.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cAB_HORAIRETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CAB_HORAIRE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cAB_SPE_UTILISATEURTableAdapter.Update(updatedRows));
+                    result = (result + this._cAB_HORAIRETableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -13990,6 +15865,14 @@ namespace RedocApp.DataSetRedocTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._cAB_SPECIALISATIONTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CAB_SPECIALISATION.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._cAB_SPECIALISATIONTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._cAB_FACTURETableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.CAB_FACTURE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -14006,14 +15889,6 @@ namespace RedocApp.DataSetRedocTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cAB_SPECIALISATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CAB_SPECIALISATION.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._cAB_SPECIALISATIONTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._cAB_EXCEPTION_HORAIRETableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.CAB_EXCEPTION_HORAIRE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -14022,11 +15897,11 @@ namespace RedocApp.DataSetRedocTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cAB_HORAIRETableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CAB_HORAIRE.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cAB_SPE_UTILISATEURTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CAB_SPE_UTILISATEUR.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cAB_HORAIRETableAdapter.Update(addedRows));
+                    result = (result + this._cAB_SPE_UTILISATEURTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -14038,11 +15913,11 @@ namespace RedocApp.DataSetRedocTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cAB_SPE_UTILISATEURTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CAB_SPE_UTILISATEUR.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cAB_HORAIRETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CAB_HORAIRE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cAB_SPE_UTILISATEURTableAdapter.Update(addedRows));
+                    result = (result + this._cAB_HORAIRETableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -14056,11 +15931,11 @@ namespace RedocApp.DataSetRedocTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(DataSetRedoc dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._cAB_SPE_UTILISATEURTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CAB_SPE_UTILISATEUR.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cAB_HORAIRETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CAB_HORAIRE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cAB_SPE_UTILISATEURTableAdapter.Update(deletedRows));
+                    result = (result + this._cAB_HORAIRETableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -14072,11 +15947,11 @@ namespace RedocApp.DataSetRedocTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cAB_HORAIRETableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CAB_HORAIRE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cAB_SPE_UTILISATEURTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CAB_SPE_UTILISATEUR.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cAB_HORAIRETableAdapter.Update(deletedRows));
+                    result = (result + this._cAB_SPE_UTILISATEURTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -14085,14 +15960,6 @@ namespace RedocApp.DataSetRedocTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._cAB_EXCEPTION_HORAIRETableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._cAB_SPECIALISATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CAB_SPECIALISATION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._cAB_SPECIALISATIONTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -14109,6 +15976,14 @@ namespace RedocApp.DataSetRedocTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._cAB_FACTURETableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cAB_SPECIALISATIONTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CAB_SPECIALISATION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cAB_SPECIALISATIONTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

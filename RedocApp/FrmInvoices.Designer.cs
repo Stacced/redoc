@@ -29,81 +29,107 @@ namespace RedocApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvInvoices = new System.Windows.Forms.DataGridView();
-            this.colPatientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAppointmentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceDetails = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.components = new System.ComponentModel.Container();
             this.adgvInvoices = new Zuby.ADGV.AdvancedDataGridView();
+            this.fACNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pATNOMCOMPLETDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fACDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fACPAYEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fACTOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vWFACTUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetRedoc = new RedocApp.DataSetRedoc();
             this.adgvSearch = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
+            this.vW_FACTURETableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_FACTURETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.adgvInvoices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWFACTUREBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvInvoices
-            // 
-            this.dgvInvoices.AllowUserToAddRows = false;
-            this.dgvInvoices.AllowUserToDeleteRows = false;
-            this.dgvInvoices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colPatientName,
-            this.colAppointmentId,
-            this.colInvoiceDetails});
-            this.dgvInvoices.Location = new System.Drawing.Point(17, 62);
-            this.dgvInvoices.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvInvoices.Name = "dgvInvoices";
-            this.dgvInvoices.ReadOnly = true;
-            this.dgvInvoices.RowHeadersWidth = 51;
-            this.dgvInvoices.RowTemplate.Height = 24;
-            this.dgvInvoices.Size = new System.Drawing.Size(1003, 439);
-            this.dgvInvoices.TabIndex = 2;
-            this.dgvInvoices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPatients_CellContentClick);
-            // 
-            // colPatientName
-            // 
-            this.colPatientName.HeaderText = "Patient";
-            this.colPatientName.MinimumWidth = 6;
-            this.colPatientName.Name = "colPatientName";
-            this.colPatientName.ReadOnly = true;
-            this.colPatientName.Width = 124;
-            // 
-            // colAppointmentId
-            // 
-            this.colAppointmentId.HeaderText = "ID RDV";
-            this.colAppointmentId.MinimumWidth = 6;
-            this.colAppointmentId.Name = "colAppointmentId";
-            this.colAppointmentId.ReadOnly = true;
-            this.colAppointmentId.Width = 124;
-            // 
-            // colInvoiceDetails
-            // 
-            this.colInvoiceDetails.HeaderText = "Voir détails";
-            this.colInvoiceDetails.MinimumWidth = 6;
-            this.colInvoiceDetails.Name = "colInvoiceDetails";
-            this.colInvoiceDetails.ReadOnly = true;
-            this.colInvoiceDetails.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colInvoiceDetails.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colInvoiceDetails.Text = "Voir détails";
-            this.colInvoiceDetails.Width = 124;
             // 
             // adgvInvoices
             // 
             this.adgvInvoices.AllowUserToAddRows = false;
             this.adgvInvoices.AllowUserToDeleteRows = false;
+            this.adgvInvoices.AutoGenerateColumns = false;
             this.adgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adgvInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fACNODataGridViewTextBoxColumn,
+            this.pATNOMCOMPLETDataGridViewTextBoxColumn,
+            this.fACDATEDataGridViewTextBoxColumn,
+            this.fACPAYEDataGridViewTextBoxColumn,
+            this.fACTOTALDataGridViewTextBoxColumn});
+            this.adgvInvoices.DataSource = this.vWFACTUREBindingSource;
             this.adgvInvoices.FilterAndSortEnabled = true;
             this.adgvInvoices.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.adgvInvoices.Location = new System.Drawing.Point(17, 92);
+            this.adgvInvoices.Location = new System.Drawing.Point(17, 43);
             this.adgvInvoices.Name = "adgvInvoices";
             this.adgvInvoices.ReadOnly = true;
             this.adgvInvoices.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.adgvInvoices.RowHeadersWidth = 51;
             this.adgvInvoices.RowTemplate.Height = 24;
-            this.adgvInvoices.Size = new System.Drawing.Size(1003, 409);
+            this.adgvInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.adgvInvoices.Size = new System.Drawing.Size(1003, 458);
             this.adgvInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adgvInvoices.TabIndex = 3;
+            // 
+            // fACNODataGridViewTextBoxColumn
+            // 
+            this.fACNODataGridViewTextBoxColumn.DataPropertyName = "FAC_NO";
+            this.fACNODataGridViewTextBoxColumn.HeaderText = "FAC_NO";
+            this.fACNODataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fACNODataGridViewTextBoxColumn.Name = "fACNODataGridViewTextBoxColumn";
+            this.fACNODataGridViewTextBoxColumn.ReadOnly = true;
+            this.fACNODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.fACNODataGridViewTextBoxColumn.Width = 124;
+            // 
+            // pATNOMCOMPLETDataGridViewTextBoxColumn
+            // 
+            this.pATNOMCOMPLETDataGridViewTextBoxColumn.DataPropertyName = "PAT_NOM_COMPLET";
+            this.pATNOMCOMPLETDataGridViewTextBoxColumn.HeaderText = "PAT_NOM_COMPLET";
+            this.pATNOMCOMPLETDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.pATNOMCOMPLETDataGridViewTextBoxColumn.Name = "pATNOMCOMPLETDataGridViewTextBoxColumn";
+            this.pATNOMCOMPLETDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pATNOMCOMPLETDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.pATNOMCOMPLETDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // fACDATEDataGridViewTextBoxColumn
+            // 
+            this.fACDATEDataGridViewTextBoxColumn.DataPropertyName = "FAC_DATE";
+            this.fACDATEDataGridViewTextBoxColumn.HeaderText = "FAC_DATE";
+            this.fACDATEDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fACDATEDataGridViewTextBoxColumn.Name = "fACDATEDataGridViewTextBoxColumn";
+            this.fACDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fACDATEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.fACDATEDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // fACPAYEDataGridViewTextBoxColumn
+            // 
+            this.fACPAYEDataGridViewTextBoxColumn.DataPropertyName = "FAC_PAYE";
+            this.fACPAYEDataGridViewTextBoxColumn.HeaderText = "FAC_PAYE";
+            this.fACPAYEDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fACPAYEDataGridViewTextBoxColumn.Name = "fACPAYEDataGridViewTextBoxColumn";
+            this.fACPAYEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fACPAYEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.fACPAYEDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // fACTOTALDataGridViewTextBoxColumn
+            // 
+            this.fACTOTALDataGridViewTextBoxColumn.DataPropertyName = "FAC_TOTAL";
+            this.fACTOTALDataGridViewTextBoxColumn.HeaderText = "FAC_TOTAL";
+            this.fACTOTALDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fACTOTALDataGridViewTextBoxColumn.Name = "fACTOTALDataGridViewTextBoxColumn";
+            this.fACTOTALDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fACTOTALDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.fACTOTALDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // vWFACTUREBindingSource
+            // 
+            this.vWFACTUREBindingSource.DataMember = "VW_FACTURE";
+            this.vWFACTUREBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // dataSetRedoc
+            // 
+            this.dataSetRedoc.DataSetName = "DataSetRedoc";
+            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // adgvSearch
             // 
@@ -118,6 +144,11 @@ namespace RedocApp
             this.adgvSearch.Size = new System.Drawing.Size(1035, 27);
             this.adgvSearch.TabIndex = 4;
             this.adgvSearch.Text = "advancedDataGridViewSearchToolBar1";
+            this.adgvSearch.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.adgvSearch_Search);
+            // 
+            // vW_FACTURETableAdapter
+            // 
+            this.vW_FACTURETableAdapter.ClearBeforeFill = true;
             // 
             // FrmInvoices
             // 
@@ -126,25 +157,29 @@ namespace RedocApp
             this.ClientSize = new System.Drawing.Size(1035, 514);
             this.Controls.Add(this.adgvSearch);
             this.Controls.Add(this.adgvInvoices);
-            this.Controls.Add(this.dgvInvoices);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(725, 552);
             this.Name = "FrmInvoices";
             this.Text = "REDOC - Facturation";
             this.Load += new System.EventHandler(this.FrmInvoices_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adgvInvoices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWFACTUREBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvInvoices;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPatientName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAppointmentId;
-        private System.Windows.Forms.DataGridViewButtonColumn colInvoiceDetails;
         private Zuby.ADGV.AdvancedDataGridView adgvInvoices;
         private Zuby.ADGV.AdvancedDataGridViewSearchToolBar adgvSearch;
+        private DataSetRedoc dataSetRedoc;
+        private System.Windows.Forms.BindingSource vWFACTUREBindingSource;
+        private DataSetRedocTableAdapters.VW_FACTURETableAdapter vW_FACTURETableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fACNODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pATNOMCOMPLETDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fACDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fACPAYEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fACTOTALDataGridViewTextBoxColumn;
     }
 }

@@ -32,10 +32,6 @@ namespace RedocApp
             this.components = new System.ComponentModel.Container();
             this.btnAddPatient = new System.Windows.Forms.Button();
             this.adgvPatients = new Zuby.ADGV.AdvancedDataGridView();
-            this.adgvSearch = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
-            this.dataSetRedoc = new RedocApp.DataSetRedoc();
-            this.vWPATIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
             this.pATNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATNOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATPRENOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +41,13 @@ namespace RedocApp
             this.pATEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATTELEPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATNOAVSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vWPATIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetRedoc = new RedocApp.DataSetRedoc();
+            this.adgvSearch = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
+            this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.adgvPatients)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWPATIENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddPatient
@@ -88,39 +88,11 @@ namespace RedocApp
             this.adgvPatients.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.adgvPatients.RowHeadersWidth = 51;
             this.adgvPatients.RowTemplate.Height = 24;
+            this.adgvPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.adgvPatients.Size = new System.Drawing.Size(979, 354);
             this.adgvPatients.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adgvPatients.TabIndex = 4;
-            this.adgvPatients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adgvPatients_CellContentClick);
-            // 
-            // adgvSearch
-            // 
-            this.adgvSearch.AllowMerge = false;
-            this.adgvSearch.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.adgvSearch.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.adgvSearch.Location = new System.Drawing.Point(0, 0);
-            this.adgvSearch.MaximumSize = new System.Drawing.Size(0, 27);
-            this.adgvSearch.MinimumSize = new System.Drawing.Size(0, 27);
-            this.adgvSearch.Name = "adgvSearch";
-            this.adgvSearch.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.adgvSearch.Size = new System.Drawing.Size(979, 27);
-            this.adgvSearch.TabIndex = 5;
-            this.adgvSearch.Text = "advancedDataGridViewSearchToolBar1";
-            this.adgvSearch.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.adgvSearch_Search);
-            // 
-            // dataSetRedoc
-            // 
-            this.dataSetRedoc.DataSetName = "DataSetRedoc";
-            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vWPATIENTBindingSource
-            // 
-            this.vWPATIENTBindingSource.DataMember = "VW_PATIENT";
-            this.vWPATIENTBindingSource.DataSource = this.dataSetRedoc;
-            // 
-            // vW_PATIENTTableAdapter
-            // 
-            this.vW_PATIENTTableAdapter.ClearBeforeFill = true;
+            this.adgvPatients.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adgvPatients_CellContentClick);
             // 
             // pATNODataGridViewTextBoxColumn
             // 
@@ -212,6 +184,35 @@ namespace RedocApp
             this.pATNOAVSDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.pATNOAVSDataGridViewTextBoxColumn.Width = 124;
             // 
+            // vWPATIENTBindingSource
+            // 
+            this.vWPATIENTBindingSource.DataMember = "VW_PATIENT";
+            this.vWPATIENTBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // dataSetRedoc
+            // 
+            this.dataSetRedoc.DataSetName = "DataSetRedoc";
+            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // adgvSearch
+            // 
+            this.adgvSearch.AllowMerge = false;
+            this.adgvSearch.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.adgvSearch.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.adgvSearch.Location = new System.Drawing.Point(0, 0);
+            this.adgvSearch.MaximumSize = new System.Drawing.Size(0, 27);
+            this.adgvSearch.MinimumSize = new System.Drawing.Size(0, 27);
+            this.adgvSearch.Name = "adgvSearch";
+            this.adgvSearch.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.adgvSearch.Size = new System.Drawing.Size(979, 27);
+            this.adgvSearch.TabIndex = 5;
+            this.adgvSearch.Text = "advancedDataGridViewSearchToolBar1";
+            this.adgvSearch.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.adgvSearch_Search);
+            // 
+            // vW_PATIENTTableAdapter
+            // 
+            this.vW_PATIENTTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmPatients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -226,8 +227,8 @@ namespace RedocApp
             this.Text = "REDOC - Gestion des patients";
             this.Load += new System.EventHandler(this.FrmPatients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adgvPatients)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWPATIENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

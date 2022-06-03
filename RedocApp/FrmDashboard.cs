@@ -12,8 +12,6 @@ namespace RedocApp
 {
     public partial class FrmDashboard : Form
     {
-        public static FrmLogin.UserType userType;
-
         public FrmDashboard()
         {
             InitializeComponent();
@@ -54,9 +52,7 @@ namespace RedocApp
             if (frmLogin.ShowDialog() == DialogResult.OK)
             {
                 this.Enabled = true;
-                userType = FrmLogin.userType;
-
-                tsbtnManageDocSchedule.Visible = userType == FrmLogin.UserType.DOCTOR;
+                tsbtnManageDocSchedule.Visible = FrmLogin.userType == FrmLogin.UserType.DOCTOR;
             }
             else
             {
@@ -80,9 +76,7 @@ namespace RedocApp
                 if (frmLogin.ShowDialog() == DialogResult.OK)
                 {
                     this.Enabled = true;
-                    userType = FrmLogin.userType;
-
-                    tsbtnManageDocSchedule.Visible = userType == FrmLogin.UserType.DOCTOR;
+                    tsbtnManageDocSchedule.Visible = FrmLogin.userType == FrmLogin.UserType.DOCTOR;
                 }
                 else
                 {

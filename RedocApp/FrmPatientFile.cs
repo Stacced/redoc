@@ -23,9 +23,20 @@ namespace RedocApp
         {
             if (e.ColumnIndex == 4)
             {
-                FrmCreateEditInvoice frm = new FrmCreateEditInvoice(false);
-                frm.ShowDialog();
+                DataGridViewRow selectedRow = dgvAppointments.Rows[e.RowIndex];
+                if (selectedRow.Cells[0] != null)
+                {
+                    FrmCreateEditInvoice frm = new FrmCreateEditInvoice(false, selectedRow.Cells[0].Value.ToString());
+                    frm.ShowDialog();
+                }
             }
+        }
+
+        private void FrmPatientFile_Load(object sender, EventArgs e)
+        {
+            // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VW_RENDEZVOUS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.vW_RENDEZVOUSTableAdapter.FillByPatNo(this.dataSetRedoc.VW_RENDEZVOUS, noPatient);
+            this.vW_PATIENTTableAdapter.FillByPatientNo(this.dataSetRedoc.VW_PATIENT, noPatient);
         }
     }
 }
