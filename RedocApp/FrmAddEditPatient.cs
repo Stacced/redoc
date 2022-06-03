@@ -13,20 +13,29 @@ namespace RedocApp
     public partial class FrmAddEditPatient : Form
     {
         private bool isEdit = false;
+        private int noPatient;
+
         public FrmAddEditPatient(bool isEdit)
         {
             InitializeComponent();
             this.isEdit = isEdit;
         }
 
+        public FrmAddEditPatient(bool isEdit, int noPatient)
+        {
+            InitializeComponent();
+            this.isEdit = isEdit;
+            this.noPatient = noPatient;
+        }
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string surname = this.txbSurname.Text;
-            string name = this.txbName.Text;
+            string surname = this.txtSurname.Text;
+            string name = this.txtName.Text;
             DateTime birthDate = this.dtpBirthdate.Value.Date;
-            string address = this.txbAddress.Text;
-            string email = this.txbEmail.Text;
-            string phoneNumber = this.txbPhoneNumber.Text;
+            string address = this.txtAddress.Text;
+            string email = this.txtEmail.Text;
+            string phoneNumber = this.txtPhoneNumber.Text;
             string noAvs = this.mtbNoAVS.Text.Replace(".", string.Empty);
 
             if (!string.IsNullOrWhiteSpace(surname) && !string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(address) && !string.IsNullOrWhiteSpace(phoneNumber) && !string.IsNullOrWhiteSpace(noAvs))
@@ -35,7 +44,7 @@ namespace RedocApp
                 DataSetRedocTableAdapters.QueriesTableAdapter request = new DataSetRedocTableAdapters.QueriesTableAdapter();
                 if (isEdit)
                 {
-                    request.PKG_REDOC_EDITPATIENT(0, surname, name, birthDate, address, email, phoneNumber, noAvs);
+                    request.PKG_REDOC_EDITPATIENT(noPatient, surname, name, birthDate, address, email, phoneNumber, noAvs);
                 }
                 else
                 {
@@ -50,6 +59,9 @@ namespace RedocApp
             {
                 this.Text = "REDOC - Modification patient";
                 this.lblAddEditPatient.Text = "Modification patient";
+
+                // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VW_PATIENT'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+                this.vW_PATIENTTableAdapter.FillByPatientNo(this.dataSetRedoc.VW_PATIENT, noPatient);
             } else
             {
                 this.Text = "REDOC - Ajout patient";

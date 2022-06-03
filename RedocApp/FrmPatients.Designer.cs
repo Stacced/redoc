@@ -53,7 +53,7 @@ namespace RedocApp
             // btnAddPatient
             // 
             this.btnAddPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddPatient.Location = new System.Drawing.Point(772, 39);
+            this.btnAddPatient.Location = new System.Drawing.Point(772, 40);
             this.btnAddPatient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddPatient.Name = "btnAddPatient";
             this.btnAddPatient.Size = new System.Drawing.Size(195, 30);
@@ -237,14 +237,6 @@ namespace RedocApp
         #endregion
         private System.Windows.Forms.Button btnAddPatient;
         private Zuby.ADGV.AdvancedDataGridView adgvPatients;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nUMÉRODataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nOMDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRÉNOMDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dATENAISSANCEDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aDRESSEDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eMAILDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tÉLÉPHONEDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nOAVSDataGridViewTextBoxColumn1;
         private Zuby.ADGV.AdvancedDataGridViewSearchToolBar adgvSearch;
         private DataSetRedoc dataSetRedoc;
         private System.Windows.Forms.BindingSource vWPATIENTBindingSource;

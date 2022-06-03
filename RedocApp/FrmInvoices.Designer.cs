@@ -58,16 +58,17 @@ namespace RedocApp
             this.fACPAYEDataGridViewTextBoxColumn,
             this.fACTOTALDataGridViewTextBoxColumn});
             this.adgvInvoices.DataSource = this.vWFACTUREBindingSource;
+            this.adgvInvoices.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.adgvInvoices.FilterAndSortEnabled = true;
             this.adgvInvoices.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.adgvInvoices.Location = new System.Drawing.Point(17, 43);
+            this.adgvInvoices.Location = new System.Drawing.Point(0, 56);
             this.adgvInvoices.Name = "adgvInvoices";
             this.adgvInvoices.ReadOnly = true;
             this.adgvInvoices.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.adgvInvoices.RowHeadersWidth = 51;
             this.adgvInvoices.RowTemplate.Height = 24;
             this.adgvInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.adgvInvoices.Size = new System.Drawing.Size(1003, 458);
+            this.adgvInvoices.Size = new System.Drawing.Size(1035, 458);
             this.adgvInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adgvInvoices.TabIndex = 3;
             // 

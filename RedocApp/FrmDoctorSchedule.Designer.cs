@@ -46,10 +46,12 @@ namespace RedocApp
             this.dgvExceptions = new System.Windows.Forms.DataGridView();
             this.btnDeleteSelectedException = new System.Windows.Forms.Button();
             this.btnAddException = new System.Windows.Forms.Button();
-            this.txbExceptionComment = new System.Windows.Forms.TextBox();
+            this.txtExceptionComment = new System.Windows.Forms.TextBox();
             this.lblExceptionComment = new System.Windows.Forms.Label();
             this.lblExceptionDateStart = new System.Windows.Forms.Label();
             this.dtpExceptionStart = new System.Windows.Forms.DateTimePicker();
+            this.HOR_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EXC_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eXCDEBUTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eXCFINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eXCCOMMENTAIREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,6 +106,7 @@ namespace RedocApp
             this.btnDeleteSelectedSchedule.TabIndex = 7;
             this.btnDeleteSelectedSchedule.Text = "&Supprimer horaire sélectionné";
             this.btnDeleteSelectedSchedule.UseVisualStyleBackColor = true;
+            this.btnDeleteSelectedSchedule.Click += new System.EventHandler(this.btnDeleteSelectedSchedule_Click);
             // 
             // btnAddSchedule
             // 
@@ -114,6 +117,7 @@ namespace RedocApp
             this.btnAddSchedule.TabIndex = 6;
             this.btnAddSchedule.Text = "&Ajouter horaire";
             this.btnAddSchedule.UseVisualStyleBackColor = true;
+            this.btnAddSchedule.Click += new System.EventHandler(this.btnAddSchedule_Click);
             // 
             // dgvWeekSchedule
             // 
@@ -124,6 +128,7 @@ namespace RedocApp
             this.dgvWeekSchedule.AutoGenerateColumns = false;
             this.dgvWeekSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWeekSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.HOR_NO,
             this.hORJOURDataGridViewTextBoxColumn,
             this.hORDEBUTDataGridViewTextBoxColumn,
             this.hORFINDataGridViewTextBoxColumn});
@@ -237,7 +242,7 @@ namespace RedocApp
             this.grpScheduleExceptions.Controls.Add(this.dgvExceptions);
             this.grpScheduleExceptions.Controls.Add(this.btnDeleteSelectedException);
             this.grpScheduleExceptions.Controls.Add(this.btnAddException);
-            this.grpScheduleExceptions.Controls.Add(this.txbExceptionComment);
+            this.grpScheduleExceptions.Controls.Add(this.txtExceptionComment);
             this.grpScheduleExceptions.Controls.Add(this.lblExceptionComment);
             this.grpScheduleExceptions.Controls.Add(this.lblExceptionDateStart);
             this.grpScheduleExceptions.Controls.Add(this.dtpExceptionStart);
@@ -278,6 +283,7 @@ namespace RedocApp
             this.dgvExceptions.AutoGenerateColumns = false;
             this.dgvExceptions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExceptions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EXC_NO,
             this.eXCDEBUTDataGridViewTextBoxColumn,
             this.eXCFINDataGridViewTextBoxColumn,
             this.eXCCOMMENTAIREDataGridViewTextBoxColumn});
@@ -301,6 +307,7 @@ namespace RedocApp
             this.btnDeleteSelectedException.TabIndex = 9;
             this.btnDeleteSelectedException.Text = "&Supprimer horaire sélectionné";
             this.btnDeleteSelectedException.UseVisualStyleBackColor = true;
+            this.btnDeleteSelectedException.Click += new System.EventHandler(this.btnDeleteSelectedException_Click);
             // 
             // btnAddException
             // 
@@ -311,15 +318,16 @@ namespace RedocApp
             this.btnAddException.TabIndex = 8;
             this.btnAddException.Text = "&Ajouter exception";
             this.btnAddException.UseVisualStyleBackColor = true;
+            this.btnAddException.Click += new System.EventHandler(this.btnAddException_Click);
             // 
-            // txbExceptionComment
+            // txtExceptionComment
             // 
-            this.txbExceptionComment.Location = new System.Drawing.Point(201, 123);
-            this.txbExceptionComment.Margin = new System.Windows.Forms.Padding(4);
-            this.txbExceptionComment.Multiline = true;
-            this.txbExceptionComment.Name = "txbExceptionComment";
-            this.txbExceptionComment.Size = new System.Drawing.Size(265, 88);
-            this.txbExceptionComment.TabIndex = 7;
+            this.txtExceptionComment.Location = new System.Drawing.Point(201, 123);
+            this.txtExceptionComment.Margin = new System.Windows.Forms.Padding(4);
+            this.txtExceptionComment.Multiline = true;
+            this.txtExceptionComment.Name = "txtExceptionComment";
+            this.txtExceptionComment.Size = new System.Drawing.Size(265, 88);
+            this.txtExceptionComment.TabIndex = 7;
             // 
             // lblExceptionComment
             // 
@@ -348,6 +356,24 @@ namespace RedocApp
             this.dtpExceptionStart.Name = "dtpExceptionStart";
             this.dtpExceptionStart.Size = new System.Drawing.Size(265, 22);
             this.dtpExceptionStart.TabIndex = 1;
+            // 
+            // HOR_NO
+            // 
+            this.HOR_NO.DataPropertyName = "HOR_NO";
+            this.HOR_NO.HeaderText = "HOR_NO";
+            this.HOR_NO.MinimumWidth = 6;
+            this.HOR_NO.Name = "HOR_NO";
+            this.HOR_NO.ReadOnly = true;
+            this.HOR_NO.Width = 124;
+            // 
+            // EXC_NO
+            // 
+            this.EXC_NO.DataPropertyName = "EXC_NO";
+            this.EXC_NO.HeaderText = "EXC_NO";
+            this.EXC_NO.MinimumWidth = 6;
+            this.EXC_NO.Name = "EXC_NO";
+            this.EXC_NO.ReadOnly = true;
+            this.EXC_NO.Width = 124;
             // 
             // eXCDEBUTDataGridViewTextBoxColumn
             // 
@@ -469,27 +495,23 @@ namespace RedocApp
         private System.Windows.Forms.Button btnDeleteSelectedSchedule;
         private System.Windows.Forms.Label lblExceptionDateStart;
         private System.Windows.Forms.DateTimePicker dtpExceptionStart;
-        private System.Windows.Forms.TextBox txbExceptionComment;
+        private System.Windows.Forms.TextBox txtExceptionComment;
         private System.Windows.Forms.Label lblExceptionComment;
         private System.Windows.Forms.Button btnDeleteSelectedException;
         private System.Windows.Forms.Button btnAddException;
         private System.Windows.Forms.DataGridView dgvExceptions;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jOURDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hEUREDÉBUTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hEUREFINDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dATEHEUREDÉBUTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dATEHEUREFINDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cOMMENTAIREDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblExceptionDateEnd;
         private System.Windows.Forms.DateTimePicker dtpExceptionEnd;
         private DataSetRedoc dataSetRedoc;
         private System.Windows.Forms.BindingSource vWHORAIREDOCTEURBindingSource;
         private DataSetRedocTableAdapters.VW_HORAIRE_DOCTEURTableAdapter vW_HORAIRE_DOCTEURTableAdapter;
+        private System.Windows.Forms.BindingSource vWEXCEPTIONHORAIREDOCTEURBindingSource;
+        private DataSetRedocTableAdapters.VW_EXCEPTION_HORAIRE_DOCTEURTableAdapter vW_EXCEPTION_HORAIRE_DOCTEURTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HOR_NO;
         private System.Windows.Forms.DataGridViewTextBoxColumn hORJOURDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hORDEBUTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hORFINDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource vWEXCEPTIONHORAIREDOCTEURBindingSource;
-        private DataSetRedocTableAdapters.VW_EXCEPTION_HORAIRE_DOCTEURTableAdapter vW_EXCEPTION_HORAIRE_DOCTEURTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EXC_NO;
         private System.Windows.Forms.DataGridViewTextBoxColumn eXCDEBUTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eXCFINDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eXCCOMMENTAIREDataGridViewTextBoxColumn;

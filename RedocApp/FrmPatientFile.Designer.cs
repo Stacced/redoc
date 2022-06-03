@@ -33,11 +33,19 @@ namespace RedocApp
             this.lblPatientFile = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
+            this.vWPATIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetRedoc = new RedocApp.DataSetRedoc();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblBirthdate = new System.Windows.Forms.Label();
             this.dtpMain = new System.Windows.Forms.DateTimePicker();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
+            this.rENNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rENDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dOCNOMCOMPLETDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rENANNULEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.rENCOMMENTAIREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vWRENDEZVOUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblAppointments = new System.Windows.Forms.Label();
@@ -47,19 +55,12 @@ namespace RedocApp
             this.lblPhone = new System.Windows.Forms.Label();
             this.txtNoAvs = new System.Windows.Forms.TextBox();
             this.lblNoAvs = new System.Windows.Forms.Label();
-            this.vWPATIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetRedoc = new RedocApp.DataSetRedoc();
-            this.rENNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rENDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dOCNOMCOMPLETDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rENANNULEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.rENCOMMENTAIREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vWRENDEZVOUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
             this.vW_RENDEZVOUSTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_RENDEZVOUSTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
+            this.llbEditPatient = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.vWPATIENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWRENDEZVOUSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +93,16 @@ namespace RedocApp
             this.txtSurname.Size = new System.Drawing.Size(159, 22);
             this.txtSurname.TabIndex = 2;
             this.txtSurname.Text = "DUPONT";
+            // 
+            // vWPATIENTBindingSource
+            // 
+            this.vWPATIENTBindingSource.DataMember = "VW_PATIENT";
+            this.vWPATIENTBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // dataSetRedoc
+            // 
+            this.dataSetRedoc.DataSetName = "DataSetRedoc";
+            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtName
             // 
@@ -160,6 +171,58 @@ namespace RedocApp
             this.dgvAppointments.Size = new System.Drawing.Size(700, 196);
             this.dgvAppointments.TabIndex = 14;
             this.dgvAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointments_CellContentClick);
+            // 
+            // rENNODataGridViewTextBoxColumn
+            // 
+            this.rENNODataGridViewTextBoxColumn.DataPropertyName = "REN_NO";
+            this.rENNODataGridViewTextBoxColumn.HeaderText = "REN_NO";
+            this.rENNODataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rENNODataGridViewTextBoxColumn.Name = "rENNODataGridViewTextBoxColumn";
+            this.rENNODataGridViewTextBoxColumn.ReadOnly = true;
+            this.rENNODataGridViewTextBoxColumn.Width = 124;
+            // 
+            // rENDATEDataGridViewTextBoxColumn
+            // 
+            this.rENDATEDataGridViewTextBoxColumn.DataPropertyName = "REN_DATE";
+            this.rENDATEDataGridViewTextBoxColumn.HeaderText = "REN_DATE";
+            this.rENDATEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rENDATEDataGridViewTextBoxColumn.Name = "rENDATEDataGridViewTextBoxColumn";
+            this.rENDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rENDATEDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // dOCNOMCOMPLETDataGridViewTextBoxColumn
+            // 
+            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.DataPropertyName = "DOC_NOM_COMPLET";
+            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.HeaderText = "DOC_NOM_COMPLET";
+            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.Name = "dOCNOMCOMPLETDataGridViewTextBoxColumn";
+            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // rENANNULEDataGridViewTextBoxColumn
+            // 
+            this.rENANNULEDataGridViewTextBoxColumn.DataPropertyName = "REN_ANNULE";
+            this.rENANNULEDataGridViewTextBoxColumn.HeaderText = "REN_ANNULE";
+            this.rENANNULEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rENANNULEDataGridViewTextBoxColumn.Name = "rENANNULEDataGridViewTextBoxColumn";
+            this.rENANNULEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rENANNULEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.rENANNULEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.rENANNULEDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // rENCOMMENTAIREDataGridViewTextBoxColumn
+            // 
+            this.rENCOMMENTAIREDataGridViewTextBoxColumn.DataPropertyName = "REN_COMMENTAIRE";
+            this.rENCOMMENTAIREDataGridViewTextBoxColumn.HeaderText = "REN_COMMENTAIRE";
+            this.rENCOMMENTAIREDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rENCOMMENTAIREDataGridViewTextBoxColumn.Name = "rENCOMMENTAIREDataGridViewTextBoxColumn";
+            this.rENCOMMENTAIREDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rENCOMMENTAIREDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // vWRENDEZVOUSBindingSource
+            // 
+            this.vWRENDEZVOUSBindingSource.DataMember = "VW_RENDEZVOUS";
+            this.vWRENDEZVOUSBindingSource.DataSource = this.dataSetRedoc;
             // 
             // txtAddress
             // 
@@ -259,68 +322,6 @@ namespace RedocApp
             this.lblNoAvs.TabIndex = 16;
             this.lblNoAvs.Text = "N° AVS .....";
             // 
-            // vWPATIENTBindingSource
-            // 
-            this.vWPATIENTBindingSource.DataMember = "VW_PATIENT";
-            this.vWPATIENTBindingSource.DataSource = this.dataSetRedoc;
-            // 
-            // dataSetRedoc
-            // 
-            this.dataSetRedoc.DataSetName = "DataSetRedoc";
-            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rENNODataGridViewTextBoxColumn
-            // 
-            this.rENNODataGridViewTextBoxColumn.DataPropertyName = "REN_NO";
-            this.rENNODataGridViewTextBoxColumn.HeaderText = "REN_NO";
-            this.rENNODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rENNODataGridViewTextBoxColumn.Name = "rENNODataGridViewTextBoxColumn";
-            this.rENNODataGridViewTextBoxColumn.ReadOnly = true;
-            this.rENNODataGridViewTextBoxColumn.Width = 124;
-            // 
-            // rENDATEDataGridViewTextBoxColumn
-            // 
-            this.rENDATEDataGridViewTextBoxColumn.DataPropertyName = "REN_DATE";
-            this.rENDATEDataGridViewTextBoxColumn.HeaderText = "REN_DATE";
-            this.rENDATEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rENDATEDataGridViewTextBoxColumn.Name = "rENDATEDataGridViewTextBoxColumn";
-            this.rENDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rENDATEDataGridViewTextBoxColumn.Width = 124;
-            // 
-            // dOCNOMCOMPLETDataGridViewTextBoxColumn
-            // 
-            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.DataPropertyName = "DOC_NOM_COMPLET";
-            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.HeaderText = "DOC_NOM_COMPLET";
-            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.Name = "dOCNOMCOMPLETDataGridViewTextBoxColumn";
-            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dOCNOMCOMPLETDataGridViewTextBoxColumn.Width = 124;
-            // 
-            // rENANNULEDataGridViewTextBoxColumn
-            // 
-            this.rENANNULEDataGridViewTextBoxColumn.DataPropertyName = "REN_ANNULE";
-            this.rENANNULEDataGridViewTextBoxColumn.HeaderText = "REN_ANNULE";
-            this.rENANNULEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rENANNULEDataGridViewTextBoxColumn.Name = "rENANNULEDataGridViewTextBoxColumn";
-            this.rENANNULEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rENANNULEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.rENANNULEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.rENANNULEDataGridViewTextBoxColumn.Width = 124;
-            // 
-            // rENCOMMENTAIREDataGridViewTextBoxColumn
-            // 
-            this.rENCOMMENTAIREDataGridViewTextBoxColumn.DataPropertyName = "REN_COMMENTAIRE";
-            this.rENCOMMENTAIREDataGridViewTextBoxColumn.HeaderText = "REN_COMMENTAIRE";
-            this.rENCOMMENTAIREDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rENCOMMENTAIREDataGridViewTextBoxColumn.Name = "rENCOMMENTAIREDataGridViewTextBoxColumn";
-            this.rENCOMMENTAIREDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rENCOMMENTAIREDataGridViewTextBoxColumn.Width = 124;
-            // 
-            // vWRENDEZVOUSBindingSource
-            // 
-            this.vWRENDEZVOUSBindingSource.DataMember = "VW_RENDEZVOUS";
-            this.vWRENDEZVOUSBindingSource.DataSource = this.dataSetRedoc;
-            // 
             // vW_PATIENTTableAdapter
             // 
             this.vW_PATIENTTableAdapter.ClearBeforeFill = true;
@@ -329,11 +330,23 @@ namespace RedocApp
             // 
             this.vW_RENDEZVOUSTableAdapter.ClearBeforeFill = true;
             // 
+            // llbEditPatient
+            // 
+            this.llbEditPatient.AutoSize = true;
+            this.llbEditPatient.Location = new System.Drawing.Point(642, 16);
+            this.llbEditPatient.Name = "llbEditPatient";
+            this.llbEditPatient.Size = new System.Drawing.Size(70, 17);
+            this.llbEditPatient.TabIndex = 18;
+            this.llbEditPatient.TabStop = true;
+            this.llbEditPatient.Text = "Modifier...";
+            this.llbEditPatient.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbEditPatient_LinkClicked);
+            // 
             // FrmPatientFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 486);
+            this.Controls.Add(this.llbEditPatient);
             this.Controls.Add(this.txtNoAvs);
             this.Controls.Add(this.lblNoAvs);
             this.Controls.Add(this.txtPhone);
@@ -358,9 +371,9 @@ namespace RedocApp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REDOC - Dossier patient";
             this.Load += new System.EventHandler(this.FrmPatientFile_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWPATIENTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWRENDEZVOUSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -396,5 +409,6 @@ namespace RedocApp
         private System.Windows.Forms.DataGridViewTextBoxColumn dOCNOMCOMPLETDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn rENANNULEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rENCOMMENTAIREDataGridViewTextBoxColumn;
+        private System.Windows.Forms.LinkLabel llbEditPatient;
     }
 }

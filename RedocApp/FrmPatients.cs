@@ -17,11 +17,15 @@ namespace RedocApp
             InitializeComponent();
         }
 
-        private void FrmPatients_Load(object sender, EventArgs e)
+        private void LoadData()
         {
             // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VW_PATIENT'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.vW_PATIENTTableAdapter.Fill(this.dataSetRedoc.VW_PATIENT);
+        }
 
+        private void FrmPatients_Load(object sender, EventArgs e)
+        {
+            LoadData();
             this.adgvSearch.SetColumns(adgvPatients.Columns);
         }
 
@@ -81,6 +85,7 @@ namespace RedocApp
             {
                 FrmPatientFile frm = new FrmPatientFile(int.Parse(selectedRow.Cells[0].Value.ToString()));
                 frm.ShowDialog();
+                LoadData();
             }
         }
     }

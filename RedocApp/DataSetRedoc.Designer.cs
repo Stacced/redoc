@@ -4725,6 +4725,8 @@ namespace RedocApp {
             
             private global::System.Data.DataColumn columnHOR_UTI_NO;
             
+            private global::System.Data.DataColumn columnHOR_NO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VW_HORAIRE_DOCTEURDataTable() {
@@ -4792,6 +4794,14 @@ namespace RedocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn HOR_NOColumn {
+                get {
+                    return this.columnHOR_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4827,13 +4837,14 @@ namespace RedocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VW_HORAIRE_DOCTEURRow AddVW_HORAIRE_DOCTEURRow(short HOR_JOUR, short HOR_DEBUT, short HOR_FIN, short HOR_UTI_NO) {
+            public VW_HORAIRE_DOCTEURRow AddVW_HORAIRE_DOCTEURRow(short HOR_JOUR, short HOR_DEBUT, short HOR_FIN, short HOR_UTI_NO, short HOR_NO) {
                 VW_HORAIRE_DOCTEURRow rowVW_HORAIRE_DOCTEURRow = ((VW_HORAIRE_DOCTEURRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         HOR_JOUR,
                         HOR_DEBUT,
                         HOR_FIN,
-                        HOR_UTI_NO};
+                        HOR_UTI_NO,
+                        HOR_NO};
                 rowVW_HORAIRE_DOCTEURRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVW_HORAIRE_DOCTEURRow);
                 return rowVW_HORAIRE_DOCTEURRow;
@@ -4860,6 +4871,7 @@ namespace RedocApp {
                 this.columnHOR_DEBUT = base.Columns["HOR_DEBUT"];
                 this.columnHOR_FIN = base.Columns["HOR_FIN"];
                 this.columnHOR_UTI_NO = base.Columns["HOR_UTI_NO"];
+                this.columnHOR_NO = base.Columns["HOR_NO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4873,10 +4885,13 @@ namespace RedocApp {
                 base.Columns.Add(this.columnHOR_FIN);
                 this.columnHOR_UTI_NO = new global::System.Data.DataColumn("HOR_UTI_NO", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHOR_UTI_NO);
+                this.columnHOR_NO = new global::System.Data.DataColumn("HOR_NO", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHOR_NO);
                 this.columnHOR_JOUR.AllowDBNull = false;
                 this.columnHOR_DEBUT.AllowDBNull = false;
                 this.columnHOR_FIN.AllowDBNull = false;
                 this.columnHOR_UTI_NO.AllowDBNull = false;
+                this.columnHOR_NO.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5391,6 +5406,8 @@ namespace RedocApp {
             
             private global::System.Data.DataColumn columnEXC_COMMENTAIRE;
             
+            private global::System.Data.DataColumn columnEXC_NO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VW_EXCEPTION_HORAIRE_DOCTEURDataTable() {
@@ -5458,6 +5475,14 @@ namespace RedocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EXC_NOColumn {
+                get {
+                    return this.columnEXC_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5493,13 +5518,14 @@ namespace RedocApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VW_EXCEPTION_HORAIRE_DOCTEURRow AddVW_EXCEPTION_HORAIRE_DOCTEURRow(short EXC_UTI_NO, System.DateTime EXC_DEBUT, System.DateTime EXC_FIN, string EXC_COMMENTAIRE) {
+            public VW_EXCEPTION_HORAIRE_DOCTEURRow AddVW_EXCEPTION_HORAIRE_DOCTEURRow(short EXC_UTI_NO, System.DateTime EXC_DEBUT, System.DateTime EXC_FIN, string EXC_COMMENTAIRE, short EXC_NO) {
                 VW_EXCEPTION_HORAIRE_DOCTEURRow rowVW_EXCEPTION_HORAIRE_DOCTEURRow = ((VW_EXCEPTION_HORAIRE_DOCTEURRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EXC_UTI_NO,
                         EXC_DEBUT,
                         EXC_FIN,
-                        EXC_COMMENTAIRE};
+                        EXC_COMMENTAIRE,
+                        EXC_NO};
                 rowVW_EXCEPTION_HORAIRE_DOCTEURRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVW_EXCEPTION_HORAIRE_DOCTEURRow);
                 return rowVW_EXCEPTION_HORAIRE_DOCTEURRow;
@@ -5526,6 +5552,7 @@ namespace RedocApp {
                 this.columnEXC_DEBUT = base.Columns["EXC_DEBUT"];
                 this.columnEXC_FIN = base.Columns["EXC_FIN"];
                 this.columnEXC_COMMENTAIRE = base.Columns["EXC_COMMENTAIRE"];
+                this.columnEXC_NO = base.Columns["EXC_NO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5539,10 +5566,13 @@ namespace RedocApp {
                 base.Columns.Add(this.columnEXC_FIN);
                 this.columnEXC_COMMENTAIRE = new global::System.Data.DataColumn("EXC_COMMENTAIRE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEXC_COMMENTAIRE);
+                this.columnEXC_NO = new global::System.Data.DataColumn("EXC_NO", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEXC_NO);
                 this.columnEXC_UTI_NO.AllowDBNull = false;
                 this.columnEXC_DEBUT.AllowDBNull = false;
                 this.columnEXC_FIN.AllowDBNull = false;
                 this.columnEXC_COMMENTAIRE.MaxLength = 2147483647;
+                this.columnEXC_NO.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7603,6 +7633,17 @@ namespace RedocApp {
                     this[this.tableVW_HORAIRE_DOCTEUR.HOR_UTI_NOColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short HOR_NO {
+                get {
+                    return ((short)(this[this.tableVW_HORAIRE_DOCTEUR.HOR_NOColumn]));
+                }
+                set {
+                    this[this.tableVW_HORAIRE_DOCTEUR.HOR_NOColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -7815,6 +7856,17 @@ namespace RedocApp {
                 }
                 set {
                     this[this.tableVW_EXCEPTION_HORAIRE_DOCTEUR.EXC_COMMENTAIREColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short EXC_NO {
+                get {
+                    return ((short)(this[this.tableVW_EXCEPTION_HORAIRE_DOCTEUR.EXC_NOColumn]));
+                }
+                set {
+                    this[this.tableVW_EXCEPTION_HORAIRE_DOCTEUR.EXC_NOColumn] = value;
                 }
             }
             
@@ -13967,6 +14019,7 @@ namespace RedocApp.DataSetRedocTableAdapters {
             tableMapping.ColumnMappings.Add("HOR_DEBUT", "HOR_DEBUT");
             tableMapping.ColumnMappings.Add("HOR_FIN", "HOR_FIN");
             tableMapping.ColumnMappings.Add("HOR_UTI_NO", "HOR_UTI_NO");
+            tableMapping.ColumnMappings.Add("HOR_NO", "HOR_NO");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13983,13 +14036,13 @@ namespace RedocApp.DataSetRedocTableAdapters {
             this._commandCollection = new global::Oracle.DataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.DataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT HOR_JOUR, HOR_DEBUT, HOR_FIN, HOR_UTI_NO FROM \"C##_REDOC_DATA\".VW_HORAIRE_" +
-                "DOCTEUR";
+            this._commandCollection[0].CommandText = "SELECT HOR_JOUR, HOR_DEBUT, HOR_FIN, HOR_UTI_NO, HOR_NO FROM \"C##_REDOC_DATA\".VW_" +
+                "HORAIRE_DOCTEUR";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.DataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT HOR_JOUR, HOR_DEBUT, HOR_FIN, HOR_UTI_NO\r\nFROM     \"C##_REDOC_DATA\".VW_HOR" +
-                "AIRE_DOCTEUR\r\nWHERE  (HOR_UTI_NO = :userNo)";
+            this._commandCollection[1].CommandText = "SELECT HOR_JOUR, HOR_DEBUT, HOR_FIN, HOR_UTI_NO, HOR_NO FROM \"C##_REDOC_DATA\".VW_" +
+                "HORAIRE_DOCTEUR WHERE (HOR_UTI_NO = :userNo)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.DataAccess.Client.OracleParameter param = new global::Oracle.DataAccess.Client.OracleParameter();
             param.ParameterName = ":userNo";
@@ -14369,6 +14422,7 @@ namespace RedocApp.DataSetRedocTableAdapters {
             tableMapping.ColumnMappings.Add("EXC_DEBUT", "EXC_DEBUT");
             tableMapping.ColumnMappings.Add("EXC_FIN", "EXC_FIN");
             tableMapping.ColumnMappings.Add("EXC_COMMENTAIRE", "EXC_COMMENTAIRE");
+            tableMapping.ColumnMappings.Add("EXC_NO", "EXC_NO");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -14385,13 +14439,13 @@ namespace RedocApp.DataSetRedocTableAdapters {
             this._commandCollection = new global::Oracle.DataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.DataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EXC_UTI_NO, EXC_DEBUT, EXC_FIN, EXC_COMMENTAIRE FROM \"C##_REDOC_DATA\".VW_E" +
-                "XCEPTION_HORAIRE_DOCTEUR";
+            this._commandCollection[0].CommandText = "SELECT EXC_UTI_NO, EXC_DEBUT, EXC_FIN, EXC_COMMENTAIRE, EXC_NO FROM \"C##_REDOC_DA" +
+                "TA\".VW_EXCEPTION_HORAIRE_DOCTEUR";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.DataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT EXC_UTI_NO, EXC_DEBUT, EXC_FIN, EXC_COMMENTAIRE\r\nFROM     \"C##_REDOC_DATA\"" +
-                ".VW_EXCEPTION_HORAIRE_DOCTEUR\r\nWHERE  (EXC_UTI_NO = :userNo)";
+            this._commandCollection[1].CommandText = "SELECT EXC_UTI_NO, EXC_DEBUT, EXC_FIN, EXC_COMMENTAIRE, EXC_NO FROM \"C##_REDOC_DA" +
+                "TA\".VW_EXCEPTION_HORAIRE_DOCTEUR WHERE (EXC_UTI_NO = :userNo)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.DataAccess.Client.OracleParameter param = new global::Oracle.DataAccess.Client.OracleParameter();
             param.ParameterName = ":userNo";
@@ -14908,7 +14962,7 @@ namespace RedocApp.DataSetRedocTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[6];
+            this._commandCollection = new global::System.Data.IDbCommand[10];
             this._commandCollection[0] = new global::Oracle.DataAccess.Client.OracleCommand();
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDPATIENT";
@@ -15139,6 +15193,100 @@ namespace RedocApp.DataSetRedocTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
+            this._commandCollection[6] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDDOCSCHEDULE";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_HOR_UTI_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_HOR_DEBUT";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_HOR_FIN";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_HOR_JOUR";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).Parameters.Add(param);
+            this._commandCollection[7] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDDOCSCHEDULEEXCEPTION";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_EXC_UTI_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_EXC_DEBUT";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_EXC_FIN";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_EXC_COMMENTAIRE";
+            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Clob;
+            param.Size = 65536;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).Parameters.Add(param);
+            this._commandCollection[8] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.DELETEDOCSCHEDULE";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_HOR_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).Parameters.Add(param);
+            this._commandCollection[9] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.DELETEDOCSCHEDULEEXCEPTION";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_EXC_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15422,6 +15570,154 @@ namespace RedocApp.DataSetRedocTableAdapters {
             }
             else {
                 command.Parameters[4].Value = ((object)(I_REN_COMMENTAIRE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_ADDDOCSCHEDULE(global::System.Nullable<decimal> I_HOR_UTI_NO, global::System.Nullable<decimal> I_HOR_DEBUT, global::System.Nullable<decimal> I_HOR_FIN, global::System.Nullable<decimal> I_HOR_JOUR) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[6]));
+            if ((I_HOR_UTI_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_HOR_UTI_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((I_HOR_DEBUT.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(I_HOR_DEBUT.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((I_HOR_FIN.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(I_HOR_FIN.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((I_HOR_JOUR.HasValue == true)) {
+                command.Parameters[3].Value = ((decimal)(I_HOR_JOUR.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_ADDDOCSCHEDULEEXCEPTION(global::System.Nullable<decimal> I_EXC_UTI_NO, global::System.Nullable<global::System.DateTime> I_EXC_DEBUT, global::System.Nullable<global::System.DateTime> I_EXC_FIN, object I_EXC_COMMENTAIRE) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[7]));
+            if ((I_EXC_UTI_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_EXC_UTI_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((I_EXC_DEBUT.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(I_EXC_DEBUT.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((I_EXC_FIN.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(I_EXC_FIN.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((I_EXC_COMMENTAIRE == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((object)(I_EXC_COMMENTAIRE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_DELETEDOCSCHEDULE(global::System.Nullable<decimal> I_HOR_NO) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[8]));
+            if ((I_HOR_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_HOR_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_DELETEDOCSCHEDULEEXCEPTION(global::System.Nullable<decimal> I_EXC_NO) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[9]));
+            if ((I_EXC_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_EXC_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
