@@ -151,7 +151,7 @@ namespace RedocApp
             this.btnConfirm.Location = new System.Drawing.Point(279, 353);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(156, 50);
-            this.btnConfirm.TabIndex = 9;
+            this.btnConfirm.TabIndex = 10;
             this.btnConfirm.Text = "&Valider";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -162,7 +162,7 @@ namespace RedocApp
             this.btnCancel.Location = new System.Drawing.Point(17, 353);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(156, 50);
-            this.btnCancel.TabIndex = 10;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "&Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -173,7 +173,7 @@ namespace RedocApp
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(418, 121);
-            this.txtNotes.TabIndex = 8;
+            this.txtNotes.TabIndex = 9;
             // 
             // lblNotes
             // 
@@ -181,7 +181,7 @@ namespace RedocApp
             this.lblNotes.Location = new System.Drawing.Point(14, 193);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(45, 17);
-            this.lblNotes.TabIndex = 7;
+            this.lblNotes.TabIndex = 8;
             this.lblNotes.Text = "&Notes";
             // 
             // vW_DOCTEURTableAdapter
@@ -203,8 +203,8 @@ namespace RedocApp
             this.cbxCancelled.Location = new System.Drawing.Point(372, 179);
             this.cbxCancelled.Name = "cbxCancelled";
             this.cbxCancelled.Size = new System.Drawing.Size(71, 21);
-            this.cbxCancelled.TabIndex = 11;
-            this.cbxCancelled.Text = "Annulé";
+            this.cbxCancelled.TabIndex = 7;
+            this.cbxCancelled.Text = "Ann&ulé";
             this.cbxCancelled.UseVisualStyleBackColor = true;
             // 
             // FrmAddEditAppointment

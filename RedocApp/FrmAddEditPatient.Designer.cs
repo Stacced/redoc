@@ -46,7 +46,7 @@ namespace RedocApp
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.lblNoAVS = new System.Windows.Forms.Label();
-            this.mtbNoAVS = new System.Windows.Forms.MaskedTextBox();
+            this.mtxNoAVS = new System.Windows.Forms.MaskedTextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
@@ -187,14 +187,14 @@ namespace RedocApp
             this.lblNoAVS.TabIndex = 1;
             this.lblNoAVS.Text = "&No AVS";
             // 
-            // mtbNoAVS
+            // mtxNoAVS
             // 
-            this.mtbNoAVS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vWPATIENTBindingSource, "PAT_NO_AVS", true));
-            this.mtbNoAVS.Location = new System.Drawing.Point(158, 44);
-            this.mtbNoAVS.Mask = "756.0000.0000.00";
-            this.mtbNoAVS.Name = "mtbNoAVS";
-            this.mtbNoAVS.Size = new System.Drawing.Size(213, 22);
-            this.mtbNoAVS.TabIndex = 2;
+            this.mtxNoAVS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vWPATIENTBindingSource, "PAT_NO_AVS", true));
+            this.mtxNoAVS.Location = new System.Drawing.Point(158, 44);
+            this.mtxNoAVS.Mask = "756.0000.0000.00";
+            this.mtxNoAVS.Name = "mtxNoAVS";
+            this.mtxNoAVS.Size = new System.Drawing.Size(213, 22);
+            this.mtxNoAVS.TabIndex = 2;
             // 
             // btnCancel
             // 
@@ -229,7 +229,7 @@ namespace RedocApp
             this.ClientSize = new System.Drawing.Size(392, 469);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.mtbNoAVS);
+            this.Controls.Add(this.mtxNoAVS);
             this.Controls.Add(this.lblNoAVS);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.lblPhoneNumber);
@@ -273,7 +273,7 @@ namespace RedocApp
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.Label lblNoAVS;
-        private System.Windows.Forms.MaskedTextBox mtbNoAVS;
+        private System.Windows.Forms.MaskedTextBox mtxNoAVS;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnConfirm;
         private DataSetRedoc dataSetRedoc;

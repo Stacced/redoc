@@ -169,7 +169,7 @@ namespace RedocApp
             this.dgvAppointments.RowHeadersWidth = 51;
             this.dgvAppointments.RowTemplate.Height = 24;
             this.dgvAppointments.Size = new System.Drawing.Size(700, 196);
-            this.dgvAppointments.TabIndex = 14;
+            this.dgvAppointments.TabIndex = 16;
             this.dgvAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointments_CellContentClick);
             // 
             // rENNODataGridViewTextBoxColumn
@@ -255,7 +255,7 @@ namespace RedocApp
             this.lblAppointments.Location = new System.Drawing.Point(8, 255);
             this.lblAppointments.Name = "lblAppointments";
             this.lblAppointments.Size = new System.Drawing.Size(196, 20);
-            this.lblAppointments.TabIndex = 13;
+            this.lblAppointments.TabIndex = 15;
             this.lblAppointments.Text = "Liste des rendez-vous";
             // 
             // lblEmail
@@ -309,7 +309,7 @@ namespace RedocApp
             this.txtNoAvs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNoAvs.Name = "txtNoAvs";
             this.txtNoAvs.Size = new System.Drawing.Size(203, 22);
-            this.txtNoAvs.TabIndex = 17;
+            this.txtNoAvs.TabIndex = 14;
             this.txtNoAvs.Text = "756.1234.5678.1";
             // 
             // lblNoAvs
@@ -319,7 +319,7 @@ namespace RedocApp
             this.lblNoAvs.Location = new System.Drawing.Point(420, 179);
             this.lblNoAvs.Name = "lblNoAvs";
             this.lblNoAvs.Size = new System.Drawing.Size(79, 17);
-            this.lblNoAvs.TabIndex = 16;
+            this.lblNoAvs.TabIndex = 13;
             this.lblNoAvs.Text = "N° AVS .....";
             // 
             // vW_PATIENTTableAdapter
@@ -336,7 +336,7 @@ namespace RedocApp
             this.llbEditPatient.Location = new System.Drawing.Point(642, 16);
             this.llbEditPatient.Name = "llbEditPatient";
             this.llbEditPatient.Size = new System.Drawing.Size(70, 17);
-            this.llbEditPatient.TabIndex = 18;
+            this.llbEditPatient.TabIndex = 17;
             this.llbEditPatient.TabStop = true;
             this.llbEditPatient.Text = "Modifier...";
             this.llbEditPatient.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbEditPatient_LinkClicked);
