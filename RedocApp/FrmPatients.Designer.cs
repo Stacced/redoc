@@ -66,6 +66,9 @@ namespace RedocApp
             // 
             this.adgvPatients.AllowUserToAddRows = false;
             this.adgvPatients.AllowUserToDeleteRows = false;
+            this.adgvPatients.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.adgvPatients.AutoGenerateColumns = false;
             this.adgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adgvPatients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -79,7 +82,6 @@ namespace RedocApp
             this.pATTELEPHONEDataGridViewTextBoxColumn,
             this.pATNOAVSDataGridViewTextBoxColumn});
             this.adgvPatients.DataSource = this.vWPATIENTBindingSource;
-            this.adgvPatients.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.adgvPatients.FilterAndSortEnabled = true;
             this.adgvPatients.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adgvPatients.Location = new System.Drawing.Point(0, 83);

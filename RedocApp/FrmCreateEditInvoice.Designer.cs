@@ -34,26 +34,29 @@ namespace RedocApp
             this.lblPatientName = new System.Windows.Forms.Label();
             this.lsbExams = new System.Windows.Forms.ListBox();
             this.txtPatient = new System.Windows.Forms.TextBox();
+            this.vWFACTUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetRedoc = new RedocApp.DataSetRedoc();
             this.lblDate = new System.Windows.Forms.Label();
             this.dtpMain = new System.Windows.Forms.DateTimePicker();
             this.btnAddExam = new System.Windows.Forms.Button();
             this.btnRemoveExam = new System.Windows.Forms.Button();
             this.cmbExams = new System.Windows.Forms.ComboBox();
             this.vWEXAMENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetRedoc = new RedocApp.DataSetRedoc();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.lblExamList = new System.Windows.Forms.Label();
             this.vW_EXAMENTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_EXAMENTableAdapter();
-            this.vWFACTUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vW_FACTURETableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_FACTURETableAdapter();
             this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
             this.tableAdapterManager = new RedocApp.DataSetRedocTableAdapters.TableAdapterManager();
-            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
+            this.vWRENDEZVOUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vW_RENDEZVOUSTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_RENDEZVOUSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.vWFACTUREBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWRENDEZVOUSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInvoice
@@ -88,13 +91,23 @@ namespace RedocApp
             // 
             // txtPatient
             // 
-            this.txtPatient.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vWFACTUREBindingSource, "PAT_NOM_COMPLET", true));
+            this.txtPatient.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vWRENDEZVOUSBindingSource, "PAT_NOM_COMPLET", true));
             this.txtPatient.Location = new System.Drawing.Point(124, 46);
             this.txtPatient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPatient.Name = "txtPatient";
             this.txtPatient.ReadOnly = true;
             this.txtPatient.Size = new System.Drawing.Size(263, 22);
             this.txtPatient.TabIndex = 2;
+            // 
+            // vWFACTUREBindingSource
+            // 
+            this.vWFACTUREBindingSource.DataMember = "VW_FACTURE";
+            this.vWFACTUREBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // dataSetRedoc
+            // 
+            this.dataSetRedoc.DataSetName = "DataSetRedoc";
+            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblDate
             // 
@@ -135,6 +148,7 @@ namespace RedocApp
             this.btnRemoveExam.TabIndex = 8;
             this.btnRemoveExam.Text = "&Retirer examen sélectionné";
             this.btnRemoveExam.UseVisualStyleBackColor = true;
+            this.btnRemoveExam.Click += new System.EventHandler(this.btnRemoveExam_Click);
             // 
             // cmbExams
             // 
@@ -153,11 +167,6 @@ namespace RedocApp
             // 
             this.vWEXAMENBindingSource.DataMember = "VW_EXAMEN";
             this.vWEXAMENBindingSource.DataSource = this.dataSetRedoc;
-            // 
-            // dataSetRedoc
-            // 
-            this.dataSetRedoc.DataSetName = "DataSetRedoc";
-            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblTotal
             // 
@@ -189,6 +198,7 @@ namespace RedocApp
             this.btnConfirm.TabIndex = 12;
             this.btnConfirm.Text = "&Valider";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // lblTotalAmount
             // 
@@ -215,11 +225,6 @@ namespace RedocApp
             // 
             this.vW_EXAMENTableAdapter.ClearBeforeFill = true;
             // 
-            // vWFACTUREBindingSource
-            // 
-            this.vWFACTUREBindingSource.DataMember = "VW_FACTURE";
-            this.vWFACTUREBindingSource.DataSource = this.dataSetRedoc;
-            // 
             // vW_FACTURETableAdapter
             // 
             this.vW_FACTURETableAdapter.ClearBeforeFill = true;
@@ -243,6 +248,15 @@ namespace RedocApp
             this.tableAdapterManager.CAB_UTILISATEURTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.UpdateOrder = RedocApp.DataSetRedocTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // vWRENDEZVOUSBindingSource
+            // 
+            this.vWRENDEZVOUSBindingSource.DataMember = "VW_RENDEZVOUS";
+            this.vWRENDEZVOUSBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // vW_RENDEZVOUSTableAdapter
+            // 
+            this.vW_RENDEZVOUSTableAdapter.ClearBeforeFill = true;
             // 
             // FrmCreateEditInvoice
             // 
@@ -269,11 +283,13 @@ namespace RedocApp
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "FrmCreateEditInvoice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REDOC - Facturation";
             this.Load += new System.EventHandler(this.FrmCreateEditInvoice_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWFACTUREBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWRENDEZVOUSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,5 +318,7 @@ namespace RedocApp
         private DataSetRedocTableAdapters.VW_FACTURETableAdapter vW_FACTURETableAdapter;
         private DataSetRedocTableAdapters.VW_PATIENTTableAdapter vW_PATIENTTableAdapter;
         private DataSetRedocTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource vWRENDEZVOUSBindingSource;
+        private DataSetRedocTableAdapters.VW_RENDEZVOUSTableAdapter vW_RENDEZVOUSTableAdapter;
     }
 }

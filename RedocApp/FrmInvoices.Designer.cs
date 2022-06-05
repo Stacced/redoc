@@ -31,15 +31,15 @@ namespace RedocApp
         {
             this.components = new System.ComponentModel.Container();
             this.adgvInvoices = new Zuby.ADGV.AdvancedDataGridView();
+            this.adgvSearch = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
+            this.vWFACTUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetRedoc = new RedocApp.DataSetRedoc();
+            this.vW_FACTURETableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_FACTURETableAdapter();
             this.fACNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATNOMCOMPLETDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fACDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fACPAYEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fACPAYEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.fACTOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vWFACTUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetRedoc = new RedocApp.DataSetRedoc();
-            this.adgvSearch = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
-            this.vW_FACTURETableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_FACTURETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.adgvInvoices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWFACTUREBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
@@ -49,6 +49,9 @@ namespace RedocApp
             // 
             this.adgvInvoices.AllowUserToAddRows = false;
             this.adgvInvoices.AllowUserToDeleteRows = false;
+            this.adgvInvoices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.adgvInvoices.AutoGenerateColumns = false;
             this.adgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adgvInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -58,7 +61,6 @@ namespace RedocApp
             this.fACPAYEDataGridViewTextBoxColumn,
             this.fACTOTALDataGridViewTextBoxColumn});
             this.adgvInvoices.DataSource = this.vWFACTUREBindingSource;
-            this.adgvInvoices.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.adgvInvoices.FilterAndSortEnabled = true;
             this.adgvInvoices.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adgvInvoices.Location = new System.Drawing.Point(0, 56);
@@ -71,6 +73,35 @@ namespace RedocApp
             this.adgvInvoices.Size = new System.Drawing.Size(1035, 458);
             this.adgvInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adgvInvoices.TabIndex = 3;
+            // 
+            // adgvSearch
+            // 
+            this.adgvSearch.AllowMerge = false;
+            this.adgvSearch.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.adgvSearch.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.adgvSearch.Location = new System.Drawing.Point(0, 0);
+            this.adgvSearch.MaximumSize = new System.Drawing.Size(0, 27);
+            this.adgvSearch.MinimumSize = new System.Drawing.Size(0, 27);
+            this.adgvSearch.Name = "adgvSearch";
+            this.adgvSearch.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.adgvSearch.Size = new System.Drawing.Size(1035, 27);
+            this.adgvSearch.TabIndex = 4;
+            this.adgvSearch.Text = "advancedDataGridViewSearchToolBar1";
+            this.adgvSearch.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.adgvSearch_Search);
+            // 
+            // vWFACTUREBindingSource
+            // 
+            this.vWFACTUREBindingSource.DataMember = "VW_FACTURE";
+            this.vWFACTUREBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // dataSetRedoc
+            // 
+            this.dataSetRedoc.DataSetName = "DataSetRedoc";
+            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vW_FACTURETableAdapter
+            // 
+            this.vW_FACTURETableAdapter.ClearBeforeFill = true;
             // 
             // fACNODataGridViewTextBoxColumn
             // 
@@ -99,6 +130,7 @@ namespace RedocApp
             this.fACDATEDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.fACDATEDataGridViewTextBoxColumn.Name = "fACDATEDataGridViewTextBoxColumn";
             this.fACDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fACDATEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.fACDATEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.fACDATEDataGridViewTextBoxColumn.Width = 124;
             // 
@@ -109,6 +141,7 @@ namespace RedocApp
             this.fACPAYEDataGridViewTextBoxColumn.MinimumWidth = 22;
             this.fACPAYEDataGridViewTextBoxColumn.Name = "fACPAYEDataGridViewTextBoxColumn";
             this.fACPAYEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fACPAYEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.fACPAYEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.fACPAYEDataGridViewTextBoxColumn.Width = 124;
             // 
@@ -121,35 +154,6 @@ namespace RedocApp
             this.fACTOTALDataGridViewTextBoxColumn.ReadOnly = true;
             this.fACTOTALDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.fACTOTALDataGridViewTextBoxColumn.Width = 124;
-            // 
-            // vWFACTUREBindingSource
-            // 
-            this.vWFACTUREBindingSource.DataMember = "VW_FACTURE";
-            this.vWFACTUREBindingSource.DataSource = this.dataSetRedoc;
-            // 
-            // dataSetRedoc
-            // 
-            this.dataSetRedoc.DataSetName = "DataSetRedoc";
-            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // adgvSearch
-            // 
-            this.adgvSearch.AllowMerge = false;
-            this.adgvSearch.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.adgvSearch.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.adgvSearch.Location = new System.Drawing.Point(0, 0);
-            this.adgvSearch.MaximumSize = new System.Drawing.Size(0, 27);
-            this.adgvSearch.MinimumSize = new System.Drawing.Size(0, 27);
-            this.adgvSearch.Name = "adgvSearch";
-            this.adgvSearch.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.adgvSearch.Size = new System.Drawing.Size(1035, 27);
-            this.adgvSearch.TabIndex = 4;
-            this.adgvSearch.Text = "advancedDataGridViewSearchToolBar1";
-            this.adgvSearch.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.adgvSearch_Search);
-            // 
-            // vW_FACTURETableAdapter
-            // 
-            this.vW_FACTURETableAdapter.ClearBeforeFill = true;
             // 
             // FrmInvoices
             // 
@@ -180,7 +184,7 @@ namespace RedocApp
         private System.Windows.Forms.DataGridViewTextBoxColumn fACNODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pATNOMCOMPLETDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fACDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fACPAYEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn fACPAYEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fACTOTALDataGridViewTextBoxColumn;
     }
 }

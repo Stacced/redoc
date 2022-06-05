@@ -20,10 +20,10 @@
     <Shape ID="DesignTable:VW_EXAMEN" ZOrder="16" X="2226" Y="70" Height="158" Width="262" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:VW_HORAIRE_DOCTEUR" ZOrder="15" X="2928" Y="70" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
     <Shape ID="DesignTable:VW_PATIENT" ZOrder="14" X="3298" Y="70" Height="319" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
-    <Shape ID="DesignTable:VW_EXCEPTION_HORAIRE_DOCTEUR" ZOrder="3" X="3999" Y="70" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
-    <Shape ID="DesignTable:VW_FACTURE" ZOrder="2" X="4369" Y="70" Height="273" Width="264" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
-    <Shape ID="DesignTable:VW_RENDEZVOUS" ZOrder="1" X="4703" Y="70" Height="434" Width="299" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
-    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="4" X="3629" Y="70" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="167" />
+    <Shape ID="DesignTable:VW_EXCEPTION_HORAIRE_DOCTEUR" ZOrder="4" X="3999" Y="70" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
+    <Shape ID="DesignTable:VW_FACTURE" ZOrder="3" X="4369" Y="70" Height="273" Width="264" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
+    <Shape ID="DesignTable:VW_RENDEZVOUS" ZOrder="2" X="4703" Y="70" Height="434" Width="299" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
+    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="1" X="5072" Y="70" Height="309" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="305" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_CAB_EXCEPTION_HORAIRE_CAB_U" ZOrder="13" LineWidth="11">

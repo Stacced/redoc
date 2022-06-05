@@ -36,7 +36,7 @@ namespace RedocApp
             string address = this.txtAddress.Text;
             string email = this.txtEmail.Text;
             string phoneNumber = this.txtPhoneNumber.Text;
-            string noAvs = this.mtbNoAVS.Text.Replace(".", string.Empty);
+            string noAvs = this.mtbNoAVS.Text.Replace(",", string.Empty);
 
             if (!string.IsNullOrWhiteSpace(surname) && !string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(address) && !string.IsNullOrWhiteSpace(phoneNumber) && !string.IsNullOrWhiteSpace(noAvs))
             {

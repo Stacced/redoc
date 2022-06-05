@@ -43,11 +43,12 @@ namespace RedocApp
             this.vWPATIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txbNotes = new System.Windows.Forms.TextBox();
+            this.txtNotes = new System.Windows.Forms.TextBox();
             this.lblNotes = new System.Windows.Forms.Label();
             this.vW_DOCTEURTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_DOCTEURTableAdapter();
             this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
             this.vW_RENDEZVOUSTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_RENDEZVOUSTableAdapter();
+            this.cbxCancelled = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.vWRENDEZVOUSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWDOCTEURBindingSource)).BeginInit();
@@ -147,7 +148,7 @@ namespace RedocApp
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(279, 345);
+            this.btnConfirm.Location = new System.Drawing.Point(279, 353);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(156, 50);
             this.btnConfirm.TabIndex = 9;
@@ -158,26 +159,26 @@ namespace RedocApp
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(17, 345);
+            this.btnCancel.Location = new System.Drawing.Point(17, 353);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(156, 50);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "&Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // txbNotes
+            // txtNotes
             // 
-            this.txbNotes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vWRENDEZVOUSBindingSource, "REN_COMMENTAIRE", true));
-            this.txbNotes.Location = new System.Drawing.Point(17, 208);
-            this.txbNotes.Multiline = true;
-            this.txbNotes.Name = "txbNotes";
-            this.txbNotes.Size = new System.Drawing.Size(418, 121);
-            this.txbNotes.TabIndex = 8;
+            this.txtNotes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vWRENDEZVOUSBindingSource, "REN_COMMENTAIRE", true));
+            this.txtNotes.Location = new System.Drawing.Point(17, 215);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(418, 121);
+            this.txtNotes.TabIndex = 8;
             // 
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(14, 188);
+            this.lblNotes.Location = new System.Drawing.Point(14, 193);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(45, 17);
             this.lblNotes.TabIndex = 7;
@@ -195,6 +196,17 @@ namespace RedocApp
             // 
             this.vW_RENDEZVOUSTableAdapter.ClearBeforeFill = true;
             // 
+            // cbxCancelled
+            // 
+            this.cbxCancelled.AutoSize = true;
+            this.cbxCancelled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.vWRENDEZVOUSBindingSource, "REN_ANNULE", true));
+            this.cbxCancelled.Location = new System.Drawing.Point(372, 179);
+            this.cbxCancelled.Name = "cbxCancelled";
+            this.cbxCancelled.Size = new System.Drawing.Size(71, 21);
+            this.cbxCancelled.TabIndex = 11;
+            this.cbxCancelled.Text = "Annulé";
+            this.cbxCancelled.UseVisualStyleBackColor = true;
+            // 
             // FrmAddEditAppointment
             // 
             this.AcceptButton = this.btnConfirm;
@@ -202,8 +214,9 @@ namespace RedocApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(455, 415);
+            this.Controls.Add(this.cbxCancelled);
             this.Controls.Add(this.lblNotes);
-            this.Controls.Add(this.txbNotes);
+            this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lblPatient);
@@ -239,7 +252,7 @@ namespace RedocApp
         private System.Windows.Forms.ComboBox cmbPatient;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txbNotes;
+        private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Label lblNotes;
         private DataSetRedoc dataSetRedoc;
         private System.Windows.Forms.BindingSource vWDOCTEURBindingSource;
@@ -248,5 +261,6 @@ namespace RedocApp
         private DataSetRedocTableAdapters.VW_PATIENTTableAdapter vW_PATIENTTableAdapter;
         private System.Windows.Forms.BindingSource vWRENDEZVOUSBindingSource;
         private DataSetRedocTableAdapters.VW_RENDEZVOUSTableAdapter vW_RENDEZVOUSTableAdapter;
+        private System.Windows.Forms.CheckBox cbxCancelled;
     }
 }

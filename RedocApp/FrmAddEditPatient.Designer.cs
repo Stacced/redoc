@@ -33,6 +33,8 @@ namespace RedocApp
             this.lblAddEditPatient = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
+            this.vWPATIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetRedoc = new RedocApp.DataSetRedoc();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.dtpBirthdate = new System.Windows.Forms.DateTimePicker();
@@ -47,11 +49,9 @@ namespace RedocApp
             this.mtbNoAVS = new System.Windows.Forms.MaskedTextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.dataSetRedoc = new RedocApp.DataSetRedoc();
-            this.vWPATIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWPATIENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAddEditPatient
@@ -80,6 +80,16 @@ namespace RedocApp
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(213, 22);
             this.txtSurname.TabIndex = 4;
+            // 
+            // vWPATIENTBindingSource
+            // 
+            this.vWPATIENTBindingSource.DataMember = "VW_PATIENT";
+            this.vWPATIENTBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // dataSetRedoc
+            // 
+            this.dataSetRedoc.DataSetName = "DataSetRedoc";
+            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtName
             // 
@@ -206,16 +216,6 @@ namespace RedocApp
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // dataSetRedoc
-            // 
-            this.dataSetRedoc.DataSetName = "DataSetRedoc";
-            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vWPATIENTBindingSource
-            // 
-            this.vWPATIENTBindingSource.DataMember = "VW_PATIENT";
-            this.vWPATIENTBindingSource.DataSource = this.dataSetRedoc;
-            // 
             // vW_PATIENTTableAdapter
             // 
             this.vW_PATIENTTableAdapter.ClearBeforeFill = true;
@@ -250,8 +250,8 @@ namespace RedocApp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REDOC - AJOUT/EDIT PATIENT";
             this.Load += new System.EventHandler(this.FrmAddEditPatient_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWPATIENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

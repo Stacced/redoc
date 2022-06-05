@@ -32,6 +32,7 @@ namespace RedocApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
             this.mnsMain = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFileQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +48,6 @@ namespace RedocApp
             this.tsbtnInvoicing = new System.Windows.Forms.ToolStripButton();
             this.tssInvoicing = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnManageDocSchedule = new System.Windows.Forms.ToolStripButton();
-            this.tsmiLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMain.SuspendLayout();
             this.tsrMain.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@ namespace RedocApp
             this.mnsMain.MdiWindowListItem = this.tsmiWindow;
             this.mnsMain.Name = "mnsMain";
             this.mnsMain.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mnsMain.Size = new System.Drawing.Size(957, 28);
+            this.mnsMain.Size = new System.Drawing.Size(957, 30);
             this.mnsMain.TabIndex = 1;
             this.mnsMain.Text = "mnsMain";
             // 
@@ -75,6 +75,13 @@ namespace RedocApp
             this.tsmiFile.Name = "tsmiFile";
             this.tsmiFile.Size = new System.Drawing.Size(66, 24);
             this.tsmiFile.Text = "&Fichier";
+            // 
+            // tsmiLogout
+            // 
+            this.tsmiLogout.Name = "tsmiLogout";
+            this.tsmiLogout.Size = new System.Drawing.Size(223, 26);
+            this.tsmiLogout.Text = "Se &déconnecter";
+            this.tsmiLogout.Click += new System.EventHandler(this.tsmiLogout_Click);
             // 
             // tsmiFileQuit
             // 
@@ -110,8 +117,8 @@ namespace RedocApp
             this.tsmiTileHorizontal,
             this.tsmiTileVertical});
             this.tsmiWindow.Name = "tsmiWindow";
-            this.tsmiWindow.Size = new System.Drawing.Size(72, 24);
-            this.tsmiWindow.Text = "&Fenêtre";
+            this.tsmiWindow.Size = new System.Drawing.Size(72, 26);
+            this.tsmiWindow.Text = "F&enêtre";
             // 
             // tsmiTileHorizontal
             // 
@@ -138,9 +145,9 @@ namespace RedocApp
             this.tsbtnInvoicing,
             this.tssInvoicing,
             this.tsbtnManageDocSchedule});
-            this.tsrMain.Location = new System.Drawing.Point(0, 28);
+            this.tsrMain.Location = new System.Drawing.Point(0, 30);
             this.tsrMain.Name = "tsrMain";
-            this.tsrMain.Size = new System.Drawing.Size(957, 27);
+            this.tsrMain.Size = new System.Drawing.Size(957, 31);
             this.tsrMain.TabIndex = 2;
             this.tsrMain.Text = "tsrMain";
             // 
@@ -149,7 +156,7 @@ namespace RedocApp
             this.tsbtnAppointments.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAppointments.Image")));
             this.tsbtnAppointments.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnAppointments.Name = "tsbtnAppointments";
-            this.tsbtnAppointments.Size = new System.Drawing.Size(118, 24);
+            this.tsbtnAppointments.Size = new System.Drawing.Size(118, 28);
             this.tsbtnAppointments.Text = "&Rendez-vous";
             this.tsbtnAppointments.Click += new System.EventHandler(this.tsbtnAppointments_Click);
             // 
@@ -177,8 +184,8 @@ namespace RedocApp
             this.tsbtnInvoicing.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnInvoicing.Image")));
             this.tsbtnInvoicing.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnInvoicing.Name = "tsbtnInvoicing";
-            this.tsbtnInvoicing.Size = new System.Drawing.Size(106, 24);
-            this.tsbtnInvoicing.Text = "Facturation";
+            this.tsbtnInvoicing.Size = new System.Drawing.Size(106, 28);
+            this.tsbtnInvoicing.Text = "&Facturation";
             this.tsbtnInvoicing.Click += new System.EventHandler(this.tsbtnInvoicing_Click);
             // 
             // tssInvoicing
@@ -191,16 +198,9 @@ namespace RedocApp
             this.tsbtnManageDocSchedule.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnManageDocSchedule.Image")));
             this.tsbtnManageDocSchedule.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnManageDocSchedule.Name = "tsbtnManageDocSchedule";
-            this.tsbtnManageDocSchedule.Size = new System.Drawing.Size(140, 24);
-            this.tsbtnManageDocSchedule.Text = "Gestion horaires";
+            this.tsbtnManageDocSchedule.Size = new System.Drawing.Size(140, 28);
+            this.tsbtnManageDocSchedule.Text = "Gestion &horaires";
             this.tsbtnManageDocSchedule.Click += new System.EventHandler(this.tsbtnSchedules_Click);
-            // 
-            // tsmiLogout
-            // 
-            this.tsmiLogout.Name = "tsmiLogout";
-            this.tsmiLogout.Size = new System.Drawing.Size(223, 26);
-            this.tsmiLogout.Text = "Se déconnecter";
-            this.tsmiLogout.Click += new System.EventHandler(this.tsmiLogout_Click);
             // 
             // FrmDashboard
             // 

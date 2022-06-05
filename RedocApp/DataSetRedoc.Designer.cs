@@ -14962,66 +14962,72 @@ namespace RedocApp.DataSetRedocTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[10];
+            this._commandCollection = new global::System.Data.IDbCommand[14];
             this._commandCollection[0] = new global::Oracle.DataAccess.Client.OracleCommand();
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDPATIENT";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDAPPOINTMENT";
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
             global::Oracle.DataAccess.Client.OracleParameter param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_NOM";
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_PRENOM";
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_DATE_NAISSANCE";
+            param.ParameterName = "I_REN_DATE";
             param.DbType = global::System.Data.DbType.Date;
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).Parameters.Add(param);
             param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_ADRESSE";
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
+            param.ParameterName = "I_DOC_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).Parameters.Add(param);
             param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_EMAIL";
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
+            param.ParameterName = "I_PAT_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).Parameters.Add(param);
             param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_TELEPHONE";
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_NO_AVS";
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
+            param.ParameterName = "I_REN_COMMENTAIRE";
+            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Clob;
+            param.Size = 65536;
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[0])).Parameters.Add(param);
             this._commandCollection[1] = new global::Oracle.DataAccess.Client.OracleCommand();
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[1])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[1])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.DELETEPATIENT";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[1])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDDOCSCHEDULE";
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.StoredProcedure;
             param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_NO";
+            param.ParameterName = "I_HOR_UTI_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[1])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_HOR_DEBUT";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[1])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_HOR_FIN";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[1])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_HOR_JOUR";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
@@ -15030,199 +15036,129 @@ namespace RedocApp.DataSetRedocTableAdapters {
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[1])).Parameters.Add(param);
             this._commandCollection[2] = new global::Oracle.DataAccess.Client.OracleCommand();
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.EDITPATIENT";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDDOCSCHEDULEEXCEPTION";
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).CommandType = global::System.Data.CommandType.StoredProcedure;
             param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_NO";
+            param.ParameterName = "I_EXC_UTI_NO";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_EXC_DEBUT";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_EXC_FIN";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_EXC_COMMENTAIRE";
+            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Clob;
+            param.Size = 65536;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            this._commandCollection[3] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDINVOICEEXAM";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_LIG_FAC_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_LIG_LIS_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).Parameters.Add(param);
+            this._commandCollection[4] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDPATIENT";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).CommandType = global::System.Data.CommandType.StoredProcedure;
             param = new global::Oracle.DataAccess.Client.OracleParameter();
             param.ParameterName = "I_PAT_NOM";
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
             param = new global::Oracle.DataAccess.Client.OracleParameter();
             param.ParameterName = "I_PAT_PRENOM";
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
             param = new global::Oracle.DataAccess.Client.OracleParameter();
             param.ParameterName = "I_PAT_DATE_NAISSANCE";
             param.DbType = global::System.Data.DbType.Date;
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
             param = new global::Oracle.DataAccess.Client.OracleParameter();
             param.ParameterName = "I_PAT_ADRESSE";
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
             param.Size = 255;
             param.IsNullable = true;
             param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
             param = new global::Oracle.DataAccess.Client.OracleParameter();
             param.ParameterName = "I_PAT_EMAIL";
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
             param.Size = 255;
             param.IsNullable = true;
             param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
             param = new global::Oracle.DataAccess.Client.OracleParameter();
             param.ParameterName = "I_PAT_TELEPHONE";
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
             param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
             param = new global::Oracle.DataAccess.Client.OracleParameter();
             param.ParameterName = "I_PAT_NO_AVS";
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
             param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[2])).Parameters.Add(param);
-            this._commandCollection[3] = new global::Oracle.DataAccess.Client.OracleCommand();
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.CHECKLOGINCREDENTIALS";
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).CommandType = global::System.Data.CommandType.StoredProcedure;
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "\"ReturnValue\"";
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32767;
-            param.Direction = global::System.Data.ParameterDirection.ReturnValue;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_UTI_EMAIL";
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_UTI_MDP";
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 255;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[3])).Parameters.Add(param);
-            this._commandCollection[4] = new global::Oracle.DataAccess.Client.OracleCommand();
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDAPPOINTMENT";
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).CommandType = global::System.Data.CommandType.StoredProcedure;
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_REN_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_DOC_NO";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_NO";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_REN_COMMENTAIRE";
-            param.DbType = global::System.Data.DbType.Object;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Clob;
-            param.Size = 65536;
-            param.IsNullable = true;
-            param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[4])).Parameters.Add(param);
             this._commandCollection[5] = new global::Oracle.DataAccess.Client.OracleCommand();
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.EDITAPPOINTMENT";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.DELETEDOCSCHEDULE";
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).CommandType = global::System.Data.CommandType.StoredProcedure;
             param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_REN_NO";
+            param.ParameterName = "I_HOR_NO";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_REN_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_DOC_NO";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_PAT_NO";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_REN_COMMENTAIRE";
-            param.DbType = global::System.Data.DbType.Object;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Clob;
-            param.Size = 65536;
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[5])).Parameters.Add(param);
             this._commandCollection[6] = new global::Oracle.DataAccess.Client.OracleCommand();
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDDOCSCHEDULE";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.DELETEDOCSCHEDULEEXCEPTION";
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).CommandType = global::System.Data.CommandType.StoredProcedure;
             param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_HOR_UTI_NO";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_HOR_DEBUT";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_HOR_FIN";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_HOR_JOUR";
+            param.ParameterName = "I_EXC_NO";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
@@ -15231,69 +15167,409 @@ namespace RedocApp.DataSetRedocTableAdapters {
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[6])).Parameters.Add(param);
             this._commandCollection[7] = new global::Oracle.DataAccess.Client.OracleCommand();
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDDOCSCHEDULEEXCEPTION";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.DELETEPATIENT";
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).CommandType = global::System.Data.CommandType.StoredProcedure;
             param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_EXC_UTI_NO";
+            param.ParameterName = "I_PAT_NO";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_EXC_DEBUT";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_EXC_FIN";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).Parameters.Add(param);
-            param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_EXC_COMMENTAIRE";
-            param.DbType = global::System.Data.DbType.Object;
-            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Clob;
-            param.Size = 65536;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[7])).Parameters.Add(param);
             this._commandCollection[8] = new global::Oracle.DataAccess.Client.OracleCommand();
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.DELETEDOCSCHEDULE";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.EDITAPPOINTMENT";
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).CommandType = global::System.Data.CommandType.StoredProcedure;
             param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_HOR_NO";
+            param.ParameterName = "I_REN_NO";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_REN_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_DOC_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_PAT_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_REN_ANNULE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_REN_COMMENTAIRE";
+            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Clob;
+            param.Size = 65536;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[8])).Parameters.Add(param);
             this._commandCollection[9] = new global::Oracle.DataAccess.Client.OracleCommand();
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
-            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.DELETEDOCSCHEDULEEXCEPTION";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.EDITPATIENT";
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).CommandType = global::System.Data.CommandType.StoredProcedure;
             param = new global::Oracle.DataAccess.Client.OracleParameter();
-            param.ParameterName = "I_EXC_NO";
+            param.ParameterName = "I_PAT_NO";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = null;
             ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_PAT_NOM";
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_PAT_PRENOM";
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_PAT_DATE_NAISSANCE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_PAT_ADRESSE";
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_PAT_EMAIL";
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_PAT_TELEPHONE";
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_PAT_NO_AVS";
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[9])).Parameters.Add(param);
+            this._commandCollection[10] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[10])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[10])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.ADDINVOICE";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[10])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "\"ReturnValue\"";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.Direction = global::System.Data.ParameterDirection.ReturnValue;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[10])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_FAC_REN_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[10])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_FAC_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[10])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_FAC_TOTAL";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[10])).Parameters.Add(param);
+            this._commandCollection[11] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[11])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[11])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.CHECKLOGINCREDENTIALS";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[11])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "\"ReturnValue\"";
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32767;
+            param.Direction = global::System.Data.ParameterDirection.ReturnValue;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[11])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_UTI_EMAIL";
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[11])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_UTI_MDP";
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[11])).Parameters.Add(param);
+            this._commandCollection[12] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[12])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[12])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.GETEXAMPRICE";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[12])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "\"ReturnValue\"";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.Direction = global::System.Data.ParameterDirection.ReturnValue;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[12])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_EXA_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[12])).Parameters.Add(param);
+            this._commandCollection[13] = new global::Oracle.DataAccess.Client.OracleCommand();
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[13])).Connection = new global::Oracle.DataAccess.Client.OracleConnection(global::RedocApp.Properties.Settings.Default.ConnectionString);
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[13])).CommandText = "\"C##_REDOC_DATA\".PKG_REDOC.EDITINVOICE";
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[13])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_FAC_NO";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[13])).Parameters.Add(param);
+            param = new global::Oracle.DataAccess.Client.OracleParameter();
+            param.ParameterName = "I_FAC_DATE";
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.DataAccess.Client.OracleDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Oracle.DataAccess.Client.OracleCommand)(this._commandCollection[13])).Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_ADDAPPOINTMENT(global::System.Nullable<global::System.DateTime> I_REN_DATE, global::System.Nullable<decimal> I_DOC_NO, global::System.Nullable<decimal> I_PAT_NO, object I_REN_COMMENTAIRE) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[0]));
+            if ((I_REN_DATE.HasValue == true)) {
+                command.Parameters[0].Value = ((System.DateTime)(I_REN_DATE.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((I_DOC_NO.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(I_DOC_NO.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((I_PAT_NO.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(I_PAT_NO.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((I_REN_COMMENTAIRE == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((object)(I_REN_COMMENTAIRE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_ADDDOCSCHEDULE(global::System.Nullable<decimal> I_HOR_UTI_NO, global::System.Nullable<decimal> I_HOR_DEBUT, global::System.Nullable<decimal> I_HOR_FIN, global::System.Nullable<decimal> I_HOR_JOUR) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[1]));
+            if ((I_HOR_UTI_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_HOR_UTI_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((I_HOR_DEBUT.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(I_HOR_DEBUT.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((I_HOR_FIN.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(I_HOR_FIN.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((I_HOR_JOUR.HasValue == true)) {
+                command.Parameters[3].Value = ((decimal)(I_HOR_JOUR.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_ADDDOCSCHEDULEEXCEPTION(global::System.Nullable<decimal> I_EXC_UTI_NO, global::System.Nullable<global::System.DateTime> I_EXC_DEBUT, global::System.Nullable<global::System.DateTime> I_EXC_FIN, object I_EXC_COMMENTAIRE) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[2]));
+            if ((I_EXC_UTI_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_EXC_UTI_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((I_EXC_DEBUT.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(I_EXC_DEBUT.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((I_EXC_FIN.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(I_EXC_FIN.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((I_EXC_COMMENTAIRE == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((object)(I_EXC_COMMENTAIRE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_ADDINVOICEEXAM(global::System.Nullable<decimal> I_LIG_FAC_NO, global::System.Nullable<decimal> I_LIG_LIS_NO) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[3]));
+            if ((I_LIG_FAC_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_LIG_FAC_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((I_LIG_LIS_NO.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(I_LIG_LIS_NO.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int PKG_REDOC_ADDPATIENT(string I_PAT_NOM, string I_PAT_PRENOM, global::System.Nullable<global::System.DateTime> I_PAT_DATE_NAISSANCE, string I_PAT_ADRESSE, string I_PAT_EMAIL, string I_PAT_TELEPHONE, string I_PAT_NO_AVS) {
-            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[0]));
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[4]));
             if ((I_PAT_NOM == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -15356,8 +15632,64 @@ namespace RedocApp.DataSetRedocTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_DELETEDOCSCHEDULE(global::System.Nullable<decimal> I_HOR_NO) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[5]));
+            if ((I_HOR_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_HOR_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_DELETEDOCSCHEDULEEXCEPTION(global::System.Nullable<decimal> I_EXC_NO) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[6]));
+            if ((I_EXC_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_EXC_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int PKG_REDOC_DELETEPATIENT(global::System.Nullable<decimal> I_PAT_NO) {
-            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[1]));
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[7]));
             if ((I_PAT_NO.HasValue == true)) {
                 command.Parameters[0].Value = ((decimal)(I_PAT_NO.Value));
             }
@@ -15384,8 +15716,66 @@ namespace RedocApp.DataSetRedocTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int PKG_REDOC_EDITAPPOINTMENT(global::System.Nullable<decimal> I_REN_NO, global::System.Nullable<global::System.DateTime> I_REN_DATE, global::System.Nullable<decimal> I_DOC_NO, global::System.Nullable<decimal> I_PAT_NO, global::System.Nullable<decimal> I_REN_ANNULE, object I_REN_COMMENTAIRE) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[8]));
+            if ((I_REN_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_REN_NO.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((I_REN_DATE.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(I_REN_DATE.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((I_DOC_NO.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(I_DOC_NO.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((I_PAT_NO.HasValue == true)) {
+                command.Parameters[3].Value = ((decimal)(I_PAT_NO.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((I_REN_ANNULE.HasValue == true)) {
+                command.Parameters[4].Value = ((decimal)(I_REN_ANNULE.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((I_REN_COMMENTAIRE == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((object)(I_REN_COMMENTAIRE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int PKG_REDOC_EDITPATIENT(global::System.Nullable<decimal> I_PAT_NO, string I_PAT_NOM, string I_PAT_PRENOM, global::System.Nullable<global::System.DateTime> I_PAT_DATE_NAISSANCE, string I_PAT_ADRESSE, string I_PAT_EMAIL, string I_PAT_TELEPHONE, string I_PAT_NO_AVS) {
-            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[2]));
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[9]));
             if ((I_PAT_NO.HasValue == true)) {
                 command.Parameters[0].Value = ((decimal)(I_PAT_NO.Value));
             }
@@ -15454,8 +15844,53 @@ namespace RedocApp.DataSetRedocTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<decimal> PKG_REDOC_ADDINVOICE(global::System.Nullable<decimal> I_FAC_REN_NO, global::System.Nullable<global::System.DateTime> I_FAC_DATE, global::System.Nullable<decimal> I_FAC_TOTAL) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[10]));
+            if ((I_FAC_REN_NO.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(I_FAC_REN_NO.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((I_FAC_DATE.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(I_FAC_DATE.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((I_FAC_TOTAL.HasValue == true)) {
+                command.Parameters[3].Value = ((decimal)(I_FAC_TOTAL.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            try {
+                command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((command.Parameters[0].Value == null) 
+                        || (command.Parameters[0].Value.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<decimal>();
+            }
+            else {
+                return new global::System.Nullable<decimal>(((decimal)(command.Parameters[0].Value)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual string PKG_REDOC_CHECKLOGINCREDENTIALS(string I_UTI_EMAIL, string I_UTI_MDP) {
-            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[3]));
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[11]));
             if ((I_UTI_EMAIL == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -15493,231 +15928,52 @@ namespace RedocApp.DataSetRedocTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int PKG_REDOC_ADDAPPOINTMENT(global::System.Nullable<global::System.DateTime> I_REN_DATE, global::System.Nullable<decimal> I_DOC_NO, global::System.Nullable<decimal> I_PAT_NO, object I_REN_COMMENTAIRE) {
-            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[4]));
-            if ((I_REN_DATE.HasValue == true)) {
-                command.Parameters[0].Value = ((System.DateTime)(I_REN_DATE.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((I_DOC_NO.HasValue == true)) {
-                command.Parameters[1].Value = ((decimal)(I_DOC_NO.Value));
+        public virtual global::System.Nullable<decimal> PKG_REDOC_GETEXAMPRICE(global::System.Nullable<decimal> I_EXA_NO) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[12]));
+            if ((I_EXA_NO.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(I_EXA_NO.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((I_PAT_NO.HasValue == true)) {
-                command.Parameters[2].Value = ((decimal)(I_PAT_NO.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((I_REN_COMMENTAIRE == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((object)(I_REN_COMMENTAIRE));
-            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            int returnValue;
             try {
-                returnValue = command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            return returnValue;
+            if (((command.Parameters[0].Value == null) 
+                        || (command.Parameters[0].Value.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<decimal>();
+            }
+            else {
+                return new global::System.Nullable<decimal>(((decimal)(command.Parameters[0].Value)));
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int PKG_REDOC_EDITAPPOINTMENT(global::System.Nullable<decimal> I_REN_NO, global::System.Nullable<global::System.DateTime> I_REN_DATE, global::System.Nullable<decimal> I_DOC_NO, global::System.Nullable<decimal> I_PAT_NO, object I_REN_COMMENTAIRE) {
-            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[5]));
-            if ((I_REN_NO.HasValue == true)) {
-                command.Parameters[0].Value = ((decimal)(I_REN_NO.Value));
+        public virtual int PKG_REDOC_EDITINVOICE(global::System.Nullable<decimal> I_FAC_NO, global::System.Nullable<global::System.DateTime> I_FAC_DATE) {
+            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[13]));
+            if ((I_FAC_NO.HasValue == true)) {
+                command.Parameters[0].Value = ((decimal)(I_FAC_NO.Value));
             }
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((I_REN_DATE.HasValue == true)) {
-                command.Parameters[1].Value = ((System.DateTime)(I_REN_DATE.Value));
+            if ((I_FAC_DATE.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(I_FAC_DATE.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((I_DOC_NO.HasValue == true)) {
-                command.Parameters[2].Value = ((decimal)(I_DOC_NO.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((I_PAT_NO.HasValue == true)) {
-                command.Parameters[3].Value = ((decimal)(I_PAT_NO.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((I_REN_COMMENTAIRE == null)) {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[4].Value = ((object)(I_REN_COMMENTAIRE));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int PKG_REDOC_ADDDOCSCHEDULE(global::System.Nullable<decimal> I_HOR_UTI_NO, global::System.Nullable<decimal> I_HOR_DEBUT, global::System.Nullable<decimal> I_HOR_FIN, global::System.Nullable<decimal> I_HOR_JOUR) {
-            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[6]));
-            if ((I_HOR_UTI_NO.HasValue == true)) {
-                command.Parameters[0].Value = ((decimal)(I_HOR_UTI_NO.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((I_HOR_DEBUT.HasValue == true)) {
-                command.Parameters[1].Value = ((decimal)(I_HOR_DEBUT.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((I_HOR_FIN.HasValue == true)) {
-                command.Parameters[2].Value = ((decimal)(I_HOR_FIN.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((I_HOR_JOUR.HasValue == true)) {
-                command.Parameters[3].Value = ((decimal)(I_HOR_JOUR.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int PKG_REDOC_ADDDOCSCHEDULEEXCEPTION(global::System.Nullable<decimal> I_EXC_UTI_NO, global::System.Nullable<global::System.DateTime> I_EXC_DEBUT, global::System.Nullable<global::System.DateTime> I_EXC_FIN, object I_EXC_COMMENTAIRE) {
-            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[7]));
-            if ((I_EXC_UTI_NO.HasValue == true)) {
-                command.Parameters[0].Value = ((decimal)(I_EXC_UTI_NO.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((I_EXC_DEBUT.HasValue == true)) {
-                command.Parameters[1].Value = ((System.DateTime)(I_EXC_DEBUT.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((I_EXC_FIN.HasValue == true)) {
-                command.Parameters[2].Value = ((System.DateTime)(I_EXC_FIN.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((I_EXC_COMMENTAIRE == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((object)(I_EXC_COMMENTAIRE));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int PKG_REDOC_DELETEDOCSCHEDULE(global::System.Nullable<decimal> I_HOR_NO) {
-            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[8]));
-            if ((I_HOR_NO.HasValue == true)) {
-                command.Parameters[0].Value = ((decimal)(I_HOR_NO.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int PKG_REDOC_DELETEDOCSCHEDULEEXCEPTION(global::System.Nullable<decimal> I_EXC_NO) {
-            global::Oracle.DataAccess.Client.OracleCommand command = ((global::Oracle.DataAccess.Client.OracleCommand)(this.CommandCollection[9]));
-            if ((I_EXC_NO.HasValue == true)) {
-                command.Parameters[0].Value = ((decimal)(I_EXC_NO.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

@@ -63,6 +63,9 @@ namespace RedocApp
             // 
             this.adgvAppointments.AllowUserToAddRows = false;
             this.adgvAppointments.AllowUserToDeleteRows = false;
+            this.adgvAppointments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.adgvAppointments.AutoGenerateColumns = false;
             this.adgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adgvAppointments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -73,7 +76,6 @@ namespace RedocApp
             this.rENANNULEDataGridViewTextBoxColumn,
             this.rENCOMMENTAIREDataGridViewTextBoxColumn});
             this.adgvAppointments.DataSource = this.vWRENDEZVOUSBindingSource;
-            this.adgvAppointments.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.adgvAppointments.FilterAndSortEnabled = true;
             this.adgvAppointments.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adgvAppointments.Location = new System.Drawing.Point(0, 90);

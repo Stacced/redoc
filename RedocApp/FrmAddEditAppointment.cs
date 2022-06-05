@@ -38,6 +38,7 @@ namespace RedocApp
             if (isEdit)
             {
                 lblAddEditAppointment.Text = "Modification rendez-vous";
+
                 this.Text = "REDOC - Modification rendez-vous";
 
                 // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VW_RENDEZVOUS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
@@ -45,6 +46,7 @@ namespace RedocApp
             } else
             {
                 lblAddEditAppointment.Text = "Ajout rendez-vous";
+                cbxCancelled.Visible = false;
                 this.Text = "REDOC - Ajout d'un rendez-vous";
             }
         }
@@ -54,12 +56,13 @@ namespace RedocApp
             DateTime apptDate = this.dtpMain.Value;
             int docNo = int.Parse(this.cmbDoctor.SelectedValue.ToString());
             int patNo = int.Parse(this.cmbPatient.SelectedValue.ToString());
-            string apptNotes = this.txbNotes.Text;
+            string apptNotes = this.txtNotes.Text;
+            int cancelled = this.cbxCancelled.Checked ? 1 : 0;
             DataSetRedocTableAdapters.QueriesTableAdapter request = new DataSetRedocTableAdapters.QueriesTableAdapter();
 
             if (isEdit)
             {
-                request.PKG_REDOC_EDITAPPOINTMENT(appointmentNo, apptDate, docNo, patNo, apptNotes);
+                request.PKG_REDOC_EDITAPPOINTMENT(appointmentNo, apptDate, docNo, patNo, cancelled, apptNotes);
                 this.DialogResult = DialogResult.OK;
             } else
             {
