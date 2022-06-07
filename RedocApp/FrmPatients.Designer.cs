@@ -32,19 +32,18 @@ namespace RedocApp
             this.components = new System.ComponentModel.Container();
             this.btnAddPatient = new System.Windows.Forms.Button();
             this.adgvPatients = new Zuby.ADGV.AdvancedDataGridView();
+            this.vWPATIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetRedoc = new RedocApp.DataSetRedoc();
+            this.adgvSearch = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
+            this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
             this.pATNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATNOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATPRENOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pATNOMCOMPLETDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATDATENAISSANCEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATADRESSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATTELEPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATNOAVSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vWPATIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetRedoc = new RedocApp.DataSetRedoc();
-            this.adgvSearch = new Zuby.ADGV.AdvancedDataGridViewSearchToolBar();
-            this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.adgvPatients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWPATIENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
@@ -75,7 +74,6 @@ namespace RedocApp
             this.pATNODataGridViewTextBoxColumn,
             this.pATNOMDataGridViewTextBoxColumn,
             this.pATPRENOMDataGridViewTextBoxColumn,
-            this.pATNOMCOMPLETDataGridViewTextBoxColumn,
             this.pATDATENAISSANCEDataGridViewTextBoxColumn,
             this.pATADRESSEDataGridViewTextBoxColumn,
             this.pATEMAILDataGridViewTextBoxColumn,
@@ -95,6 +93,35 @@ namespace RedocApp
             this.adgvPatients.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adgvPatients.TabIndex = 4;
             this.adgvPatients.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adgvPatients_CellContentClick);
+            // 
+            // vWPATIENTBindingSource
+            // 
+            this.vWPATIENTBindingSource.DataMember = "VW_PATIENT";
+            this.vWPATIENTBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // dataSetRedoc
+            // 
+            this.dataSetRedoc.DataSetName = "DataSetRedoc";
+            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // adgvSearch
+            // 
+            this.adgvSearch.AllowMerge = false;
+            this.adgvSearch.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.adgvSearch.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.adgvSearch.Location = new System.Drawing.Point(0, 0);
+            this.adgvSearch.MaximumSize = new System.Drawing.Size(0, 27);
+            this.adgvSearch.MinimumSize = new System.Drawing.Size(0, 27);
+            this.adgvSearch.Name = "adgvSearch";
+            this.adgvSearch.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.adgvSearch.Size = new System.Drawing.Size(979, 27);
+            this.adgvSearch.TabIndex = 5;
+            this.adgvSearch.Text = "advancedDataGridViewSearchToolBar1";
+            this.adgvSearch.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.adgvSearch_Search);
+            // 
+            // vW_PATIENTTableAdapter
+            // 
+            this.vW_PATIENTTableAdapter.ClearBeforeFill = true;
             // 
             // pATNODataGridViewTextBoxColumn
             // 
@@ -125,16 +152,6 @@ namespace RedocApp
             this.pATPRENOMDataGridViewTextBoxColumn.ReadOnly = true;
             this.pATPRENOMDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.pATPRENOMDataGridViewTextBoxColumn.Width = 124;
-            // 
-            // pATNOMCOMPLETDataGridViewTextBoxColumn
-            // 
-            this.pATNOMCOMPLETDataGridViewTextBoxColumn.DataPropertyName = "PAT_NOM_COMPLET";
-            this.pATNOMCOMPLETDataGridViewTextBoxColumn.HeaderText = "PAT_NOM_COMPLET";
-            this.pATNOMCOMPLETDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.pATNOMCOMPLETDataGridViewTextBoxColumn.Name = "pATNOMCOMPLETDataGridViewTextBoxColumn";
-            this.pATNOMCOMPLETDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pATNOMCOMPLETDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.pATNOMCOMPLETDataGridViewTextBoxColumn.Width = 124;
             // 
             // pATDATENAISSANCEDataGridViewTextBoxColumn
             // 
@@ -186,35 +203,6 @@ namespace RedocApp
             this.pATNOAVSDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.pATNOAVSDataGridViewTextBoxColumn.Width = 124;
             // 
-            // vWPATIENTBindingSource
-            // 
-            this.vWPATIENTBindingSource.DataMember = "VW_PATIENT";
-            this.vWPATIENTBindingSource.DataSource = this.dataSetRedoc;
-            // 
-            // dataSetRedoc
-            // 
-            this.dataSetRedoc.DataSetName = "DataSetRedoc";
-            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // adgvSearch
-            // 
-            this.adgvSearch.AllowMerge = false;
-            this.adgvSearch.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.adgvSearch.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.adgvSearch.Location = new System.Drawing.Point(0, 0);
-            this.adgvSearch.MaximumSize = new System.Drawing.Size(0, 27);
-            this.adgvSearch.MinimumSize = new System.Drawing.Size(0, 27);
-            this.adgvSearch.Name = "adgvSearch";
-            this.adgvSearch.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.adgvSearch.Size = new System.Drawing.Size(979, 27);
-            this.adgvSearch.TabIndex = 5;
-            this.adgvSearch.Text = "advancedDataGridViewSearchToolBar1";
-            this.adgvSearch.Search += new Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventHandler(this.adgvSearch_Search);
-            // 
-            // vW_PATIENTTableAdapter
-            // 
-            this.vW_PATIENTTableAdapter.ClearBeforeFill = true;
-            // 
             // FrmPatients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,7 +234,6 @@ namespace RedocApp
         private System.Windows.Forms.DataGridViewTextBoxColumn pATNODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pATNOMDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pATPRENOMDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pATNOMCOMPLETDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pATDATENAISSANCEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pATADRESSEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pATEMAILDataGridViewTextBoxColumn;

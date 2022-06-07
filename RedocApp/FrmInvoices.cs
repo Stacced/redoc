@@ -17,10 +17,15 @@ namespace RedocApp
             InitializeComponent();
         }
 
-        private void FrmInvoices_Load(object sender, EventArgs e)
+        private void LoadData()
         {
             // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VW_FACTURE'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.vW_FACTURETableAdapter.Fill(this.dataSetRedoc.VW_FACTURE);
+        }
+
+        private void FrmInvoices_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void adgvSearch_Search(object sender, Zuby.ADGV.AdvancedDataGridViewSearchToolBarSearchEventArgs e)
@@ -61,6 +66,18 @@ namespace RedocApp
                     e.CaseSensitive);
             if (c != null)
                 adgvInvoices.CurrentCell = c;
+        }
+
+        private void adgvInvoices_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow selectedRow = adgvInvoices.Rows[e.RowIndex];
+
+            if (selectedRow.Cells[0] != null && selectedRow.Cells[1] != null)
+            {
+                FrmCreateEditInvoice frm = new FrmCreateEditInvoice(true, Convert.ToInt32(selectedRow.Cells[1].Value), Convert.ToInt32(selectedRow.Cells[0].Value));
+                frm.ShowDialog();
+                LoadData();
+            }
         }
     }
 }

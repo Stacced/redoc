@@ -15,6 +15,7 @@ namespace RedocApp
         private bool isEdit = false;
         private int apptNo;
         private int invoiceNo;
+        private List<short> exams = new List<short>();
 
         public FrmCreateEditInvoice(bool isEdit)
         {
@@ -48,23 +49,48 @@ namespace RedocApp
                 this.Text = "REDOC - Modification facture";
                 this.lblInvoice.Text = "Modification facture";
 
+                // We suppose that the invoice will not need any exam list modifications in the future.
+                this.btnAddExam.Enabled = false;
+                this.btnRemoveExam.Enabled = false;
+                this.cmbExams.Enabled = false;
+
                 // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VW_FACTURE'. Vous pouvez la déplacer ou la supprimer selon les besoins.
                 this.vW_FACTURETableAdapter.Fill(this.dataSetRedoc.VW_FACTURE);
+
+                // TODO: cette ligne de code charge les données dans la table 'dataSetRedoc.VW_EXAMENS_FACTURE'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+                this.vW_EXAMENS_FACTURETableAdapter.FillByFacNo(this.dataSetRedoc.VW_EXAMENS_FACTURE, invoiceNo);
+
+                // Fill exams list with items in list box
+                foreach (DataRowView examView in lsbExams.Items)
+                {
+                    DataSetRedoc.VW_EXAMENS_FACTURERow examRow = (DataSetRedoc.VW_EXAMENS_FACTURERow)examView.Row; 
+                    exams.Add(examRow.EXA_NO);
+                }
+
+                this.lblTotalAmount.Text = ComputeTotal().ToString();
             } else
             {
                 this.Text = "REDOC - Création facture";
                 this.lblInvoice.Text = "Création facture";
+                this.lsbExams.DataSource = null;
+                this.lsbExams.DisplayMember = null;
+                this.lsbExams.ValueMember = null;
+                this.cbxPaid.Enabled = false;
             }
         }
 
         private void btnAddExam_Click(object sender, EventArgs e)
         {
-            this.lsbExams.Items.Add(this.cmbExams.SelectedValue);
+            DataSetRedoc.VW_EXAMENRow row = (DataSetRedoc.VW_EXAMENRow)((DataRowView)this.cmbExams.SelectedItem).Row;
+            
+            this.exams.Add(Convert.ToInt16(this.cmbExams.SelectedValue));
+            this.lsbExams.Items.Add(row.LIS_NOM);
             this.lblTotalAmount.Text = ComputeTotal().ToString();
         }
 
         private void btnRemoveExam_Click(object sender, EventArgs e)
         {
+            this.exams.Remove(Convert.ToInt16(this.cmbExams.SelectedValue));
             this.lsbExams.Items.Remove(this.lsbExams.SelectedItem);
             this.lblTotalAmount.Text = ComputeTotal().ToString();
         }
@@ -74,7 +100,7 @@ namespace RedocApp
             DataSetRedocTableAdapters.QueriesTableAdapter request = new DataSetRedocTableAdapters.QueriesTableAdapter();
             decimal invoiceTotal = 0;
 
-            foreach (short examNo in lsbExams.Items)
+            foreach (short examNo in exams)
             {
                 decimal? examPrice = request.PKG_REDOC_GETEXAMPRICE(examNo);
                 if (examPrice != null)
@@ -94,12 +120,13 @@ namespace RedocApp
 
             if (isEdit)
             {
-                request.PKG_REDOC_EDITINVOICE(invoiceNo, invoiceDate);
+                int paid = cbxPaid.Checked ? 1 : 0;
+                request.PKG_REDOC_EDITINVOICE(invoiceNo, invoiceDate, paid);
             } else
             {
                 int invoiceNo = (int)request.PKG_REDOC_ADDINVOICE(apptNo, invoiceDate, invoiceTotal);
 
-                foreach (short examNo in this.lsbExams.Items)
+                foreach (short examNo in exams)
                 {
                     request.PKG_REDOC_ADDINVOICEEXAM(invoiceNo, examNo);
                 }

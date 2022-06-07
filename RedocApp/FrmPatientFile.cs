@@ -21,7 +21,7 @@ namespace RedocApp
 
         private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 5)
             {
                 DataGridViewRow selectedRow = dgvAppointments.Rows[e.RowIndex];
                 if (selectedRow.Cells[0] != null)

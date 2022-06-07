@@ -33,9 +33,11 @@ namespace RedocApp
             this.lblInvoice = new System.Windows.Forms.Label();
             this.lblPatientName = new System.Windows.Forms.Label();
             this.lsbExams = new System.Windows.Forms.ListBox();
-            this.txtPatient = new System.Windows.Forms.TextBox();
-            this.vWFACTUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vWEXAMENSFACTUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetRedoc = new RedocApp.DataSetRedoc();
+            this.txtPatient = new System.Windows.Forms.TextBox();
+            this.vWRENDEZVOUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vWFACTUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblDate = new System.Windows.Forms.Label();
             this.dtpMain = new System.Windows.Forms.DateTimePicker();
             this.btnAddExam = new System.Windows.Forms.Button();
@@ -51,12 +53,14 @@ namespace RedocApp
             this.vW_FACTURETableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_FACTURETableAdapter();
             this.vW_PATIENTTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_PATIENTTableAdapter();
             this.tableAdapterManager = new RedocApp.DataSetRedocTableAdapters.TableAdapterManager();
-            this.vWRENDEZVOUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vW_RENDEZVOUSTableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_RENDEZVOUSTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.vWFACTUREBindingSource)).BeginInit();
+            this.vW_EXAMENS_FACTURETableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_EXAMENS_FACTURETableAdapter();
+            this.cbxPaid = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENSFACTUREBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWRENDEZVOUSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWFACTUREBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInvoice
@@ -80,6 +84,8 @@ namespace RedocApp
             // 
             // lsbExams
             // 
+            this.lsbExams.DataSource = this.vWEXAMENSFACTUREBindingSource;
+            this.lsbExams.DisplayMember = "EXA_NOM";
             this.lsbExams.FormattingEnabled = true;
             this.lsbExams.HorizontalScrollbar = true;
             this.lsbExams.ItemHeight = 16;
@@ -87,7 +93,18 @@ namespace RedocApp
             this.lsbExams.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lsbExams.Name = "lsbExams";
             this.lsbExams.Size = new System.Drawing.Size(369, 212);
-            this.lsbExams.TabIndex = 9;
+            this.lsbExams.TabIndex = 10;
+            this.lsbExams.ValueMember = "EXA_NO";
+            // 
+            // vWEXAMENSFACTUREBindingSource
+            // 
+            this.vWEXAMENSFACTUREBindingSource.DataMember = "VW_EXAMENS_FACTURE";
+            this.vWEXAMENSFACTUREBindingSource.DataSource = this.dataSetRedoc;
+            // 
+            // dataSetRedoc
+            // 
+            this.dataSetRedoc.DataSetName = "DataSetRedoc";
+            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtPatient
             // 
@@ -99,15 +116,15 @@ namespace RedocApp
             this.txtPatient.Size = new System.Drawing.Size(263, 22);
             this.txtPatient.TabIndex = 2;
             // 
+            // vWRENDEZVOUSBindingSource
+            // 
+            this.vWRENDEZVOUSBindingSource.DataMember = "VW_RENDEZVOUS";
+            this.vWRENDEZVOUSBindingSource.DataSource = this.dataSetRedoc;
+            // 
             // vWFACTUREBindingSource
             // 
             this.vWFACTUREBindingSource.DataMember = "VW_FACTURE";
             this.vWFACTUREBindingSource.DataSource = this.dataSetRedoc;
-            // 
-            // dataSetRedoc
-            // 
-            this.dataSetRedoc.DataSetName = "DataSetRedoc";
-            this.dataSetRedoc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblDate
             // 
@@ -134,7 +151,7 @@ namespace RedocApp
             this.btnAddExam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddExam.Name = "btnAddExam";
             this.btnAddExam.Size = new System.Drawing.Size(123, 44);
-            this.btnAddExam.TabIndex = 7;
+            this.btnAddExam.TabIndex = 8;
             this.btnAddExam.Text = "A&jouter examen";
             this.btnAddExam.UseVisualStyleBackColor = true;
             this.btnAddExam.Click += new System.EventHandler(this.btnAddExam_Click);
@@ -145,7 +162,7 @@ namespace RedocApp
             this.btnRemoveExam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemoveExam.Name = "btnRemoveExam";
             this.btnRemoveExam.Size = new System.Drawing.Size(133, 44);
-            this.btnRemoveExam.TabIndex = 8;
+            this.btnRemoveExam.TabIndex = 9;
             this.btnRemoveExam.Text = "&Retirer examen sélectionné";
             this.btnRemoveExam.UseVisualStyleBackColor = true;
             this.btnRemoveExam.Click += new System.EventHandler(this.btnRemoveExam_Click);
@@ -160,7 +177,7 @@ namespace RedocApp
             this.cmbExams.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbExams.Name = "cmbExams";
             this.cmbExams.Size = new System.Drawing.Size(369, 24);
-            this.cmbExams.TabIndex = 6;
+            this.cmbExams.TabIndex = 7;
             this.cmbExams.ValueMember = "LIS_NO";
             // 
             // vWEXAMENBindingSource
@@ -175,7 +192,7 @@ namespace RedocApp
             this.lblTotal.Location = new System.Drawing.Point(13, 448);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(83, 24);
-            this.lblTotal.TabIndex = 10;
+            this.lblTotal.TabIndex = 11;
             this.lblTotal.Text = "TOTAL:";
             // 
             // btnCancel
@@ -185,7 +202,7 @@ namespace RedocApp
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 46);
-            this.btnCancel.TabIndex = 13;
+            this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "&Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -195,7 +212,7 @@ namespace RedocApp
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(112, 46);
-            this.btnConfirm.TabIndex = 12;
+            this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "&Valider";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -205,10 +222,10 @@ namespace RedocApp
             this.lblTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalAmount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vWFACTUREBindingSource, "FAC_TOTAL", true));
             this.lblTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.Location = new System.Drawing.Point(166, 449);
+            this.lblTotalAmount.Location = new System.Drawing.Point(171, 449);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(227, 23);
-            this.lblTotalAmount.TabIndex = 11;
+            this.lblTotalAmount.TabIndex = 12;
             this.lblTotalAmount.Text = "0.0";
             this.lblTotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -218,7 +235,7 @@ namespace RedocApp
             this.lblExamList.Location = new System.Drawing.Point(13, 123);
             this.lblExamList.Name = "lblExamList";
             this.lblExamList.Size = new System.Drawing.Size(125, 17);
-            this.lblExamList.TabIndex = 5;
+            this.lblExamList.TabIndex = 6;
             this.lblExamList.Text = "&Liste des examens";
             // 
             // vW_EXAMENTableAdapter
@@ -249,14 +266,24 @@ namespace RedocApp
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.UpdateOrder = RedocApp.DataSetRedocTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // vWRENDEZVOUSBindingSource
-            // 
-            this.vWRENDEZVOUSBindingSource.DataMember = "VW_RENDEZVOUS";
-            this.vWRENDEZVOUSBindingSource.DataSource = this.dataSetRedoc;
-            // 
             // vW_RENDEZVOUSTableAdapter
             // 
             this.vW_RENDEZVOUSTableAdapter.ClearBeforeFill = true;
+            // 
+            // vW_EXAMENS_FACTURETableAdapter
+            // 
+            this.vW_EXAMENS_FACTURETableAdapter.ClearBeforeFill = true;
+            // 
+            // cbxPaid
+            // 
+            this.cbxPaid.AutoSize = true;
+            this.cbxPaid.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.vWFACTUREBindingSource, "FAC_PAYE", true));
+            this.cbxPaid.Location = new System.Drawing.Point(335, 111);
+            this.cbxPaid.Name = "cbxPaid";
+            this.cbxPaid.Size = new System.Drawing.Size(59, 21);
+            this.cbxPaid.TabIndex = 5;
+            this.cbxPaid.Text = "Payé";
+            this.cbxPaid.UseVisualStyleBackColor = true;
             // 
             // FrmCreateEditInvoice
             // 
@@ -264,7 +291,8 @@ namespace RedocApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(408, 550);
+            this.ClientSize = new System.Drawing.Size(413, 550);
+            this.Controls.Add(this.cbxPaid);
             this.Controls.Add(this.lblExamList);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.btnConfirm);
@@ -286,10 +314,11 @@ namespace RedocApp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REDOC - Facturation";
             this.Load += new System.EventHandler(this.FrmCreateEditInvoice_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vWFACTUREBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENSFACTUREBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetRedoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vWRENDEZVOUSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWFACTUREBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vWEXAMENBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,5 +349,8 @@ namespace RedocApp
         private DataSetRedocTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingSource vWRENDEZVOUSBindingSource;
         private DataSetRedocTableAdapters.VW_RENDEZVOUSTableAdapter vW_RENDEZVOUSTableAdapter;
+        private System.Windows.Forms.BindingSource vWEXAMENSFACTUREBindingSource;
+        private DataSetRedocTableAdapters.VW_EXAMENS_FACTURETableAdapter vW_EXAMENS_FACTURETableAdapter;
+        private System.Windows.Forms.CheckBox cbxPaid;
     }
 }

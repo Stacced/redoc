@@ -36,6 +36,7 @@ namespace RedocApp
             this.dataSetRedoc = new RedocApp.DataSetRedoc();
             this.vW_FACTURETableAdapter = new RedocApp.DataSetRedocTableAdapters.VW_FACTURETableAdapter();
             this.fACNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FAC_REN_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pATNOMCOMPLETDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fACDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fACPAYEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -56,6 +57,7 @@ namespace RedocApp
             this.adgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adgvInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fACNODataGridViewTextBoxColumn,
+            this.FAC_REN_NO,
             this.pATNOMCOMPLETDataGridViewTextBoxColumn,
             this.fACDATEDataGridViewTextBoxColumn,
             this.fACPAYEDataGridViewTextBoxColumn,
@@ -73,6 +75,7 @@ namespace RedocApp
             this.adgvInvoices.Size = new System.Drawing.Size(1035, 458);
             this.adgvInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adgvInvoices.TabIndex = 3;
+            this.adgvInvoices.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adgvInvoices_CellContentDoubleClick);
             // 
             // adgvSearch
             // 
@@ -112,6 +115,16 @@ namespace RedocApp
             this.fACNODataGridViewTextBoxColumn.ReadOnly = true;
             this.fACNODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.fACNODataGridViewTextBoxColumn.Width = 124;
+            // 
+            // FAC_REN_NO
+            // 
+            this.FAC_REN_NO.DataPropertyName = "FAC_REN_NO";
+            this.FAC_REN_NO.HeaderText = "FAC_REN_NO";
+            this.FAC_REN_NO.MinimumWidth = 22;
+            this.FAC_REN_NO.Name = "FAC_REN_NO";
+            this.FAC_REN_NO.ReadOnly = true;
+            this.FAC_REN_NO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.FAC_REN_NO.Width = 124;
             // 
             // pATNOMCOMPLETDataGridViewTextBoxColumn
             // 
@@ -182,6 +195,7 @@ namespace RedocApp
         private System.Windows.Forms.BindingSource vWFACTUREBindingSource;
         private DataSetRedocTableAdapters.VW_FACTURETableAdapter vW_FACTURETableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn fACNODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FAC_REN_NO;
         private System.Windows.Forms.DataGridViewTextBoxColumn pATNOMCOMPLETDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fACDATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn fACPAYEDataGridViewTextBoxColumn;
