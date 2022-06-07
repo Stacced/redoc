@@ -29,7 +29,7 @@ namespace RedocApp
 
         private void txtLogin_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtUsername.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text))
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 btnLogin.Enabled = true;
             } else
@@ -47,7 +47,7 @@ namespace RedocApp
 
             // Ask DB if credentials are correct
             // Returned data is formatted as 'user_no;user_role'. If credentials are incorrect, DB will return '-1;DENIED'.
-            string loginResult = request.PKG_REDOC_CHECKLOGINCREDENTIALS(txtUsername.Text, hash.ToLower());
+            string loginResult = request.PKG_REDOC_CHECKLOGINCREDENTIALS(txtEmail.Text, hash.ToLower());
             string[] loginParts = loginResult.Split(';');
             int returnedUserNo = int.Parse(loginParts[0]);
 

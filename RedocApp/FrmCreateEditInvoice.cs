@@ -133,6 +133,7 @@ namespace RedocApp
             }
 
             this.btnConfirm.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
